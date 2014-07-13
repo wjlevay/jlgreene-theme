@@ -114,43 +114,6 @@ duplicate one of the lines in the array and name it according to your
 new image size.
 */
 
-/************* THUMBNAIL CAPTIONS *************/
-
-/*
-Show Captions on Thumbnail Images
-via http://wordpress.org/support/topic/display-caption-with-the_post_thumbnail
-*/
-
-function the_post_thumbnail_caption() {
-  global $post;
-
-  $thumb_id = get_post_thumbnail_id($post->id);
-
-  $args = array(
-  'post_type' => 'attachment',
-  'post_status' => null,
-  'post_parent' => $post->ID,
-  'include'  => $thumb_id
-  ); 
-
-   $thumbnail_image = get_posts($args);
-
-   if ($thumbnail_image && isset($thumbnail_image[0])) {
-     //show thumbnail title
-     //echo $thumbnail_image[0]->post_title; 
-
-     //Uncomment to show the thumbnail caption
-     echo $thumbnail_image[0]->post_excerpt; 
-
-     //Uncomment to show the thumbnail description
-     //echo $thumbnail_image[0]->post_content; 
-
-     //Uncomment to show the thumbnail alt field
-     //$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-     //if(count($alt)) echo $alt;
-  }
-}
-
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
@@ -384,5 +347,6 @@ function initialize_cmb_meta_boxes() {
         require_once( 'library/metabox/init.php' );
     }
 }
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

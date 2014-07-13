@@ -55,19 +55,20 @@
 								<section class="entry-content m-all t-1of2 d-1of2 cf">
 
 									<h1 class="single-title custom-post-type-title"><?php the_title(); ?></h1>
-									<p class="byline vcard"><?php
-										printf( __( '%1$s', 'bonestheme' ), get_the_term_list( $post->ID, 'project_cat', ' ', ', ', '' ) );
+									<p class="project-cat"><?php
+										printf(__('%1$s', 'bonestheme'), get_the_term_list( get_the_ID(), 'project_cat', "", " &middot; ", "" ));
 									?></p>
 
 									<?php // display the quote custom fields ?>
-									<p class="quote"><?php
+									<div class="quote"><?php
 									    $quote = get_post_meta( $post->ID, '_cmb_quote', true );
 									    $quotee = get_post_meta( $post->ID, '_cmb_quotee', true );
 
 									    if( !empty( $quote ) ) {
-											echo $quote . '<br>&mdash; ' . $quotee;
+											$quote_block = $quote . '<br>&mdash; ' . $quotee;
+											echo apply_filters('the_content', $quote_block);
 										}
-									?></p>
+									?></div>
 
 								</section> <!-- end left section -->
 
@@ -76,8 +77,50 @@
 								</section> <!-- end right section -->
 
 								<footer class="article-footer m-all t-all d-all cf">
-									<h3>related projects:</h3>
-									<?php // echo bones_related_projects(); ?>
+									
+									<?php // get two related projects
+									
+									$categories = get_the_category($post->ID);
+									
+										$category_ids = array();
+										foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+										$args=array(
+											'post_type' => 'project',
+											'category__in' => $category_ids,
+											'post__not_in' => array($post->ID),
+											'posts_per_page'=> 2, // Number of related posts that will be shown.
+											'caller_get_posts'=>1
+										);
+
+									$related = new WP_Query( $args );
+									if ($related->have_posts()) {
+										echo '<h3>related projects:</h3>';
+									}
+									while ($related->have_posts()) : $related->the_post();
+									$postcount++; ?>								
+
+									<?php // If it's the first project, put it in a left column, if it's the second, put it in a right column
+									if ($postcount == 1) : echo '<div class="rel-project m-all t-1of2 d-1of2 cf">'; 
+									else : echo '<div class="rel-project m-all t-1of2 d-1of2 last-col cf">';
+									endif ; ?>
+
+										<?php // check for featured image and display
+											if ( '' != get_the_post_thumbnail() ) { ?>
+											<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a></div>
+											<?php } 
+											else {
+												echo '';
+											} 
+										?>
+										<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+										<p class="project-cat"><?php
+											printf(__('%1$s', 'bonestheme'), get_the_term_list( get_the_ID(), 'project_cat', "", " &middot; ", "" ));
+										?></p>
+									</div>
+
+									<?php endwhile;
+									wp_reset_postdata();
+									?>
 								</footer>
 
 							</article>

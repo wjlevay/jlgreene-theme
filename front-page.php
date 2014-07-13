@@ -12,9 +12,11 @@
 
 								<header class="article-header">
 
-									<?php // put the image slider here ?>
+									<?php // display image slider using Flexslider via WP Better Attachments ?>
+										<?php echo do_shortcode('[wpba-flexslider]'); ?>
+									<!--end flexslider-->
 
-									<?php // display the site description here ?>
+									<?php // display the site description ?>
 									<h2 class="tagline h1"><?php bloginfo('description'); ?></h2>
 
 								</header>
@@ -54,9 +56,11 @@
 								</div> <!-- end right column -->
 
 								<footer class="article-footer m-all t-all d-all cf">
-									<h3>featured projects:</h3>
-									<?php // get two sticky projects
+									<?php // get two projects marked 'featured'
 									$project = new WP_Query(array ('post_type' => 'project', 'posts_per_page' => 2, 'orderby' => 'rand', 'meta_key' => '_cmb_featured_project') );
+									if ($project->have_posts()) {
+										echo '<h3>featured projects:</h3>';
+									}
 									while ($project->have_posts()) : $project->the_post();
 									$postcount++; ?>
 

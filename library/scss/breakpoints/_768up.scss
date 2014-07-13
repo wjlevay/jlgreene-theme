@@ -34,6 +34,8 @@ HEADER STYLES
 .header {
 	/* show the menu on larger screens */
 	.header-right {display: block;}
+
+	letter-spacing: 0.0625em;
 }
 
 	#logo {}
@@ -167,6 +169,39 @@ NAVIGATION STYLES
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+/* entry content */
+.entry-content {
+
+	blockquote, 
+	.quote {
+		text-indent: -0.55em;
+	}
+}
+
+.blog {
+	#blank_col {display: block;}
+
+	.hentry {padding-top: 1.5em;}
+
+	.article-header {
+
+		.post-thumbnail {
+			margin-top: 0.5em;
+		}
+	}
+
+	.entry-content {
+		padding: 0.5em 0 0 0;
+		margin-top: 0;
+
+		p {margin: 0;}
+	}
+}
 
 /*********************
 SIDEBARS & ASIDES

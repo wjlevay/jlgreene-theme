@@ -6,6 +6,9 @@
 
 					<div id="main" class="cf" role="main">
 
+						<?php // display the news page tagline ?>
+						<h2 class="tagline h1">This headline will refer to events and news from the Jerome L. Greene Foundation.</h2>
+
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
@@ -28,7 +31,7 @@
 
 								<?php // check for featured image and display
 									if ( '' != get_the_post_thumbnail() ) { ?>
-									<div class="post-thumbnail"><?php the_post_thumbnail( $image_size ); ?><span class="thumbnail-caption"><?php the_post_thumbnail_caption(); ?></span></div>
+									<div class="post-thumbnail"><?php the_post_thumbnail( $image_size ); ?><span class="thumbnail-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></span></div>
 									<?php } 
 									else {
 										echo '';
@@ -44,25 +47,26 @@
 							<div id="article-wrap" class="m-all t-1of2 d-1of2 last-col cf"> <!-- begin right column -->
 
 								<section class="entry-content cf">
-									<h1 class="h2 entry-title"><?php the_title(); ?></h1>
+									<h1 class="h3 entry-title"><?php the_title(); ?></h1>
 									<?php the_content(); ?>
 								</section>
 
 								<footer class="article-footer cf">
-									<p class="byline vcard">
+									<p class="post-meta">
 										<?php printf( __( '', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time>', get_the_time('Y-m-j'), get_the_time(get_option('date_format'))); ?>
-									</p>
+									
 									<?php 
 										$linkURL = get_post_meta( $post->ID, '_cmb_linkURL', true );
 										$linkText = get_post_meta( $post->ID, '_cmb_linkText', true );
 
 										if( !empty( $linkURL ) ) {
-	        								echo '<a class="external-link" href="' . $linkURL . '" title ="' . $linkText . '">' . $linkText . '</a>';
+	        								echo ' &middot; <a class="external-link" href="' . $linkURL . '" title ="' . $linkText . '">' . $linkText . '</a>';
 	    								}
 	    								else {
 	    									echo '';
 	    								}
 									?>
+									</p>
 								</footer>
 
 							</div> <!-- end right column -->

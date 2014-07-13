@@ -1259,7 +1259,7 @@ body {
 
 /* This is for the span class in the TinyMCE editor. The WebType fonts are called from the _mixins.scss file */
 .boldsans, .boldsans-lg {
-  font-family: Antenna;
+  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: bold; }
 
@@ -1363,7 +1363,9 @@ h2, .h2 {
 h2.tagline {
   font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
   font-style: normal;
-  font-weight: normal; }
+  font-weight: normal;
+  margin-top: 0.375em;
+  margin-bottom: 0; }
 
 h3, .h3 {
   font-size: 1.125em; }
@@ -1443,9 +1445,9 @@ POSTS & CONTENT STYLES
   background-color: white;
   margin-bottom: 1.5em; }
   .hentry header {
-    padding: 0; }
+    /*padding: 0;*/ }
   .hentry footer {
-    padding: 1.5em; }
+    padding: 0; }
     .hentry footer p {
       margin: 0; }
 
@@ -1472,7 +1474,7 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0;
+  padding: 1.5em 1.5em 0 0;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
@@ -1507,7 +1509,7 @@ POSTS & CONTENT STYLES
     .entry-content th:last-child {
       border-right: 0; }
   .entry-content blockquote,
-  .entry-content p.quote {
+  .entry-content .quote {
     margin: 0;
     padding: 0;
     color: #970076; }
@@ -1567,24 +1569,8 @@ POSTS & CONTENT STYLES
     margin: -0.6667em 0 0 -1.5em;
     color: white; }
 
-/* style the homepage latest news block */
-.latest-news {
-  position: relative; }
-  .latest-news .latest-news-story .latest-news-text {
-    position: absolute;
-    left: 5%;
-    top: 0;
-    color: white; }
-  .latest-news article section {
-    background: #c0b8b0; }
-    .latest-news article section h3 {
-      color: #970076; }
-    .latest-news article section p a {
-      color: white; }
-
 .wp-caption {
   max-width: 100%;
-  background: #eee;
   padding: 5px;
   /* images inside wp-caption */ }
   .wp-caption img {
@@ -1592,9 +1578,11 @@ POSTS & CONTENT STYLES
     margin-bottom: 0;
     width: 100%; }
   .wp-caption p.wp-caption-text {
-    font-size: 0.85em;
-    margin: 4px 0 7px;
-    text-align: center; }
+    font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: black;
+    text-align: left; }
 
 /* end .wp-caption */
 /* image gallery styles */
@@ -1655,6 +1643,89 @@ PAGE NAVI STYLES
   float: right; }
 
 /* end .wp-prev-next */
+/* homepage stuff */
+.home {
+  /* featured projects */
+  /* latest news block */ }
+  .home .feat-project {
+    margin-bottom: 2em; }
+  .home .latest-news {
+    display: flex;
+    position: relative; }
+    .home .latest-news .latest-news-story {
+      margin-top: 1.5em; }
+      .home .latest-news .latest-news-story .latest-news-text {
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        color: white;
+        text-shadow: 2px 2px 2px #969696; }
+    .home .latest-news article .entry-content {
+      padding: 0.5em 0.75em 0;
+      background: #c0b8b0; }
+      .home .latest-news article .entry-content .entry-title {
+        color: #970076;
+        font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+        font-style: normal;
+        font-weight: normal; }
+      .home .latest-news article .entry-content .h4 {
+        font-size: 0.95em;
+        margin-bottom: 0.75em; }
+        .home .latest-news article .entry-content .h4 a {
+          color: white; }
+
+/* end .home */
+/* project stuff across all pages */
+.project-cat a {
+  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.95em; }
+
+.project-title {
+  margin: 0.5em 0 0; }
+
+/* project page stuff */
+.single-project {
+  /* related projects */ }
+  .single-project .article-header .post-thumbnail {
+    margin-top: 1.5em; }
+  .single-project .rel-project {
+    margin-bottom: 2em; }
+
+/* project category page */
+.tax-project_cat {
+  /* a single project */ }
+  .tax-project_cat .project {
+    margin-bottom: 2em; }
+    .tax-project_cat .project .project-cat {
+      margin: 0; }
+
+/* news page */
+.blog #blank_col {
+  display: none; }
+.blog .article-header .post-thumbnail {
+  position: relative;
+  margin-top: 1.5em; }
+  .blog .article-header .post-thumbnail .thumbnail-caption {
+    position: absolute;
+    left: 0;
+    bottom: -2em;
+    font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.9em; }
+.blog .entry-content {
+  padding: 1.5em 0 0 0;
+  margin-top: 1.5em; }
+  .blog .entry-content p {
+    margin: 0; }
+.blog .post-meta {
+  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: #970076; }
+
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
@@ -1822,6 +1893,28 @@ view.
 */
 /* end .footer-links */
 /*********************
+FLEXSLIDER STYLES
+*********************/
+/* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+.home .flexslider {
+  margin: 1.5em 0;
+  border: 0;
+  position: relative;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none; }
+  .home .flexslider .flex-control-nav {
+    display: none; }
+  .home .flexslider .slides img {
+    max-height: none;
+    height: auto; }
+
+/*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
 larger than an iPhone but smaller than a tablet. Let's call them
@@ -1933,7 +2026,8 @@ you can add resource intensive styles.
   HEADER STYLES
   *********************/
   .header {
-    /* show the menu on larger screens */ }
+    /* show the menu on larger screens */
+    letter-spacing: 0.0625em; }
     .header .header-right {
       display: block; }
 
@@ -2023,6 +2117,26 @@ you can add resource intensive styles.
 
   /* end .nav */
   /*********************
+  POSTS & CONTENT STYLES
+  *********************/
+  /* entry content */
+  .entry-content blockquote,
+  .entry-content .quote {
+    text-indent: -0.55em; }
+
+  .blog #blank_col {
+    display: block; }
+  .blog .hentry {
+    padding-top: 1.5em; }
+  .blog .article-header .post-thumbnail {
+    margin-top: 0.5em; }
+  .blog .entry-content {
+    padding: 0.5em 0 0 0;
+    margin-top: 0; }
+    .blog .entry-content p {
+      margin: 0; }
+
+  /*********************
   SIDEBARS & ASIDES
   *********************/
   .sidebar {
@@ -2087,7 +2201,7 @@ you can add resource intensive styles.
   
   ******************************************************************/
   .wrap {
-    width: 1040px; } }
+    width: 760px; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2102,7 +2216,9 @@ This is for the larger monitors and possibly full screen viewers.
   You can add some advanced styles here if you like. This kicks in
   on larger screens.
   
-  ******************************************************************/ }
+  ******************************************************************/
+  .wrap {
+    width: 760px; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

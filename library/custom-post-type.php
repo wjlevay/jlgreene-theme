@@ -34,7 +34,7 @@ function custom_post_example() {
 			'add_new' => __( 'Add New', 'bonestheme' ), /* The add new menu item */
 			'add_new_item' => __( 'Add New Project', 'bonestheme' ), /* Add New Display Title */
 			'edit' => __( 'Edit', 'bonestheme' ), /* Edit Dialog */
-			'edit_item' => __( 'Edit Projects', 'bonestheme' ), /* Edit Display Title */
+			'edit_item' => __( 'Edit Project', 'bonestheme' ), /* Edit Display Title */
 			'new_item' => __( 'New Project', 'bonestheme' ), /* New Display Title */
 			'view_item' => __( 'View Project', 'bonestheme' ), /* View Display Title */
 			'search_items' => __( 'Search Project', 'bonestheme' ), /* Search Custom Type Title */ 
