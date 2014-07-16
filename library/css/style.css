@@ -2287,6 +2287,23 @@ This is for the larger monitors and possibly full screen viewers.
   .wrap {
     width: 1040px; } }
 /*********************
+EXTRA LARGE VIEWING SIZE
+This is for the largest monitors and possibly full screen viewers.
+*********************/
+@media only screen and (min-width: 1824px) {
+  /******************************************************************
+  Site Name: JLGreene.org
+  Author: W.J. Levay
+  
+  Stylesheet: Super-Duper Large Monitor Stylesheet
+  
+  You can add some advanced styles here if you like. This kicks in
+  on larger screens.
+  
+  ******************************************************************/
+  .wrap {
+    width: 1440px; } }
+/*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with
 other displays with a 2x resolution. You can also create a media
