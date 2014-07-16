@@ -89,7 +89,9 @@ NAVIGATION STYLES
 		}
 
 		&:first-child {}
-		&:last-child {}
+		&:last-child {
+			a {margin-right: 0;}
+		}
 		&:nth-child(n+2) {
 			background-image: url(wp-content/themes/jlgreene/library/images/bullet.png);
 			color: $warm-gray;

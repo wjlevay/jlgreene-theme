@@ -249,6 +249,8 @@ NAVIGATION STYLES
       */ }
       .nav li a:hover, .nav li a:focus {
         color: white; }
+    .nav li:last-child a {
+      margin-right: 0; }
     .nav li:nth-child(n+2) {
       background-image: url(wp-content/themes/jlgreene/library/images/bullet.png);
       color: #c0b8b0; }

@@ -1601,6 +1601,12 @@ POSTS & CONTENT STYLES
 
 /* homepage stuff */
 .home {
+  /* flexslider */
+  /*.flex-direction-nav {
+  	a {
+  		background-image: url(/wp-content/themes/jlgreene/library/images/bg_direction_nav.png);
+  	}
+  }*/
   /* featured projects */
   /* latest news block */ }
   .home .feat-project {
@@ -2109,6 +2115,8 @@ you can add resource intensive styles.
         */ }
         .nav li a:hover, .nav li a:focus {
           color: white; }
+      .nav li:last-child a {
+        margin-right: 0; }
       .nav li:nth-child(n+2) {
         background-image: url(wp-content/themes/jlgreene/library/images/bullet.png);
         color: #c0b8b0; }
@@ -2302,7 +2310,7 @@ This is for the largest monitors and possibly full screen viewers.
   
   ******************************************************************/
   .wrap {
-    width: 1440px; } }
+    width: 1040px; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with
