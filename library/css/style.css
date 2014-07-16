@@ -597,6 +597,9 @@ http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 WEBTYPE FONTS
 *********************/
 /*********************
+PARAGRAPH INDENTS
+*********************/
+/*********************
 TRANSITION
 *********************/
 /*
@@ -655,198 +658,204 @@ them however you see fit.
 @media (max-width: 767px) {
   .m-all {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 100%;
     padding-right: 0; }
 
   .m-1of2 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 50%; }
 
   .m-1of3 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 33.33%; }
 
   .m-2of3 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 66.66%; }
 
   .m-1of4 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 25%; }
 
   .m-3of4 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 75%; } }
 /* Portrait tablet to landscape */
 @media (min-width: 768px) and (max-width: 1029px) {
   .t-all {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 100%;
     padding-right: 0; }
 
   .t-1of2 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 50%; }
 
   .t-1of3 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 33.33%; }
 
   .t-2of3 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 66.66%; }
 
   .t-1of4 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 25%; }
 
   .t-3of4 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 75%; }
 
   .t-1of5 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 20%; }
 
   .t-2of5 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 40%; }
 
   .t-3of5 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 60%; }
 
   .t-4of5 {
     float: left;
-    padding-right: 1.5em;
-    width: 80%; } }
+    padding-right: 0.75em;
+    width: 80%; }
+
+  .last-col {
+    padding-left: 0.75em; } }
 /* Landscape to small desktop */
 @media (min-width: 1030px) {
   .d-all {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 100%;
     padding-right: 0; }
 
   .d-1of2 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 50%; }
 
   .d-1of3 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 33.33%; }
 
   .d-2of3 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 66.66%; }
 
   .d-1of4 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 25%; }
 
   .d-3of4 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 75%; }
 
   .d-1of5 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 20%; }
 
   .d-2of5 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 40%; }
 
   .d-3of5 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 60%; }
 
   .d-4of5 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 80%; }
 
   .d-1of6 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 16.6666666667%; }
 
   .d-1of7 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 14.2857142857%; }
 
   .d-2of7 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 28.5714286%; }
 
   .d-3of7 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 42.8571429%; }
 
   .d-4of7 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 57.1428572%; }
 
   .d-5of7 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 71.4285715%; }
 
   .d-6of7 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 85.7142857%; }
 
   .d-1of8 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 12.5%; }
 
   .d-1of9 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 11.1111111111%; }
 
   .d-1of10 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 10%; }
 
   .d-1of11 {
     float: left;
-    padding-right: 1.5em;
+    padding-right: 0.75em;
     width: 9.09090909091%; }
 
   .d-1of12 {
     float: left;
-    padding-right: 1.5em;
-    width: 8.33%; } }
+    padding-right: 0.75em;
+    width: 8.33%; }
+
+  .last-col {
+    padding-left: 0.75em; } }
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -1474,7 +1483,7 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0 0;
+  padding-top: 1.5em;
   /*
   image alignment on a screen this size may be
   a bit difficult. It's set to start aligning
@@ -1571,7 +1580,6 @@ POSTS & CONTENT STYLES
 
 .wp-caption {
   max-width: 100%;
-  padding: 5px;
   /* images inside wp-caption */ }
   .wp-caption img {
     max-width: 100%;
@@ -1590,6 +1598,118 @@ POSTS & CONTENT STYLES
 /* gallery caption styles */
 .tags {
   margin: 0; }
+
+/* homepage stuff */
+.home {
+  /* featured projects */
+  /* latest news block */ }
+  .home .feat-project {
+    margin-bottom: 2em; }
+  .home .latest-news {
+    display: flex;
+    position: relative; }
+    .home .latest-news .latest-news-story {
+      margin-top: 1.5em; }
+      .home .latest-news .latest-news-story .latest-news-text {
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        color: white;
+        text-shadow: 2px 2px 2px #969696; }
+    .home .latest-news article .entry-content {
+      padding: 0.5em 0.75em 0;
+      background: #c0b8b0; }
+      .home .latest-news article .entry-content .entry-title {
+        color: #970076;
+        font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+        font-style: normal;
+        font-weight: normal; }
+      .home .latest-news article .entry-content .h4 {
+        font-size: 0.95em;
+        margin-bottom: 0.75em; }
+        .home .latest-news article .entry-content .h4 a {
+          color: white; }
+
+/* end .home */
+/* project stuff across all pages */
+.project-cat a {
+  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.95em; }
+
+.project-title {
+  margin: 0.5em 0 0; }
+
+/* project page stuff */
+.single-project {
+  /* related projects */ }
+  .single-project .article-header .post-thumbnail {
+    margin-top: 1.5em; }
+  .single-project .the-content p {
+    margin: 0; }
+  .single-project .the-content p {
+    text-indent: 2em; }
+  .single-project .the-content p.first, .single-project .the-content h1 + p, .single-project .the-content h2 + p, .single-project .the-content h3 + p, .single-project .the-content div + p, .single-project .the-content p.wp-caption-text {
+    text-indent: 0; }
+  .single-project .rel-project {
+    margin-bottom: 2em; }
+
+/* project category page */
+.tax-project_cat {
+  /* a single project */ }
+  .tax-project_cat .archive-title p {
+    margin: 0; }
+  .tax-project_cat .projects-grid {
+    padding-top: 1.5em; }
+  .tax-project_cat .project {
+    margin-bottom: 2em; }
+    .tax-project_cat .project .project-cat {
+      margin: 0; }
+
+/* news page */
+.blog #blank_col {
+  display: none; }
+.blog .article-header .post-thumbnail {
+  position: relative;
+  margin-top: 1.5em; }
+  .blog .article-header .post-thumbnail .thumbnail-caption {
+    position: absolute;
+    left: 0;
+    bottom: -2em;
+    font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.9em; }
+.blog .entry-content {
+  padding-top: 1.5em;
+  margin-top: 1.5em; }
+  .blog .entry-content .the-content p {
+    margin: 0; }
+  .blog .entry-content .the-content p {
+    text-indent: 2em; }
+  .blog .entry-content .the-content p.first, .blog .entry-content .the-content h1 + p, .blog .entry-content .the-content h2 + p, .blog .entry-content .the-content h3 + p, .blog .entry-content .the-content div + p, .blog .entry-content .the-content p.wp-caption-text {
+    text-indent: 0; }
+.blog .post-meta {
+  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: #970076; }
+
+/* about page */
+.page-about .the-content h3, .page-template-page-about-php .the-content h3 {
+  margin-bottom: 0; }
+.page-about .the-content p, .page-template-page-about-php .the-content p {
+  margin: 0; }
+.page-about .the-content .wp-caption, .page-template-page-about-php .the-content .wp-caption {
+  margin: 1.5em 0; }
+.page-about .the-content p.wp-caption-text, .page-template-page-about-php .the-content p.wp-caption-text {
+  margin: initial;
+  font-size: 0.9em; }
+.page-about .the-content p, .page-template-page-about-php .the-content p {
+  text-indent: 2em; }
+.page-about .the-content p.first, .page-about .the-content h1 + p, .page-about .the-content h2 + p, .page-about .the-content h3 + p, .page-about .the-content div + p, .page-about .the-content p.wp-caption-text, .page-template-page-about-php .the-content p.first, .page-template-page-about-php .the-content h1 + p, .page-template-page-about-php .the-content h2 + p, .page-template-page-about-php .the-content h3 + p, .page-template-page-about-php .the-content div + p, .page-template-page-about-php .the-content p.wp-caption-text {
+  text-indent: 0; }
 
 /******************************************************************
 PAGE NAVI STYLES
@@ -1643,89 +1763,6 @@ PAGE NAVI STYLES
   float: right; }
 
 /* end .wp-prev-next */
-/* homepage stuff */
-.home {
-  /* featured projects */
-  /* latest news block */ }
-  .home .feat-project {
-    margin-bottom: 2em; }
-  .home .latest-news {
-    display: flex;
-    position: relative; }
-    .home .latest-news .latest-news-story {
-      margin-top: 1.5em; }
-      .home .latest-news .latest-news-story .latest-news-text {
-        position: absolute;
-        left: 5%;
-        top: 5%;
-        color: white;
-        text-shadow: 2px 2px 2px #969696; }
-    .home .latest-news article .entry-content {
-      padding: 0.5em 0.75em 0;
-      background: #c0b8b0; }
-      .home .latest-news article .entry-content .entry-title {
-        color: #970076;
-        font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
-        font-style: normal;
-        font-weight: normal; }
-      .home .latest-news article .entry-content .h4 {
-        font-size: 0.95em;
-        margin-bottom: 0.75em; }
-        .home .latest-news article .entry-content .h4 a {
-          color: white; }
-
-/* end .home */
-/* project stuff across all pages */
-.project-cat a {
-  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 0.95em; }
-
-.project-title {
-  margin: 0.5em 0 0; }
-
-/* project page stuff */
-.single-project {
-  /* related projects */ }
-  .single-project .article-header .post-thumbnail {
-    margin-top: 1.5em; }
-  .single-project .rel-project {
-    margin-bottom: 2em; }
-
-/* project category page */
-.tax-project_cat {
-  /* a single project */ }
-  .tax-project_cat .project {
-    margin-bottom: 2em; }
-    .tax-project_cat .project .project-cat {
-      margin: 0; }
-
-/* news page */
-.blog #blank_col {
-  display: none; }
-.blog .article-header .post-thumbnail {
-  position: relative;
-  margin-top: 1.5em; }
-  .blog .article-header .post-thumbnail .thumbnail-caption {
-    position: absolute;
-    left: 0;
-    bottom: -2em;
-    font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 0.9em; }
-.blog .entry-content {
-  padding: 1.5em 0 0 0;
-  margin-top: 1.5em; }
-  .blog .entry-content p {
-    margin: 0; }
-.blog .post-meta {
-  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  color: #970076; }
-
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
@@ -2039,7 +2076,7 @@ you can add resource intensive styles.
     font-style: normal;
     font-weight: bold; }
     .header .header-right {
-      padding: 1em 0 0 0; }
+      padding: 1em 0 0 0.75em; }
       .header .header-right .nav-header {
         font-size: 0.85em;
         color: white;
@@ -2124,17 +2161,47 @@ you can add resource intensive styles.
   .entry-content .quote {
     text-indent: -0.55em; }
 
-  .blog #blank_col {
-    display: block; }
-  .blog .hentry {
-    padding-top: 1.5em; }
-  .blog .article-header .post-thumbnail {
-    margin-top: 0.5em; }
-  .blog .entry-content {
-    padding: 0.5em 0 0 0;
-    margin-top: 0; }
-    .blog .entry-content p {
+  .blog {
+    /* fixing spacing in case bottom of photo extends close to footer */ }
+    .blog #blank_col {
+      display: block; }
+    .blog .hentry {
+      padding-top: 1.5em; }
+    .blog .article-header .thumb-medium {
+      margin-top: 0.5em; }
+    .blog .article-header .thumb-large {
+      margin-top: 0; }
+    .blog .entry-content {
+      padding: 0.5em 0 0 0;
+      margin-top: 0; }
+      .blog .entry-content p {
+        margin: 0; }
+    .blog .footer {
+      margin-top: 3em; }
+
+  /* about page */
+  .page-about .entry-content, .page-template-page-about-php .entry-content {
+    padding-right: 0; }
+    .page-about .entry-content h3, .page-about .entry-content p, .page-template-page-about-php .entry-content h3, .page-template-page-about-php .entry-content p {
+      width: 50%;
+      float: right;
+      padding-left: 0.75em;
+      padding-right: 0;
+      clear: right; }
+    .page-about .entry-content h3, .page-template-page-about-php .entry-content h3 {
+      margin-top: 0; }
+    .page-about .entry-content .wp-caption, .page-template-page-about-php .entry-content .wp-caption {
       margin: 0; }
+      .page-about .entry-content .wp-caption .wp-caption-text, .page-template-page-about-php .entry-content .wp-caption .wp-caption-text {
+        font-size: 0.9em;
+        width: initial;
+        float: initial;
+        padding: initial;
+        clear: initial; }
+    .page-about .entry-content .wp-caption.alignnone img, .page-template-page-about-php .entry-content .wp-caption.alignnone img {
+      margin-top: 1.5em; }
+    .page-about .entry-content .wp-caption.alignnone .wp-caption-text, .page-template-page-about-php .entry-content .wp-caption.alignnone .wp-caption-text {
+      margin-bottom: -1.5em; }
 
   /*********************
   SIDEBARS & ASIDES
@@ -2201,7 +2268,7 @@ you can add resource intensive styles.
   
   ******************************************************************/
   .wrap {
-    width: 760px; } }
+    width: 960px; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2218,7 +2285,7 @@ This is for the larger monitors and possibly full screen viewers.
   
   ******************************************************************/
   .wrap {
-    width: 760px; } }
+    width: 1040px; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

@@ -27,7 +27,7 @@ over your project's layout.
 // using a mixin since we can't use placeholder selectors
 @mixin grid-col {
   float: left;
-  padding-right: 1.5em;
+  padding-right: 0.75em;
 
 }
 
@@ -132,6 +132,10 @@ them however you see fit.
   .t-4of5 {
     @include grid-col;
     width: 80%;
+  }
+
+  .last-col {
+    padding-left: 0.75em;
   }
 
 } // end tablet
@@ -248,6 +252,10 @@ them however you see fit.
   .d-1of12 {
     @include grid-col;
     width: 8.33%;
+  }
+
+  .last-col {
+    padding-left: 0.75em;
   }
 
 } // end desktop styles

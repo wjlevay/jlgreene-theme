@@ -37,6 +37,20 @@ WEBTYPE FONTS
 }
 
 /*********************
+PARAGRAPH INDENTS
+*********************/
+
+@mixin graf-indent {
+	p {
+		text-indent: 2em;
+	}
+	p.first, h1 + p, h2 + p, h3 + p, div + p, p.wp-caption-text {
+		text-indent: 0;
+	}
+
+}
+
+/*********************
 TRANSITION
 *********************/
 

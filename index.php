@@ -31,7 +31,7 @@
 
 								<?php // check for featured image and display
 									if ( '' != get_the_post_thumbnail() ) { ?>
-									<div class="post-thumbnail"><?php the_post_thumbnail( $image_size ); ?><span class="thumbnail-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></span></div>
+									<div class="post-thumbnail thumb-<?php echo $image_size; ?>"><?php the_post_thumbnail( $image_size ); ?><span class="thumbnail-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></span></div>
 									<?php } 
 									else {
 										echo '';
@@ -48,7 +48,7 @@
 
 								<section class="entry-content cf">
 									<h1 class="h3 entry-title"><?php the_title(); ?></h1>
-									<?php the_content(); ?>
+									<div class="the-content"><?php the_content(); ?></div>
 								</section>
 
 								<footer class="article-footer cf">

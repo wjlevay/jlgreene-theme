@@ -49,7 +49,7 @@ NAVIGATION STYLES
 
 	.header-right {
 
-		padding: 1em 0 0 0;
+		padding: 1em 0 0 0.75em;
 
 		.nav-header {
 			font-size: 0.85em;
@@ -66,8 +66,9 @@ NAVIGATION STYLES
 .nav {
 	border: 0;
 	ul {
-		margin-top:0;
+		margin-top: 0;
 	}
+	
 	li {
 		float: left;
 		position: relative;
@@ -190,8 +191,12 @@ POSTS & CONTENT STYLES
 
 	.article-header {
 
-		.post-thumbnail {
+		.thumb-medium {
 			margin-top: 0.5em;
+		}
+
+		.thumb-large {
+			margin-top: 0;
 		}
 	}
 
@@ -200,6 +205,48 @@ POSTS & CONTENT STYLES
 		margin-top: 0;
 
 		p {margin: 0;}
+	}
+
+	.footer {margin-top: 3em;} /* fixing spacing in case bottom of photo extends close to footer */
+}
+
+/* about page */
+.page-about, .page-template-page-about-php {
+	.entry-content {
+		padding-right: 0;
+
+		h3, p {
+			width: 50%;
+			float: right;
+			padding-left: 0.75em;
+			padding-right: 0;
+			clear: right;
+		}
+
+		h3 {margin-top: 0;}
+
+		.wp-caption {
+
+			margin: 0;
+
+			.wp-caption-text {
+				font-size: 0.9em;
+				width: initial;
+				float: initial;
+				padding: initial;
+				clear: initial;
+			}
+		}
+
+		.wp-caption.alignnone {
+			img {
+				margin-top: 1.5em;
+			}
+
+			.wp-caption-text {
+				margin-bottom: -1.5em;
+			}
+		}
 	}
 }
 

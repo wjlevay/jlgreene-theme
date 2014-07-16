@@ -328,7 +328,7 @@ POSTS & CONTENT STYLES
 
 		/* entry content */
 		.entry-content {
-			padding: 1.5em 1.5em 0 0;
+			padding-top: 1.5em;
 
 			p {
 				margin: 0 0 1.5em;
@@ -494,7 +494,6 @@ POSTS & CONTENT STYLES
 
 		.wp-caption {
 			max-width: 100%;
-			padding: 5px;
 
 			/* images inside wp-caption */
 			img {
@@ -539,6 +538,171 @@ POSTS & CONTENT STYLES
 	// the tag output
 	.tags {
 		margin: 0;
+	}
+
+	/* homepage stuff */
+	.home {
+
+		/* featured projects */
+		.feat-project {
+			margin-bottom: 2em;
+		}
+
+		/* latest news block */
+		.latest-news {
+
+			display: flex;
+			position: relative;
+
+			.latest-news-story {
+				margin-top: 1.5em;
+
+				.latest-news-text {
+					position: absolute;
+					left: 5%;
+					top: 5%;
+					color: $white;
+					text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+
+				}
+			}
+
+			article {
+				.entry-content {
+					padding: 0.5em 0.75em 0;
+
+					background: $warm-gray;
+					.entry-title {
+						color: $plum;
+						@include ibis;
+					}
+					.h4 {
+						font-size: 0.95em;
+						margin-bottom: 0.75em;
+						a {
+							color: $white;
+						}
+					}
+				}
+			}
+		}
+
+	} /* end .home */
+
+	/* project stuff across all pages */
+	.project-cat {
+
+		a {
+			@include antenna;
+			font-size: 0.95em;
+		}
+	}
+
+	.project-title {
+		margin: 0.5em 0 0;
+	}
+
+	/* project page stuff */
+	.single-project {
+
+		.article-header {
+			.post-thumbnail {
+				margin-top: 1.5em;
+			}
+		}
+
+		.the-content {
+			p {margin: 0;}
+			@include graf-indent;
+		}
+
+		/* related projects */
+		.rel-project {
+
+			margin-bottom: 2em;
+
+		}
+	}
+
+	/* project category page */
+	.tax-project_cat {
+
+		.archive-title {
+			p {margin: 0;}
+		}
+
+		.projects-grid {
+			padding-top: 1.5em;
+		}
+		
+		/* a single project */
+		.project {
+
+			margin-bottom: 2em;
+
+			.project-cat {
+				margin: 0;
+			}
+		}
+	}
+
+	/* news page */
+	.blog {
+
+		#blank_col {display: none;}
+
+		.article-header {
+
+			.post-thumbnail {
+
+				position: relative;
+				margin-top: 1.5em;
+
+				.thumbnail-caption {
+					position: absolute;
+					left: 0;
+					bottom: -2em;
+					@include antenna;
+					font-size: 0.9em;
+				}
+			}
+		}
+
+		.entry-content {
+			padding-top: 1.5em;
+			margin-top: 1.5em;
+
+			.the-content {
+				p {margin: 0;}
+				@include graf-indent;
+			}
+		}
+
+		.post-meta {
+			@include antenna;
+			color: $plum;
+
+			.updated {}
+			.external-link {}
+		}
+	}
+
+	/* about page */
+	.page-about, .page-template-page-about-php {
+		
+		.the-content {
+
+			h3 {margin-bottom: 0;}
+			p {margin: 0;}
+			.wp-caption {margin: 1.5em 0;}
+
+			p.wp-caption-text {
+				margin: initial;
+				font-size: 0.9em;
+			}
+
+			@include graf-indent;
+		}
 	}
 
 /******************************************************************
@@ -615,137 +779,6 @@ PAGE NAVI STYLES
 
 	} /* end .wp-prev-next */
 
-
-	/* homepage stuff */
-	.home {
-
-		/* featured projects */
-		.feat-project {
-			margin-bottom: 2em;
-		}
-
-		/* latest news block */
-		.latest-news {
-
-			display: flex;
-			position: relative;
-
-			.latest-news-story {
-				margin-top: 1.5em;
-
-				.latest-news-text {
-					position: absolute;
-					left: 5%;
-					top: 5%;
-					color: $white;
-					text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
-
-				}
-			}
-
-			article {
-				.entry-content {
-					padding: 0.5em 0.75em 0;
-
-					background: $warm-gray;
-					.entry-title {
-						color: $plum;
-						@include ibis;
-					}
-					.h4 {
-						font-size: 0.95em;
-						margin-bottom: 0.75em;
-						a {
-							color: $white;
-						}
-					}
-				}
-			}
-		}
-
-	} /* end .home */
-
-	/* project stuff across all pages */
-	.project-cat {
-
-		a {
-			@include antenna;
-			font-size: 0.95em;
-		}
-	}
-
-	.project-title {
-		margin: 0.5em 0 0;
-	}
-
-	/* project page stuff */
-	.single-project {
-
-		.article-header {
-			.post-thumbnail {
-				margin-top: 1.5em;
-			}
-		}
-
-		/* related projects */
-		.rel-project {
-
-			margin-bottom: 2em;
-
-		}
-	}
-
-	/* project category page */
-	.tax-project_cat {
-		
-		/* a single project */
-		.project {
-
-			margin-bottom: 2em;
-
-			.project-cat {
-				margin: 0;
-			}
-		}
-	}
-
-	/* news page */
-	.blog {
-
-		#blank_col {display: none;}
-
-		.article-header {
-
-			.post-thumbnail {
-
-				position: relative;
-				margin-top: 1.5em;
-
-				.thumbnail-caption {
-					position: absolute;
-					left: 0;
-					bottom: -2em;
-					@include antenna;
-					font-size: 0.9em;
-				}
-			}
-		}
-
-		.entry-content {
-			padding: 1.5em 0 0 0;
-			margin-top: 1.5em;
-
-			p {margin: 0;}
-		}
-
-		.post-meta {
-			@include antenna;
-			color: $plum;
-
-			.updated {}
-			.external-link {}
-		}
-	}
 
 /******************************************************************
 COMMENT STYLES

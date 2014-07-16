@@ -221,6 +221,47 @@ Found here: http://premium.wpmudev.org/blog/how-to-display-your-wordpress-catego
 remove_filter('pre_term_description', 'wp_filter_kses');
 
 
+/************* PAGE SLUG AS BODY CLASS *********************/
+
+/* 
+Set page slug as a body class (via http://timneill.net/2013/05/wordpress-add-page-slug-to-body-class-including-parents/)
+*/
+
+function add_body_class($classes) {
+    // You can modify this check so it will run on every post type
+    if (is_page()) {
+        global $post;
+        
+        // If we *do* have an ancestors list, process it
+        // http://codex.wordpress.org/Function_Reference/get_post_ancestors
+        if ($parents = get_post_ancestors($post->ID)) {
+            foreach ((array)$parents as $parent) {
+                // As the array contains IDs only, we need to get each page
+                if ($page = get_page($parent)) {
+                    // Add the current ancestor to the body class array
+                    $classes[] = "{$page->post_type}-{$page->post_name}";
+                }
+            }
+        }
+ 
+        // Add the current page to our body class array
+        $classes[] = "{$post->post_type}-{$post->post_name}";
+    }
+    
+    return $classes;
+}
+
+add_filter('body_class', 'add_body_class');
+
+
+/************* FIRST PARAGRAPH CLASS *********************/
+
+function first_paragraph($content){
+    return preg_replace('/<p([^>]+)?>/', '<p$1 class="first">', $content, 1);
+}
+add_filter('the_content', 'first_paragraph');
+
+
 /************* CUSTOM META BOXES *********************/
 
 /*
@@ -245,6 +286,24 @@ function jlg_metaboxes( $meta_boxes ) {
                 'name' => 'Project Tagline',
                 'desc' => 'Enter a tagline that will display at the top of the Project page',
                 'id' => $prefix . 'tagline',
+                'type' => 'text'
+            ),
+        ),
+    );
+
+    $meta_boxes['about_tagline_metabox'] = array(
+        'id' => 'about_tagline_metabox',
+        'title' => 'About Page Tagline',
+        'pages' => array('page'), // post type
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => false, // Show field names on the left
+        'show_on'    => array( 'key' => 'page-template', 'value' => 'page-about.php' ), // Specific page template to display this metabox
+        'fields' => array(
+            array(
+                'name' => 'About Page Tagline',
+                'desc' => 'Enter a tagline that will display at the top of the About page',
+                'id' => $prefix . 'about_tagline',
                 'type' => 'text'
             ),
         ),

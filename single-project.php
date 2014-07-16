@@ -54,7 +54,7 @@
 									
 								<section class="entry-content m-all t-1of2 d-1of2 cf">
 
-									<h1 class="single-title custom-post-type-title"><?php the_title(); ?></h1>
+									<h1 class="h2 single-title custom-post-type-title"><?php the_title(); ?></h1>
 									<p class="project-cat"><?php
 										printf(__('%1$s', 'bonestheme'), get_the_term_list( get_the_ID(), 'project_cat', "", " &middot; ", "" ));
 									?></p>
@@ -73,7 +73,7 @@
 								</section> <!-- end left section -->
 
 								<section class="entry-content m-all t-1of2 d-1of2 last-col cf">
-									<?php the_content(); ?>
+									<div class="the-content"><?php the_content(); ?></div>
 								</section> <!-- end right section -->
 
 								<footer class="article-footer m-all t-all d-all cf">
