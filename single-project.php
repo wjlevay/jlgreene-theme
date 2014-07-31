@@ -80,16 +80,25 @@
 									
 									<?php // get two related projects
 									
-									$categories = get_the_terms($post->ID);
-									
-										$category_ids = array();
-										foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+									// Get array of terms
+									$terms = get_the_terms($post->ID, 'project_cat', 'string');
+									// Pluck out the IDs to get an array of IDs
+									$term_ids = wp_list_pluck($terms, 'term_id');
+
+										// Set up arguments for the new WP_Query below
 										$args=array(
 											'post_type' => 'project',
-											'term__in' => $category_ids,
-											'post__not_in' => array($post->ID),
-											'posts_per_page'=> 2, // Number of related posts that will be shown.
-											'caller_get_posts'=>1
+											'tax_query' => array(
+												array(
+													'taxonomy' => 'project_cat',
+													'field' => 'id',
+													'terms' => $term_ids,
+													'operator' => 'IN' // or 'AND' or 'NOT IN'
+												)
+											),
+											'post__not_in' => array($post->ID), // Exclude the project being displayed
+											'posts_per_page'=> 2, // Number of related posts that will be shown
+											'orderby' => 'rand'
 										);
 
 									$related = new WP_Query( $args );
