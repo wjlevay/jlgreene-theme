@@ -32,6 +32,8 @@ HEADER STYLES
 *********************/
 
 .header {
+	display: block !important; /* At this screen size the Menufication menu disappears */
+
 	/* show the menu on larger screens */
 	.header-right {display: block;}
 
@@ -173,6 +175,21 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
+/* sticky header plugin tweaks */
+#thsp-sticky-header {	
+	-webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+	-moz-box-shadow:    0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+	box-shadow:         0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+
+	#thsp-sticky-header-menu {
+		@include antenna;
+	}
+
+	a {
+		color: $warm-gray;
+	}
+}
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -227,9 +244,9 @@ POSTS & CONTENT STYLES
 
 		h3 {margin-top: 0;}
 
-		.wp-caption {
+		.wp-caption.alignleft, wp-caption.alignnone {
 
-			margin: 0;
+			margin: 0.5em 0 0 0;
 
 			.wp-caption-text {
 				font-size: 0.9em;

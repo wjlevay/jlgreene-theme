@@ -1393,6 +1393,8 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
+  display: none !important;
+  /* need to hide header if we're using the Menufication plugin */
   background-color: #970076;
   -webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
   -moz-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
@@ -1403,6 +1405,27 @@ HEADER STYLES
 
 .logo {
   margin: 1em 0; }
+
+/* Menufication plugin tweaks */
+#menufication-nav li a,
+#menufication-non-css3-nav li a {
+  text-transform: none !important;
+  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-style: normal;
+  font-weight: bold;
+  color: #c0b8b0; }
+
+#menufication-top,
+#menufication-non-css3-top {
+  background: #970076 !important; }
+  #menufication-top #menufication-header-logo,
+  #menufication-top #menufication-non-css3-header-logo,
+  #menufication-non-css3-top #menufication-header-logo,
+  #menufication-non-css3-top #menufication-non-css3-header-logo {
+    padding-left: 1em; }
+
+#menufication-nav li.menufication-active-class > a, #menufication-non-css3-nav li.menufication-active-class > a {
+  color: white; }
 
 /*********************
 NAVIGATION STYLES
@@ -2028,6 +2051,9 @@ tweeners.
       clear: both; }
 
   /* end .entry-content */
+  .page-about .entry-content .wp-caption.alignleft, .page-template-page-about-php .entry-content .wp-caption.alignleft {
+    margin: 0.5em 1.5em 1.5em 0; }
+
   /*********************
   FOOTER STYLES
   *********************/
@@ -2069,6 +2095,8 @@ you can add resource intensive styles.
   HEADER STYLES
   *********************/
   .header {
+    display: block !important;
+    /* At this screen size the Menufication menu disappears */
     /* show the menu on larger screens */
     letter-spacing: 0.0625em; }
     .header .header-right {
@@ -2161,6 +2189,18 @@ you can add resource intensive styles.
       border-bottom: 2px solid white; }
 
   /* end .nav */
+  /* sticky header plugin tweaks */
+  #thsp-sticky-header {
+    -webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+    -moz-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+    box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4); }
+    #thsp-sticky-header #thsp-sticky-header-menu {
+      font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-style: normal;
+      font-weight: bold; }
+    #thsp-sticky-header a {
+      color: #c0b8b0; }
+
   /*********************
   POSTS & CONTENT STYLES
   *********************/
@@ -2198,9 +2238,9 @@ you can add resource intensive styles.
       clear: right; }
     .page-about .entry-content h3, .page-template-page-about-php .entry-content h3 {
       margin-top: 0; }
-    .page-about .entry-content .wp-caption, .page-template-page-about-php .entry-content .wp-caption {
-      margin: 0; }
-      .page-about .entry-content .wp-caption .wp-caption-text, .page-template-page-about-php .entry-content .wp-caption .wp-caption-text {
+    .page-about .entry-content .wp-caption.alignleft, .page-about .entry-content wp-caption.alignnone, .page-template-page-about-php .entry-content .wp-caption.alignleft, .page-template-page-about-php .entry-content wp-caption.alignnone {
+      margin: 0.5em 0 0 0; }
+      .page-about .entry-content .wp-caption.alignleft .wp-caption-text, .page-about .entry-content wp-caption.alignnone .wp-caption-text, .page-template-page-about-php .entry-content .wp-caption.alignleft .wp-caption-text, .page-template-page-about-php .entry-content wp-caption.alignnone .wp-caption-text {
         font-size: 0.9em;
         width: initial;
         float: initial;

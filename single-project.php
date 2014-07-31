@@ -80,13 +80,13 @@
 									
 									<?php // get two related projects
 									
-									$categories = get_the_category($post->ID);
+									$categories = get_the_terms($post->ID);
 									
 										$category_ids = array();
 										foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
 										$args=array(
 											'post_type' => 'project',
-											'category__in' => $category_ids,
+											'term__in' => $category_ids,
 											'post__not_in' => array($post->ID),
 											'posts_per_page'=> 2, // Number of related posts that will be shown.
 											'caller_get_posts'=>1

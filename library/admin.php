@@ -59,6 +59,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
 
 // RSS Dashboard Widget
+/*
 function bones_rss_dashboard_widget() {
 	if ( function_exists( 'fetch_feed' ) ) {
 		// include_once( ABSPATH . WPINC . '/feed.php' );               // include the required file
@@ -84,6 +85,7 @@ function bones_rss_dashboard_widget() {
 	</p>
 	<?php }
 }
+*/
 
 // calling all custom dashboard widgets
 function bones_custom_dashboard_widgets() {

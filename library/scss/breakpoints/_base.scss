@@ -171,6 +171,7 @@ HEADER STYLES
 *********************/
 
 .header {
+	display: none !important; /* need to hide header if we're using the Menufication plugin */
 	background-color: $plum;
 	-webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
 	-moz-box-shadow:    0px 9px 10px 0px rgba(50, 50, 50, 0.4);
@@ -183,6 +184,30 @@ HEADER STYLES
 	.logo {
 		margin: 1em 0;
 	}
+
+/* Menufication plugin tweaks */
+#menufication-nav li a, 
+#menufication-non-css3-nav li a {
+	text-transform: none !important;
+	font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	font-style: normal;
+	font-weight: bold;
+	color: $warm-gray;
+}
+
+#menufication-top, 
+#menufication-non-css3-top {
+	background: #970076 !important;
+
+	#menufication-header-logo,
+	#menufication-non-css3-header-logo {
+		padding-left: 1em;
+	}
+}
+
+#menufication-nav li.menufication-active-class>a, #menufication-non-css3-nav li.menufication-active-class>a {
+	color: $white;
+}
 
 /*********************
 NAVIGATION STYLES
@@ -265,7 +290,6 @@ and more scalable.
 	}  /* end current highlighters */
 
 } /* end .nav */
-
 
 /*********************
 POSTS & CONTENT STYLES

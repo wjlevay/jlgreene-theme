@@ -169,6 +169,9 @@ POSTS & CONTENT STYLES
     clear: both; }
 
 /* end .entry-content */
+.page-about .entry-content .wp-caption.alignleft, .page-template-page-about-php .entry-content .wp-caption.alignleft {
+  margin: 0.5em 1.5em 1.5em 0; }
+
 /*********************
 FOOTER STYLES
 *********************/
@@ -203,6 +206,8 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 .header {
+  display: block !important;
+  /* At this screen size the Menufication menu disappears */
   /* show the menu on larger screens */
   letter-spacing: 0.0625em; }
   .header .header-right {
@@ -295,6 +300,18 @@ NAVIGATION STYLES
     border-bottom: 2px solid white; }
 
 /* end .nav */
+/* sticky header plugin tweaks */
+#thsp-sticky-header {
+  -webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+  -moz-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+  box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4); }
+  #thsp-sticky-header #thsp-sticky-header-menu {
+    font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold; }
+  #thsp-sticky-header a {
+    color: #c0b8b0; }
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -332,9 +349,9 @@ POSTS & CONTENT STYLES
     clear: right; }
   .page-about .entry-content h3, .page-template-page-about-php .entry-content h3 {
     margin-top: 0; }
-  .page-about .entry-content .wp-caption, .page-template-page-about-php .entry-content .wp-caption {
-    margin: 0; }
-    .page-about .entry-content .wp-caption .wp-caption-text, .page-template-page-about-php .entry-content .wp-caption .wp-caption-text {
+  .page-about .entry-content .wp-caption.alignleft, .page-about .entry-content wp-caption.alignnone, .page-template-page-about-php .entry-content .wp-caption.alignleft, .page-template-page-about-php .entry-content wp-caption.alignnone {
+    margin: 0.5em 0 0 0; }
+    .page-about .entry-content .wp-caption.alignleft .wp-caption-text, .page-about .entry-content wp-caption.alignnone .wp-caption-text, .page-template-page-about-php .entry-content .wp-caption.alignleft .wp-caption-text, .page-template-page-about-php .entry-content wp-caption.alignnone .wp-caption-text {
       font-size: 0.9em;
       width: initial;
       float: initial;

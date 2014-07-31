@@ -101,6 +101,14 @@ POSTS & CONTENT STYLES
 
 } /* end .entry-content */
 
+.page-about, .page-template-page-about-php {
+	.entry-content {
+		.wp-caption.alignleft {
+			margin: 0.5em 1.5em 1.5em 0;
+		}
+	}
+}
+
 /*********************
 FOOTER STYLES
 *********************/
