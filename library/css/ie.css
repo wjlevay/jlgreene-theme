@@ -305,6 +305,10 @@ NAVIGATION STYLES
   -webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
   -moz-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
   box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4); }
+  #thsp-sticky-header #thsp-sticky-header-inner {
+    width: 760px;
+    /* make this the same as the .wrap width! */
+    margin: auto; }
   #thsp-sticky-header #thsp-sticky-header-menu {
     font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
@@ -420,6 +424,9 @@ be seen on the Desktop.
 
 ******************************************************************/
 .wrap {
+  width: 960px; }
+
+#thsp-sticky-header #thsp-sticky-header-inner {
   width: 960px; }
 
 /*
