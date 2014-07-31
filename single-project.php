@@ -77,7 +77,59 @@
 								</section> <!-- end right section -->
 
 								<footer class="article-footer m-all t-all d-all cf">
-									<?php get_related_projects(); ?>
+									
+									<?php // get two related projects
+									
+									// Get array of terms
+									$terms = get_the_terms($post->ID, 'project_cat', 'string');
+									// Pluck out the IDs to get an array of IDs
+									$term_ids = wp_list_pluck($terms, 'term_id');
+
+										// Set up arguments for the new WP_Query below
+										$args=array(
+											'post_type' => 'project',
+											'tax_query' => array(
+												array(
+													'taxonomy' => 'project_cat',
+													'field' => 'id',
+													'terms' => $term_ids,
+													'operator' => 'IN' // or 'AND' or 'NOT IN'
+												)
+											),
+											'post__not_in' => array($post->ID), // Exclude the project being displayed
+											'posts_per_page'=> 2, // Number of related posts that will be shown
+											'orderby' => 'rand'
+										);
+
+									$related = new WP_Query( $args );
+									if ($related->have_posts()) {
+										echo '<h3>related projects:</h3>';
+									}
+									while ($related->have_posts()) : $related->the_post();
+									$postcount++; ?>								
+
+									<?php // If it's the first project, put it in a left column, if it's the second, put it in a right column
+									if ($postcount == 1) : echo '<div class="rel-project m-all t-1of2 d-1of2 cf">'; 
+									else : echo '<div class="rel-project m-all t-1of2 d-1of2 last-col cf">';
+									endif ; ?>
+
+										<?php // check for featured image and display
+											if ( '' != get_the_post_thumbnail() ) { ?>
+											<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a></div>
+											<?php } 
+											else {
+												echo '';
+											} 
+										?>
+										<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+										<p class="project-cat"><?php
+											printf(__('%1$s', 'bonestheme'), get_the_term_list( get_the_ID(), 'project_cat', "", " &middot; ", "" ));
+										?></p>
+									</div>
+
+									<?php endwhile;
+									wp_reset_postdata();
+									?>
 								</footer>
 
 							</article>

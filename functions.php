@@ -276,6 +276,7 @@ function get_related_projects() {
   $terms = get_the_terms($post->ID, 'project_cat', 'string');
   // Pluck out the IDs to get an array of IDs
   $term_ids = wp_list_pluck($terms, 'term_id');
+  $exclude_post = $post->ID;
 
     // Set up arguments for the new WP_Query below
     $args=array(
@@ -288,7 +289,7 @@ function get_related_projects() {
           'operator' => 'IN' // or 'AND' or 'NOT IN'
         )
       ),
-      'post__not_in' => array($post->ID), // Exclude the project being displayed
+      'post__not_in' => array($exclude_post), // Exclude the project being displayed
       'posts_per_page'=> 2, // Number of related posts that will be shown
       'orderby' => 'rand'
     );
@@ -320,9 +321,11 @@ function get_related_projects() {
   </div>
 
   <?php endwhile;
+  wp_reset_query();
   wp_reset_postdata();
 
 }
+
 
 /************* CUSTOM META BOXES *********************/
 
