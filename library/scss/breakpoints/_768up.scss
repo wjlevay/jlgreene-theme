@@ -79,7 +79,7 @@ NAVIGATION STYLES
 			color: $link-color;
 			border-bottom: 2px solid $plum;
 			padding: 0;
-			margin-right: 1em;
+			margin-right: 0.25em;
 
 			/*
 			you can use hover styles here even though this size
@@ -95,8 +95,10 @@ NAVIGATION STYLES
 			a {margin-right: 0;}
 		}
 		&:nth-child(n+2) {
-			background-image: url(wp-content/themes/jlgreene/library/images/bullet.png);
-			color: $warm-gray;
+			background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
+			background-repeat: no-repeat;
+			background-position: 0;
+			padding-left: 0.6em;
 		}
 
 		/*
@@ -184,6 +186,19 @@ NAVIGATION STYLES
 	#thsp-sticky-header-inner {
 		width: 760px; /* make this the same as the .wrap width! */
 		margin: auto;
+
+		/* highlight current page */
+		li.current-menu-item,
+		li.current-menu-parent,
+		li.current_page_item,
+		li.current_page_ancestor {
+			a {
+				color: $white !important;
+				border-bottom: 1px solid white;
+				line-height: 20px;
+			}
+		}  /* end current highlighters */
+
 	}
 
 	#thsp-sticky-header-menu {
@@ -191,7 +206,7 @@ NAVIGATION STYLES
 	}
 
 	a {
-		color: $warm-gray;
+		&:hover, &:focus {color: $white !important;}
 	}
 }
 
@@ -236,41 +251,17 @@ POSTS & CONTENT STYLES
 
 /* about page */
 .page-about, .page-template-page-about-php {
-	.entry-content {
-		padding-right: 0;
+	
+	.the-content {
 
-		h3, p {
-			width: 50%;
-			float: right;
-			padding-left: 0.75em;
-			padding-right: 0;
-			clear: right;
-		}
-
-		h3 {margin-top: 0;}
-
-		.wp-caption.alignleft, wp-caption.alignnone {
-
-			margin: 0.5em 0 0 0;
-
-			.wp-caption-text {
-				font-size: 0.9em;
-				width: initial;
-				float: initial;
-				padding: initial;
-				clear: initial;
+		.t-1of2, .d-1of2 {
+			.wp-caption {
+				margin: 0.33em 0 1.5em 0;
 			}
 		}
 
-		.wp-caption.alignnone {
-			img {
-				margin-top: 1.5em;
-			}
+		.mobile-hide {display: block;} /* for displaying a blank column */
 
-			.wp-caption-text {
-				margin-bottom: -1.5em;
-			}
-		}
 	}
 }
 

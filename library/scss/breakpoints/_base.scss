@@ -734,6 +734,8 @@ POSTS & CONTENT STYLES
 			}
 
 			@include graf-indent;
+
+			.mobile-hide {display: none;} /* for hiding a blank column */
 		}
 	}
 

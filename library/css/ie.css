@@ -169,9 +169,6 @@ POSTS & CONTENT STYLES
     clear: both; }
 
 /* end .entry-content */
-.page-about .entry-content .wp-caption.alignleft, .page-template-page-about-php .entry-content .wp-caption.alignleft {
-  margin: 0.5em 1.5em 1.5em 0; }
-
 /*********************
 FOOTER STYLES
 *********************/
@@ -247,7 +244,7 @@ NAVIGATION STYLES
       color: #c0b8b0;
       border-bottom: 2px solid #970076;
       padding: 0;
-      margin-right: 1em;
+      margin-right: 0.25em;
       /*
       you can use hover styles here even though this size
       has the possibility of being a mobile device.
@@ -257,8 +254,10 @@ NAVIGATION STYLES
     .nav li:last-child a {
       margin-right: 0; }
     .nav li:nth-child(n+2) {
-      background-image: url(wp-content/themes/jlgreene/library/images/bullet.png);
-      color: #c0b8b0; }
+      background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
+      background-repeat: no-repeat;
+      background-position: 0;
+      padding-left: 0.6em; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
@@ -308,13 +307,22 @@ NAVIGATION STYLES
   #thsp-sticky-header #thsp-sticky-header-inner {
     width: 760px;
     /* make this the same as the .wrap width! */
-    margin: auto; }
+    margin: auto;
+    /* highlight current page */
+    /* end current highlighters */ }
+    #thsp-sticky-header #thsp-sticky-header-inner li.current-menu-item a,
+    #thsp-sticky-header #thsp-sticky-header-inner li.current-menu-parent a,
+    #thsp-sticky-header #thsp-sticky-header-inner li.current_page_item a,
+    #thsp-sticky-header #thsp-sticky-header-inner li.current_page_ancestor a {
+      color: white !important;
+      border-bottom: 1px solid white;
+      line-height: 20px; }
   #thsp-sticky-header #thsp-sticky-header-menu {
     font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
     font-weight: bold; }
-  #thsp-sticky-header a {
-    color: #c0b8b0; }
+  #thsp-sticky-header a:hover, #thsp-sticky-header a:focus {
+    color: white !important; }
 
 /*********************
 POSTS & CONTENT STYLES
@@ -343,28 +351,12 @@ POSTS & CONTENT STYLES
     margin-top: 3em; }
 
 /* about page */
-.page-about .entry-content, .page-template-page-about-php .entry-content {
-  padding-right: 0; }
-  .page-about .entry-content h3, .page-about .entry-content p, .page-template-page-about-php .entry-content h3, .page-template-page-about-php .entry-content p {
-    width: 50%;
-    float: right;
-    padding-left: 0.75em;
-    padding-right: 0;
-    clear: right; }
-  .page-about .entry-content h3, .page-template-page-about-php .entry-content h3 {
-    margin-top: 0; }
-  .page-about .entry-content .wp-caption.alignleft, .page-about .entry-content wp-caption.alignnone, .page-template-page-about-php .entry-content .wp-caption.alignleft, .page-template-page-about-php .entry-content wp-caption.alignnone {
-    margin: 0.5em 0 0 0; }
-    .page-about .entry-content .wp-caption.alignleft .wp-caption-text, .page-about .entry-content wp-caption.alignnone .wp-caption-text, .page-template-page-about-php .entry-content .wp-caption.alignleft .wp-caption-text, .page-template-page-about-php .entry-content wp-caption.alignnone .wp-caption-text {
-      font-size: 0.9em;
-      width: initial;
-      float: initial;
-      padding: initial;
-      clear: initial; }
-  .page-about .entry-content .wp-caption.alignnone img, .page-template-page-about-php .entry-content .wp-caption.alignnone img {
-    margin-top: 1.5em; }
-  .page-about .entry-content .wp-caption.alignnone .wp-caption-text, .page-template-page-about-php .entry-content .wp-caption.alignnone .wp-caption-text {
-    margin-bottom: -1.5em; }
+.page-about .the-content, .page-template-page-about-php .the-content {
+  /* for displaying a blank column */ }
+  .page-about .the-content .t-1of2 .wp-caption, .page-about .the-content .d-1of2 .wp-caption, .page-template-page-about-php .the-content .t-1of2 .wp-caption, .page-template-page-about-php .the-content .d-1of2 .wp-caption {
+    margin: 0.33em 0 1.5em 0; }
+  .page-about .the-content .mobile-hide, .page-template-page-about-php .the-content .mobile-hide {
+    display: block; }
 
 /*********************
 SIDEBARS & ASIDES
