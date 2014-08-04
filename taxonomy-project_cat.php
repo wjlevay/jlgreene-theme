@@ -25,7 +25,7 @@
 								<?php // display the description instead of the title
 									echo category_description();
 								?>
-							</h1>
+							</h2>
 
 							<div class="projects-grid">
 

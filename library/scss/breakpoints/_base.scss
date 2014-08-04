@@ -144,7 +144,7 @@ h2, .h2 {
 	margin-bottom: 0.375em;
 }
 
-h2.tagline {
+h1.tagline, h2.tagline {
 	@include ibis;
 	margin-top: 0.375em;
 	margin-bottom: 0;
@@ -657,7 +657,8 @@ POSTS & CONTENT STYLES
 	}
 
 	/* project category page */
-	.tax-project_cat {
+	.tax-project_cat,
+	.post-type-archive-project {
 
 		.archive-title {
 			p {margin: 0;}

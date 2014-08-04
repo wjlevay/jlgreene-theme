@@ -18,54 +18,67 @@
 
 				<div id="inner-content" class="wrap cf">
 
-						<div id="main" class="m-all t-2of3 d-5of7 cf" role="main">
+						<div id="main" class="cf" role="main">
 
-						<h1 class="archive-title h2"><?php post_type_archive_title(); ?></h1>
+							<h1 class="archive-title h1 tagline">JLGreene Projects</h1>
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<div class="projects-grid">
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+								<?php if (have_posts()) : while (have_posts()) : the_post(); $postcount++; ?>
 
-								<header class="article-header">
+									<?php // if it's an odd project, put it in a left column, if it's even, put it in a right column
+										if ($postcount % 2) : echo '<div class="project m-all t-1of2 d-1of2 cf">'; 
+										else : echo '<div class="project m-all t-1of2 d-1of2 last-col cf">';
+										endif ; ?>
 
-									<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard"><?php
-										printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), get_author_posts_url( get_the_author_meta( 'ID' ) ));
-									?></p>
+										<?php // check if it's a new project so we can add the "new-project" class to the thumbnail
+											$new = get_post_meta( $post->ID, '_cmb_new_project', true );
+											if ( !empty( $new ) ) {
+												$new_class = 'new-project';
+												$new_caption= '<div class="new-overlay"></div><p class="h1 new-overlay-text">new</p>';
+											}
+											else {
+												$new_class = '';
+												$new_caption = '';
+											}
+										?>
 
-								</header>
+										<?php // check for featured image and display, and add the "new-project class" if needed
+											if ('' != get_the_post_thumbnail() ) { ?>
+											<div class="post-thumbnail <?php echo $new_class; ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); echo $new_caption; ?></a></div>
+											<?php } 
+											else {
+												echo '';
+											} 
+										?>
+										<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+										<p class="project-cat"><?php
+											printf(__('%1$s', 'bonestheme'), get_the_term_list( get_the_ID(), 'project_cat', "", " &middot; ", "" ));
+										?></p>
 
-								<section class="entry-content cf">
+									</div>
 
-									<?php the_excerpt(); ?>
+								<?php endwhile; ?>
 
-								</section>
+										<?php bones_page_navi(); ?>
 
-								<footer class="article-footer">
+								<?php else : ?>
 
-								</footer>
+										<article id="post-not-found" class="hentry cf">
+											<header class="article-header">
+												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+											</header>
+											<section class="entry-content">
+												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+											</section>
+											<footer class="article-footer">
+													<p><?php _e( 'This is the error message in the archive-project.php template.', 'bonestheme' ); ?></p>
+											</footer>
+										</article>
 
-							</article>
+								<?php endif; ?>
 
-							<?php endwhile; ?>
-
-									<?php bones_page_navi(); ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry cf">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the custom posty type archive template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
+							</div>
 
 						</div>
 

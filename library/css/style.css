@@ -1369,7 +1369,7 @@ h2, .h2 {
   line-height: 1.4em;
   margin-bottom: 0.375em; }
 
-h2.tagline {
+h1.tagline, h2.tagline {
   font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
   font-style: normal;
   font-weight: normal;
@@ -1685,15 +1685,20 @@ POSTS & CONTENT STYLES
     margin-bottom: 2em; }
 
 /* project category page */
-.tax-project_cat {
+.tax-project_cat,
+.post-type-archive-project {
   /* a single project */ }
-  .tax-project_cat .archive-title p {
+  .tax-project_cat .archive-title p,
+  .post-type-archive-project .archive-title p {
     margin: 0; }
-  .tax-project_cat .projects-grid {
+  .tax-project_cat .projects-grid,
+  .post-type-archive-project .projects-grid {
     padding-top: 1.5em; }
-  .tax-project_cat .project {
+  .tax-project_cat .project,
+  .post-type-archive-project .project {
     margin-bottom: 2em; }
-    .tax-project_cat .project .project-cat {
+    .tax-project_cat .project .project-cat,
+    .post-type-archive-project .project .project-cat {
       margin: 0; }
 
 /* news page */
