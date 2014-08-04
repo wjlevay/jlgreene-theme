@@ -2149,7 +2149,7 @@ you can add resource intensive styles.
       .nav li:nth-child(n+2) {
         background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
         background-repeat: no-repeat;
-        background-position: 0;
+        background-position: 0 0;
         padding-left: 0.6em; }
       .nav li ul.sub-menu,
       .nav li ul.children {

@@ -59,7 +59,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
 
 // RSS Dashboard Widget
-/*
+
 function bones_rss_dashboard_widget() {
 	if ( function_exists( 'fetch_feed' ) ) {
 		// include_once( ABSPATH . WPINC . '/feed.php' );               // include the required file
@@ -85,7 +85,6 @@ function bones_rss_dashboard_widget() {
 	</p>
 	<?php }
 }
-*/
 
 // calling all custom dashboard widgets
 function bones_custom_dashboard_widgets() {
@@ -96,11 +95,10 @@ function bones_custom_dashboard_widgets() {
 	*/
 }
 
-
 // removing the dashboard widgets
 add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 // adding any custom widgets
-add_action( 'wp_dashboard_setup', 'bones_custom_dashboard_widgets' );
+// add_action( 'wp_dashboard_setup', 'bones_custom_dashboard_widgets' );
 
 
 /************* CUSTOM LOGIN PAGE *****************/
@@ -136,7 +134,7 @@ you like.
 
 // Custom Backend Footer
 function bones_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.', 'bonestheme' );
+	_e( '<span id="footer-thankyou">Developed by <a href="http://wjlevay.net" target="_blank">W.J. Levay</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.', 'bonestheme' );
 }
 
 // adding it to the admin area
