@@ -27,6 +27,11 @@ LAYOUT & GRID STYLES
 	width: 760px;
 }
 
+.projects-grid {
+	.t-1of2, .d-1of2 {clear: both;}
+	.t-1of2.last-col, .d-1of2.last-col {clear: none;}
+}
+
 /*********************
 HEADER STYLES
 *********************/

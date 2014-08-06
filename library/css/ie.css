@@ -199,6 +199,11 @@ LAYOUT & GRID STYLES
 .wrap {
   width: 760px; }
 
+.projects-grid .t-1of2, .projects-grid .d-1of2 {
+  clear: both; }
+.projects-grid .t-1of2.last-col, .projects-grid .d-1of2.last-col {
+  clear: none; }
+
 /*********************
 HEADER STYLES
 *********************/
