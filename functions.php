@@ -255,6 +255,19 @@ function add_body_class($classes) {
 add_filter('body_class', 'add_body_class');
 
 
+/************* REDIRECT SINGLE POST TO INDEX *********************/
+
+// via http://wordpress.stackexchange.com/questions/65300/force-redirect-single-php-to-index
+
+add_action('wp', 'single_redirect');
+ function single_redirect(){ 
+    if(is_single()){ 
+            wp_redirect( home_url( '/news' ) ); exit;  
+        }
+
+  }
+
+
 /************* FIRST PARAGRAPH CLASS *********************/
 
 function first_paragraph($content){

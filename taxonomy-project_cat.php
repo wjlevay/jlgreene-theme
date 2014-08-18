@@ -77,7 +77,7 @@
 												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 											</section>
 											<footer class="article-footer">
-													<p><?php _e( 'This is the error message in the taxonomy-project_cat.php template.', 'bonestheme' ); ?></p>
+													<p><?php // _e( 'This is the error message in the taxonomy-project_cat.php template.', 'bonestheme' ); ?></p>
 											</footer>
 										</article>
 
