@@ -597,7 +597,7 @@ http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
 WEBTYPE FONTS
 *********************/
 /*********************
-PARAGRAPH INDENTS
+PARAGRAPH SPACING
 *********************/
 /*********************
 TRANSITION
@@ -1678,9 +1678,9 @@ POSTS & CONTENT STYLES
   .single-project .the-content p {
     margin: 0; }
   .single-project .the-content p {
-    text-indent: 2em; }
+    margin: 1em 0 0 0; }
   .single-project .the-content p.first, .single-project .the-content h1 + p, .single-project .the-content h2 + p, .single-project .the-content h3 + p, .single-project .the-content div + p, .single-project .the-content p.wp-caption-text {
-    text-indent: 0; }
+    margin: 0; }
   .single-project .rel-project {
     margin-bottom: 2em; }
 
@@ -1719,16 +1719,18 @@ POSTS & CONTENT STYLES
   padding-top: 1.5em;
   margin-top: 1.5em; }
   .blog .entry-content .the-content p {
-    margin: 0; }
-  .blog .entry-content .the-content p {
-    text-indent: 2em; }
+    margin: 1em 0 0 0; }
   .blog .entry-content .the-content p.first, .blog .entry-content .the-content h1 + p, .blog .entry-content .the-content h2 + p, .blog .entry-content .the-content h3 + p, .blog .entry-content .the-content div + p, .blog .entry-content .the-content p.wp-caption-text {
-    text-indent: 0; }
+    margin: 0; }
 .blog .post-meta {
   font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   color: #970076; }
+  .blog .post-meta .external-link {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom: 0; }
 
 /* about page */
 .page-about .the-content, .page-template-page-about-php .the-content {
@@ -1743,9 +1745,9 @@ POSTS & CONTENT STYLES
     margin: initial;
     font-size: 0.9em; }
   .page-about .the-content p, .page-template-page-about-php .the-content p {
-    text-indent: 2em; }
+    margin: 1em 0 0 0; }
   .page-about .the-content p.first, .page-about .the-content h1 + p, .page-about .the-content h2 + p, .page-about .the-content h3 + p, .page-about .the-content div + p, .page-about .the-content p.wp-caption-text, .page-template-page-about-php .the-content p.first, .page-template-page-about-php .the-content h1 + p, .page-template-page-about-php .the-content h2 + p, .page-template-page-about-php .the-content h3 + p, .page-template-page-about-php .the-content div + p, .page-template-page-about-php .the-content p.wp-caption-text {
-    text-indent: 0; }
+    margin: 0; }
   .page-about .the-content .mobile-hide, .page-template-page-about-php .the-content .mobile-hide {
     display: none; }
 
@@ -1952,7 +1954,8 @@ FOOTER STYLES
   clear: both;
   background-color: #c0b8b0;
   font-size: 0.8em;
-  color: #970076; }
+  color: #970076;
+  padding: 1em 0; }
   .footer a {
     color: #970076;
     text-decoration: none; }

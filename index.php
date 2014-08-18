@@ -53,14 +53,15 @@
 
 								<footer class="article-footer cf">
 									<p class="post-meta">
-										<?php printf( __( '', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time>', get_the_time('Y-m-j'), get_the_time(get_option('date_format'))); ?>
+										<?php // Uncomment below to display post date
+											  // printf( __( '', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time>', get_the_time('Y-m-j'), get_the_time(get_option('date_format'))); ?>
 									
 									<?php 
 										$linkURL = get_post_meta( $post->ID, '_cmb_linkURL', true );
 										$linkText = get_post_meta( $post->ID, '_cmb_linkText', true );
 
 										if( !empty( $linkURL ) ) {
-	        								echo ' &middot; <a class="external-link" href="' . $linkURL . '" title ="' . $linkText . '">' . $linkText . '</a>';
+	        								echo 'learn more &middot; <a class="external-link" href="' . $linkURL . '" title ="' . $linkText . '">' . $linkText . '</a>';
 	    								}
 	    								else {
 	    									echo '';

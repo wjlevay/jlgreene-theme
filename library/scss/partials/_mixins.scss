@@ -37,15 +37,15 @@ WEBTYPE FONTS
 }
 
 /*********************
-PARAGRAPH INDENTS
+PARAGRAPH SPACING
 *********************/
 
-@mixin graf-indent {
+@mixin graf-spacing {
 	p {
-		text-indent: 2em;
+		margin: 1em 0 0 0;
 	}
 	p.first, h1 + p, h2 + p, h3 + p, div + p, p.wp-caption-text {
-		text-indent: 0;
+		margin: 0;
 	}
 
 }

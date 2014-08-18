@@ -645,7 +645,7 @@ POSTS & CONTENT STYLES
 
 		.the-content {
 			p {margin: 0;}
-			@include graf-indent;
+			@include graf-spacing;
 		}
 
 		/* related projects */
@@ -706,8 +706,7 @@ POSTS & CONTENT STYLES
 			margin-top: 1.5em;
 
 			.the-content {
-				p {margin: 0;}
-				@include graf-indent;
+				@include graf-spacing;
 			}
 		}
 
@@ -716,7 +715,11 @@ POSTS & CONTENT STYLES
 			color: $plum;
 
 			.updated {}
-			.external-link {}
+			.external-link {
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				padding-bottom: 0;
+			}
 		}
 	}
 
@@ -734,7 +737,7 @@ POSTS & CONTENT STYLES
 				font-size: 0.9em;
 			}
 
-			@include graf-indent;
+			@include graf-spacing;
 
 			.mobile-hide {display: none;} /* for hiding a blank column */
 		}
@@ -1118,6 +1121,7 @@ FOOTER STYLES
 	background-color: $warm-gray;
 	font-size: 0.8em;
 	color: $plum;
+	padding: 1em 0;
 
 	a {
 		color: $plum;

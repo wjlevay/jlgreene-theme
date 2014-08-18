@@ -261,7 +261,7 @@ add_filter('body_class', 'add_body_class');
 
 add_action('wp', 'single_redirect');
  function single_redirect(){ 
-    if(is_single()){ 
+    if(is_singular('post')){ 
             wp_redirect( home_url( '/news' ) ); exit;  
         }
 
