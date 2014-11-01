@@ -151,7 +151,7 @@ h1.tagline, h2.tagline {
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	font-size: 1.5em;
 }
 
 h4, .h4 {
@@ -426,6 +426,8 @@ POSTS & CONTENT STYLES
 				padding: 0;
 				color: $plum;
 
+				p {}
+
 				&:before {}
 
 			}
@@ -567,55 +569,15 @@ POSTS & CONTENT STYLES
 	/* homepage stuff */
 	.home {
 
-		/* flexslider */
-
-		/*.flex-direction-nav {
-			a {
-				background-image: url(/wp-content/themes/jlgreene/library/images/bg_direction_nav.png);
-			}
-		}*/
-
-		/* featured projects */
-		.feat-project {
-			margin-bottom: 2em;
-		}
-
-		/* latest news block */
+		/* latest news */
 		.latest-news {
+			margin-bottom: 2em;
 
-			display: flex;
-			position: relative;
+			.news-title {
+				@include ibis;
+				margin: 0.5em 0 0;
 
-			.latest-news-story {
-				margin-top: 1.5em;
-
-				.latest-news-text {
-					position: absolute;
-					left: 5%;
-					top: 5%;
-					color: $white;
-					text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
-
-				}
-			}
-
-			article {
-				.entry-content {
-					padding: 0.5em 0.75em 0;
-
-					background: $warm-gray;
-					.entry-title {
-						color: $plum;
-						@include ibis;
-					}
-					.h4 {
-						font-size: 0.95em;
-						margin-bottom: 0.75em;
-						a {
-							color: $white;
-						}
-					}
-				}
+				a {color: black;}
 			}
 		}
 
@@ -1173,7 +1135,33 @@ FLEXSLIDER STYLES
 		-moz-box-shadow: none;
 		-o-box-shadow: none;
 
-		.flex-control-nav {display: none;}
+		.flex-direction-nav {
+			a {
+				background-image: url(/wp-content/themes/jlgreene/library/images/bg_direction_nav.png);
+			}
+		}
+
+		&:hover {
+			.flex-next {opacity:0.8;right:0}
+			.flex-prev{opacity:0.8;left:0}
+		}
+
+		.flex-control-nav {
+			bottom: 5px;
+		}
+
+		.flex-control-paging {
+			li {
+				a {
+					width: 13px;
+					height: 13px;
+					background: none;
+					box-shadow: inset 0 0 3px $plum;
+				}
+
+				a.flex-active {background: $plum;}
+			}
+		}
 
 		.slides img {
 			max-height: none;

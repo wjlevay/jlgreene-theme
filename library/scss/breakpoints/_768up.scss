@@ -54,19 +54,10 @@ NAVIGATION STYLES
 .header {
 	@include antenna;
 
-	.header-right {
+	padding: 1em 0 0 0.75em;
 
-		padding: 1em 0 0 0.75em;
-
-		.nav-header {
-			font-size: 0.85em;
-			color: $white;
-			margin: 0;
-		}
-
-		.nav {
-			margin-bottom: 1em;
-		}
+	.nav {
+		margin-bottom: 1em;
 	}
 }
 
@@ -82,9 +73,10 @@ NAVIGATION STYLES
 
 		a {
 			color: $link-color;
-			border-bottom: 2px solid $plum;
+			border-bottom: 1px solid $plum;
 			padding: 0;
 			margin-right: 0.33em;
+			font-size: 120%;
 
 			/*
 			you can use hover styles here even though this size
@@ -112,23 +104,29 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			border: 1px solid #ccc;
-			border-top: 0;
+			padding: 1.5em 1em 0.5em 1em;
+			border-top: 1em solid $plum;
+			background: $warm-gray;
 			position: absolute;
 			visibility: hidden;
 			z-index: 8999;
 
 			li {
 
+				background: none;
+				padding-left: 0;
+				margin-bottom: 0.5em;
+				width: 400px;
+
 				a {
-					padding-left: 10px;
-					border-right: 0;
-					display: block;
-					width: 180px;
-					border-bottom: 1px solid #ccc;
+					color: $white;
+					padding-left: 0;
+					display: inline; /* need this to get the underline to run under text only, not entire element */
+					border: 0;
+					border-bottom: 1px solid $warm-gray;
 
 					&:hover,
-					&:focus {}
+					&:focus {border-bottom: 1px solid $white;}
 
 					&:link {}
 				}
@@ -138,7 +136,6 @@ NAVIGATION STYLES
 				&:last-child {
 
 					a {
-						border-bottom: 0;
 					}
 				}
 
@@ -176,7 +173,7 @@ NAVIGATION STYLES
 	li.current_page_ancestor {
 		a {
 			color: $white;
-			border-bottom: 2px solid white;
+			border-bottom: 1px solid white;
 		}
 	}  /* end current highlighters */
 
@@ -224,7 +221,26 @@ POSTS & CONTENT STYLES
 
 	blockquote, 
 	.quote {
+		/* we no longer want to have the leading quotation mark hanging off the left margin
 		text-indent: -0.55em;
+		*/
+	}
+}
+
+.home {
+	.entry-content {
+		p {
+			width: 66.67%;
+			font-size: 130%;
+		}
+
+		blockquote,
+		.quote {
+			p {
+				width: 100%;
+				font-size: 100%;
+			}
+		}
 	}
 }
 
@@ -418,3 +434,35 @@ mobile. Make sure to double check these!
 	}
 } /* end .footer-links */
 
+/*********************
+FLEXSLIDER STYLES
+*********************/
+
+/* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+.home {
+	.flexslider {
+
+		&:hover {
+			.flex-next {opacity:0.8;right:20px}
+			.flex-prev{opacity:0.8;left:20px}
+		}
+
+		.flex-control-nav {
+			bottom: 20px;
+		}
+
+		.flex-control-paging {
+			li {
+				a {
+					width: 13px;
+					height: 13px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 860px){
+	.flex-direction-nav .flex-prev{opacity:0; left:-36px}
+	.flex-direction-nav .flex-next{opacity:0; right:-36px}
+}

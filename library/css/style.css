@@ -1377,7 +1377,7 @@ h1.tagline, h2.tagline {
   margin-bottom: 0; }
 
 h3, .h3 {
-  font-size: 1.125em; }
+  font-size: 1.5em; }
 
 h4, .h4 {
   font-size: 1.1em;
@@ -1624,40 +1624,16 @@ POSTS & CONTENT STYLES
 
 /* homepage stuff */
 .home {
-  /* flexslider */
-  /*.flex-direction-nav {
-  	a {
-  		background-image: url(/wp-content/themes/jlgreene/library/images/bg_direction_nav.png);
-  	}
-  }*/
-  /* featured projects */
-  /* latest news block */ }
-  .home .feat-project {
-    margin-bottom: 2em; }
+  /* latest news */ }
   .home .latest-news {
-    display: flex;
-    position: relative; }
-    .home .latest-news .latest-news-story {
-      margin-top: 1.5em; }
-      .home .latest-news .latest-news-story .latest-news-text {
-        position: absolute;
-        left: 5%;
-        top: 5%;
-        color: white;
-        text-shadow: 2px 2px 2px #969696; }
-    .home .latest-news article .entry-content {
-      padding: 0.5em 0.75em 0;
-      background: #c0b8b0; }
-      .home .latest-news article .entry-content .entry-title {
-        color: #970076;
-        font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
-        font-style: normal;
-        font-weight: normal; }
-      .home .latest-news article .entry-content .h4 {
-        font-size: 0.95em;
-        margin-bottom: 0.75em; }
-        .home .latest-news article .entry-content .h4 a {
-          color: white; }
+    margin-bottom: 2em; }
+    .home .latest-news .news-title {
+      font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+      font-style: normal;
+      font-weight: normal;
+      margin: 0.5em 0 0; }
+      .home .latest-news .news-title a {
+        color: black; }
 
 /* end .home */
 /* project stuff across all pages */
@@ -1988,8 +1964,23 @@ FLEXSLIDER STYLES
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -o-box-shadow: none; }
+  .home .flexslider .flex-direction-nav a {
+    background-image: url(/wp-content/themes/jlgreene/library/images/bg_direction_nav.png); }
+  .home .flexslider:hover .flex-next {
+    opacity: 0.8;
+    right: 0; }
+  .home .flexslider:hover .flex-prev {
+    opacity: 0.8;
+    left: 0; }
   .home .flexslider .flex-control-nav {
-    display: none; }
+    bottom: 5px; }
+  .home .flexslider .flex-control-paging li a {
+    width: 13px;
+    height: 13px;
+    background: none;
+    box-shadow: inset 0 0 3px #970076; }
+  .home .flexslider .flex-control-paging li a.flex-active {
+    background: #970076; }
   .home .flexslider .slides img {
     max-height: none;
     height: auto; }
@@ -2072,7 +2063,26 @@ tweeners.
   check your menus here. do they look good?
   do they need tweaking?
   */
-  /* end .footer-links */ }
+  /* end .footer-links */
+  /*********************
+  FLEXSLIDER STYLES
+  *********************/
+  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+  .home .flexslider .flex-next {
+    right: 10px; }
+  .home .flexslider .flex-prev {
+    left: 10px; }
+  .home .flexslider:hover .flex-next {
+    opacity: 0.8;
+    right: 10px; }
+  .home .flexslider:hover .flex-prev {
+    opacity: 0.8;
+    left: 10px; }
+  .home .flexslider .flex-control-nav {
+    bottom: 15px; }
+  .home .flexslider .flex-control-paging li a {
+    width: 13px;
+    height: 13px; } }
 /*********************
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
@@ -2124,15 +2134,10 @@ you can add resource intensive styles.
   .header {
     font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
-    font-weight: bold; }
-    .header .header-right {
-      padding: 1em 0 0 0.75em; }
-      .header .header-right .nav-header {
-        font-size: 0.85em;
-        color: white;
-        margin: 0; }
-      .header .header-right .nav {
-        margin-bottom: 1em; }
+    font-weight: bold;
+    padding: 1em 0 0 0.75em; }
+    .header .nav {
+      margin-bottom: 1em; }
 
   .nav {
     border: 0;
@@ -2150,9 +2155,10 @@ you can add resource intensive styles.
       /* showing sub-menus */ }
       .nav li a {
         color: #c0b8b0;
-        border-bottom: 2px solid #970076;
+        border-bottom: 1px solid #970076;
         padding: 0;
         margin-right: 0.33em;
+        font-size: 120%;
         /*
         you can use hover styles here even though this size
         has the possibility of being a mobile device.
@@ -2169,14 +2175,19 @@ you can add resource intensive styles.
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
-        border: 1px solid #ccc;
-        border-top: 0;
+        padding: 1.5em 1em 0.5em 1em;
+        border-top: 1em solid #970076;
+        background: #c0b8b0;
         position: absolute;
         visibility: hidden;
         z-index: 8999;
         /* highlight sub-menu current page */ }
         .nav li ul.sub-menu li,
         .nav li ul.children li {
+          background: none;
+          padding-left: 0;
+          margin-bottom: 0.5em;
+          width: 400px;
           /*
           if you need to go deeper, go nuts
           just remember deeper menus suck
@@ -2184,14 +2195,16 @@ you can add resource intensive styles.
           */ }
           .nav li ul.sub-menu li a,
           .nav li ul.children li a {
-            padding-left: 10px;
-            border-right: 0;
-            display: block;
-            width: 180px;
-            border-bottom: 1px solid #ccc; }
-          .nav li ul.sub-menu li:last-child a,
-          .nav li ul.children li:last-child a {
-            border-bottom: 0; }
+            color: white;
+            padding-left: 0;
+            display: inline;
+            /* need this to get the underline to run under text only, not entire element */
+            border: 0;
+            border-bottom: 1px solid #c0b8b0; }
+            .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
+            .nav li ul.children li a:hover,
+            .nav li ul.children li a:focus {
+              border-bottom: 1px solid white; }
           .nav li ul.sub-menu li ul,
           .nav li ul.children li ul {
             top: 0;
@@ -2204,7 +2217,7 @@ you can add resource intensive styles.
     .nav li.current_page_item a,
     .nav li.current_page_ancestor a {
       color: white;
-      border-bottom: 2px solid white; }
+      border-bottom: 1px solid white; }
 
   /* end .nav */
   /* sticky header plugin tweaks */
@@ -2238,7 +2251,17 @@ you can add resource intensive styles.
   /* entry content */
   .entry-content blockquote,
   .entry-content .quote {
-    text-indent: -0.55em; }
+    /* we no longer want to have the leading quotation mark hanging off the left margin
+    text-indent: -0.55em;
+    */ }
+
+  .home .entry-content p {
+    width: 66.67%;
+    font-size: 130%; }
+  .home .entry-content blockquote p,
+  .home .entry-content .quote p {
+    width: 100%;
+    font-size: 100%; }
 
   .blog {
     /* fixing spacing in case bottom of photo extends close to footer */ }
@@ -2312,7 +2335,30 @@ you can add resource intensive styles.
     the footer.
     */ }
 
-  /* end .footer-links */ }
+  /* end .footer-links */
+  /*********************
+  FLEXSLIDER STYLES
+  *********************/
+  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+  .home .flexslider:hover .flex-next {
+    opacity: 0.8;
+    right: 20px; }
+  .home .flexslider:hover .flex-prev {
+    opacity: 0.8;
+    left: 20px; }
+  .home .flexslider .flex-control-nav {
+    bottom: 20px; }
+  .home .flexslider .flex-control-paging li a {
+    width: 13px;
+    height: 13px; } }
+@media only screen and (min-width: 768px) and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {
+    opacity: 0;
+    left: -36px; }
+
+  .flex-direction-nav .flex-next {
+    opacity: 0;
+    right: -36px; } }
 /*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
@@ -2331,10 +2377,10 @@ you can add resource intensive styles.
   
   ******************************************************************/
   .wrap {
-    width: 960px; }
+    width: 1030px; }
 
   #thsp-sticky-header #thsp-sticky-header-inner {
-    width: 960px; } }
+    width: 1030px; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2351,15 +2397,15 @@ This is for the larger monitors and possibly full screen viewers.
   
   ******************************************************************/
   .wrap {
-    width: 1040px; }
+    width: 1240px; }
 
   #thsp-sticky-header #thsp-sticky-header-inner {
-    width: 1040px; } }
+    width: 1240px; } }
 /*********************
 EXTRA LARGE VIEWING SIZE
 This is for the largest monitors and possibly full screen viewers.
 *********************/
-@media only screen and (min-width: 1824px) {
+@media only screen and (min-width: 1920px) {
   /******************************************************************
   Site Name: JLGreene.org
   Author: W.J. Levay
@@ -2371,10 +2417,10 @@ This is for the largest monitors and possibly full screen viewers.
   
   ******************************************************************/
   .wrap {
-    width: 1040px; }
+    width: 1920px; }
 
   #thsp-sticky-header #thsp-sticky-header-inner {
-    width: 1040px; } }
+    width: 1920px; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

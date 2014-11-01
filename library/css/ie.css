@@ -177,6 +177,26 @@ check your menus here. do they look good?
 do they need tweaking?
 */
 /* end .footer-links */
+/*********************
+FLEXSLIDER STYLES
+*********************/
+/* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+.home .flexslider .flex-next {
+  right: 10px; }
+.home .flexslider .flex-prev {
+  left: 10px; }
+.home .flexslider:hover .flex-next {
+  opacity: 0.8;
+  right: 10px; }
+.home .flexslider:hover .flex-prev {
+  opacity: 0.8;
+  left: 10px; }
+.home .flexslider .flex-control-nav {
+  bottom: 15px; }
+.home .flexslider .flex-control-paging li a {
+  width: 13px;
+  height: 13px; }
+
 /******************************************************************
 Site Name: JLGreene.org
 Author: W.J. Levay
@@ -221,15 +241,10 @@ NAVIGATION STYLES
 .header {
   font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: bold; }
-  .header .header-right {
-    padding: 1em 0 0 0.75em; }
-    .header .header-right .nav-header {
-      font-size: 0.85em;
-      color: white;
-      margin: 0; }
-    .header .header-right .nav {
-      margin-bottom: 1em; }
+  font-weight: bold;
+  padding: 1em 0 0 0.75em; }
+  .header .nav {
+    margin-bottom: 1em; }
 
 .nav {
   border: 0;
@@ -247,9 +262,10 @@ NAVIGATION STYLES
     /* showing sub-menus */ }
     .nav li a {
       color: #c0b8b0;
-      border-bottom: 2px solid #970076;
+      border-bottom: 1px solid #970076;
       padding: 0;
       margin-right: 0.33em;
+      font-size: 120%;
       /*
       you can use hover styles here even though this size
       has the possibility of being a mobile device.
@@ -266,14 +282,19 @@ NAVIGATION STYLES
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
-      border: 1px solid #ccc;
-      border-top: 0;
+      padding: 1.5em 1em 0.5em 1em;
+      border-top: 1em solid #970076;
+      background: #c0b8b0;
       position: absolute;
       visibility: hidden;
       z-index: 8999;
       /* highlight sub-menu current page */ }
       .nav li ul.sub-menu li,
       .nav li ul.children li {
+        background: none;
+        padding-left: 0;
+        margin-bottom: 0.5em;
+        width: 400px;
         /*
         if you need to go deeper, go nuts
         just remember deeper menus suck
@@ -281,14 +302,16 @@ NAVIGATION STYLES
         */ }
         .nav li ul.sub-menu li a,
         .nav li ul.children li a {
-          padding-left: 10px;
-          border-right: 0;
-          display: block;
-          width: 180px;
-          border-bottom: 1px solid #ccc; }
-        .nav li ul.sub-menu li:last-child a,
-        .nav li ul.children li:last-child a {
-          border-bottom: 0; }
+          color: white;
+          padding-left: 0;
+          display: inline;
+          /* need this to get the underline to run under text only, not entire element */
+          border: 0;
+          border-bottom: 1px solid #c0b8b0; }
+          .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
+          .nav li ul.children li a:hover,
+          .nav li ul.children li a:focus {
+            border-bottom: 1px solid white; }
         .nav li ul.sub-menu li ul,
         .nav li ul.children li ul {
           top: 0;
@@ -301,7 +324,7 @@ NAVIGATION STYLES
   .nav li.current_page_item a,
   .nav li.current_page_ancestor a {
     color: white;
-    border-bottom: 2px solid white; }
+    border-bottom: 1px solid white; }
 
 /* end .nav */
 /* sticky header plugin tweaks */
@@ -335,7 +358,17 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content blockquote,
 .entry-content .quote {
-  text-indent: -0.55em; }
+  /* we no longer want to have the leading quotation mark hanging off the left margin
+  text-indent: -0.55em;
+  */ }
+
+.home .entry-content p {
+  width: 66.67%;
+  font-size: 130%; }
+.home .entry-content blockquote p,
+.home .entry-content .quote p {
+  width: 100%;
+  font-size: 100%; }
 
 .blog {
   /* fixing spacing in case bottom of photo extends close to footer */ }
@@ -410,6 +443,30 @@ mobile. Make sure to double check these!
   */ }
 
 /* end .footer-links */
+/*********************
+FLEXSLIDER STYLES
+*********************/
+/* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+.home .flexslider:hover .flex-next {
+  opacity: 0.8;
+  right: 20px; }
+.home .flexslider:hover .flex-prev {
+  opacity: 0.8;
+  left: 20px; }
+.home .flexslider .flex-control-nav {
+  bottom: 20px; }
+.home .flexslider .flex-control-paging li a {
+  width: 13px;
+  height: 13px; }
+
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {
+    opacity: 0;
+    left: -36px; }
+
+  .flex-direction-nav .flex-next {
+    opacity: 0;
+    right: -36px; } }
 /******************************************************************
 Site Name: JLGreene.org
 Author: W.J. Levay
@@ -421,10 +478,10 @@ be seen on the Desktop.
 
 ******************************************************************/
 .wrap {
-  width: 960px; }
+  width: 1030px; }
 
 #thsp-sticky-header #thsp-sticky-header-inner {
-  width: 960px; }
+  width: 1030px; }
 
 /*
 you can call the larger styles if you want, but there's really no need
