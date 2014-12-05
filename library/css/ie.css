@@ -214,6 +214,9 @@ come into play. Have fun!
 /*********************
 GENERAL STYLES
 *********************/
+body {
+  font-size: 18px; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -245,7 +248,7 @@ NAVIGATION STYLES
   font-weight: bold;
   padding: 1em 0 0 0.75em; }
   .header .nav {
-    margin-bottom: 1em; }
+    margin-bottom: 1.5em; }
 
 .nav {
   border: 0;
@@ -281,12 +284,13 @@ NAVIGATION STYLES
       background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
       background-repeat: no-repeat;
       background-position: 0 0;
+      background-size: contain;
       padding-left: 0.6em; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
       padding: 1em 1em 0.5em 1em;
-      border-top: 1em solid #970076;
+      border-top: 1.5em solid #970076;
       background: #9e9da0;
       position: absolute;
       visibility: hidden;
@@ -307,7 +311,7 @@ NAVIGATION STYLES
         .nav li ul.sub-menu li a,
         .nav li ul.children li a {
           color: white;
-          font-size: initial;
+          font-size: 120%;
           padding-left: 0;
           display: inline-block;
           /* need this to get the underline to run under text only, not entire element */
@@ -338,13 +342,23 @@ NAVIGATION STYLES
     width: 760px;
     /* make this the same as the .wrap width! */
     margin: auto;
-    /* highlight current page */
-    /* end current highlighters */ }
-    #thsp-sticky-header #thsp-sticky-header-inner li.current-menu-item a,
-    #thsp-sticky-header #thsp-sticky-header-inner li.current_page_item a {
-      color: white !important;
-      border-bottom: 1px solid white;
-      line-height: 20px; }
+    padding-right: .5em; }
+    #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu {
+      /* highlight current page */
+      /* end current highlighters */ }
+      #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li {
+        margin: 0 0 0 0 !important;
+        font-size: .65em; }
+        #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
+          background-image: url(/wp-content/themes/jlgreene/library/images/bullet-sm.png);
+          background-repeat: no-repeat;
+          background-position: 0 8px;
+          padding-left: .5em; }
+      #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li.current-menu-item a,
+      #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li.current_page_item a {
+        color: white !important;
+        border-bottom: 1px solid white;
+        line-height: 20px; }
   #thsp-sticky-header #thsp-sticky-header-menu {
     font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
@@ -358,9 +372,13 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content blockquote,
 .entry-content .quote {
-  /* we no longer want to have the leading quotation mark hanging off the left margin
-  text-indent: -0.55em;
-  */ }
+  padding: 1px 0 0 0; }
+
+/* home page */
+.home {
+  /* latest news */ }
+  .home .entry-content .quote {
+    padding: 3px 0 0 0; }
 
 .blog {
   /* fixing spacing in case bottom of photo extends close to footer */ }
@@ -374,12 +392,10 @@ POSTS & CONTENT STYLES
     margin-top: 3em; }
 
 /* about page */
-.page-about .the-content p, .page-template-page-about-php .the-content p {
-  width: 70%; }
-.page-about .the-content h2, .page-template-page-about-php .the-content h2 {
-  font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
-  font-style: normal;
-  font-weight: normal; }
+.page-about .entry-content, .page-template-page-about-php .entry-content {
+  padding-top: .5em; }
+  .page-about .entry-content .the-content p, .page-template-page-about-php .entry-content .the-content p {
+    width: 70%; }
 
 /* project page */
 .project h1.tagline, .project h2.tagline {
@@ -389,15 +405,20 @@ POSTS & CONTENT STYLES
 /* history page */
 .page-history .article-header .page-title, page-template-page-history-php .article-header .page-title {
   margin-left: 30%; }
-.page-history .entry-content .the-content p, .page-history .entry-content .the-content div + p, page-template-page-history-php .entry-content .the-content p, page-template-page-history-php .entry-content .the-content div + p {
-  margin-left: 30%;
-  margin-top: 1em; }
-.page-history .entry-content .the-content .alignleft, page-template-page-history-php .entry-content .the-content .alignleft {
-  max-width: 30%;
-  padding-right: 1em; }
-.page-history .entry-content .the-content p.wp-caption-text, page-template-page-history-php .entry-content .the-content p.wp-caption-text {
-  margin-left: 0;
-  margin-top: 0; }
+.page-history .entry-content, page-template-page-history-php .entry-content {
+  padding-top: 0; }
+  .page-history .entry-content .the-content p, .page-history .entry-content .the-content div + p, page-template-page-history-php .entry-content .the-content p, page-template-page-history-php .entry-content .the-content div + p {
+    margin-left: 30%;
+    margin-top: 1em; }
+  .page-history .entry-content .the-content p.first, page-template-page-history-php .entry-content .the-content p.first {
+    margin-left: 30%;
+    margin-top: .5em; }
+  .page-history .entry-content .the-content .alignleft, page-template-page-history-php .entry-content .the-content .alignleft {
+    max-width: 30%;
+    padding-right: 1em; }
+  .page-history .entry-content .the-content p.wp-caption-text, page-template-page-history-php .entry-content .the-content p.wp-caption-text {
+    margin-left: 0;
+    margin-top: 0; }
 
 /*********************
 SIDEBARS & ASIDES
@@ -483,16 +504,30 @@ be seen on the Desktop.
 .wrap {
   width: 1030px; }
 
+body {
+  font-size: 22px; }
+
 #thsp-sticky-header #thsp-sticky-header-inner {
   width: 1030px; }
 
-.nav li a {
-  font-size: 140%; }
 .nav li:nth-child(n+2) {
   background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   padding-left: 0.6em; }
+
+/* sticky header plugin tweaks */
+#thsp-sticky-header #thsp-sticky-header-inner {
+  width: 1030px;
+  /* make this the same as the .wrap width! */ }
+  #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li {
+    font-size: .9em;
+    margin: 0 0 0 .2em !important; }
+    #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
+      background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
+      background-repeat: no-repeat;
+      background-position: 0 3px;
+      padding-left: .75em; }
 
 /*
 you can call the larger styles if you want, but there's really no need

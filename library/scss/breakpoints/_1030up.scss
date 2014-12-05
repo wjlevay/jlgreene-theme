@@ -13,6 +13,8 @@ be seen on the Desktop.
   width: 1030px;
 }
 
+body {font-size: 22px;}
+
 #thsp-sticky-header {
 	#thsp-sticky-header-inner {
 		width: 1030px;
@@ -22,7 +24,6 @@ be seen on the Desktop.
 .nav {	
 	li {
 		a {
-			font-size: 140%;
 		}
 
 		&:nth-child(n+2) {
@@ -33,3 +34,26 @@ be seen on the Desktop.
 		}
 	}
 }
+
+/* sticky header plugin tweaks */
+#thsp-sticky-header {	
+
+	#thsp-sticky-header-inner {
+		width: 1030px; /* make this the same as the .wrap width! */
+
+		#thsp-sticky-header-menu {
+
+			li {
+				font-size: .9em;
+				margin: 0 0 0 .2em !important;
+
+				&:nth-child(n+2) {
+					background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
+					background-repeat: no-repeat;
+					background-position: 0 3px;
+					padding-left: .75em;
+				}
+			}
+		}
+	}
+}	

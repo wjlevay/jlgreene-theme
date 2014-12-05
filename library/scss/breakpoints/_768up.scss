@@ -17,7 +17,7 @@ come into play. Have fun!
 GENERAL STYLES
 *********************/
 
-body {}
+body {font-size: 18px;}
 
 /*********************
 LAYOUT & GRID STYLES
@@ -57,7 +57,7 @@ NAVIGATION STYLES
 	padding: 1em 0 0 0.75em;
 
 	.nav {
-		margin-bottom: 1em;
+		margin-bottom: 1.5em;
 	}
 }
 
@@ -97,6 +97,7 @@ NAVIGATION STYLES
 			background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
 			background-repeat: no-repeat;
 			background-position: 0 0;
+			background-size: contain;
 			padding-left: 0.6em;
 		}
 
@@ -107,7 +108,7 @@ NAVIGATION STYLES
 		ul.children {
 			margin-top: 0;
 			padding: 1em 1em 0.5em 1em;
-			border-top: 1em solid $plum;
+			border-top: 1.5em solid $plum;
 			background: $warm-gray;
 			position: absolute;
 			visibility: hidden;
@@ -123,7 +124,7 @@ NAVIGATION STYLES
 
 				a {
 					color: $white;
-					font-size: initial;
+					font-size: 120%;
 					padding-left: 0;
 					display: inline-block; /* need this to get the underline to run under text only, not entire element */
 					border-bottom: 1px solid $warm-gray;
@@ -193,19 +194,34 @@ NAVIGATION STYLES
 	#thsp-sticky-header-inner {
 		width: 760px; /* make this the same as the .wrap width! */
 		margin: auto;
+		padding-right: .5em;
 
-		/* highlight current page */
-		li.current-menu-item,
-		li.current_page_item
-		/* li.current-menu-parent,
-		li.current_page_ancestor */ {
-			a {
-				color: $white !important;
-				border-bottom: 1px solid white;
-				line-height: 20px;
+		#thsp-sticky-header-menu {
+
+			li {
+				margin: 0 0 0 0 !important;
+				font-size: .65em;
+
+				&:nth-child(n+2) {
+					background-image: url(/wp-content/themes/jlgreene/library/images/bullet-sm.png);
+					background-repeat: no-repeat;
+					background-position: 0 8px;
+					padding-left: .5em;
+				}
 			}
-		}  /* end current highlighters */
 
+			/* highlight current page */
+			li.current-menu-item,
+			li.current_page_item
+			/* li.current-menu-parent,
+			li.current_page_ancestor */ {
+				a {
+					color: $white !important;
+					border-bottom: 1px solid white;
+					line-height: 20px;
+				}
+			}  /* end current highlighters */
+		}
 	}
 
 	#thsp-sticky-header-menu {
@@ -226,14 +242,24 @@ POSTS & CONTENT STYLES
 
 	blockquote, 
 	.quote {
-		/* we no longer want to have the leading quotation mark hanging off the left margin
-		text-indent: -0.55em;
-		*/
+		padding: 1px 0 0 0;
 	}
 }
 
+/* home page */
 .home {
 	.entry-content {
+		.quote {
+			padding: 3px 0 0 0;
+		}
+	}
+
+	/* latest news */
+	.latest-news {
+
+		.post-thumbnail {
+
+		}
 	}
 }
 
@@ -253,11 +279,12 @@ POSTS & CONTENT STYLES
 
 /* about page */
 .page-about, .page-template-page-about-php {
-	
-	.the-content {
-		p {width: 70%;}
-		h2 {
-			@include ibis;
+
+	.entry-content {
+		padding-top: .5em;
+
+		.the-content {
+			p {width: 70%;}
 		}
 	}
 }
@@ -279,10 +306,17 @@ POSTS & CONTENT STYLES
 		}
 	}
 	.entry-content {
+		padding-top: 0;
+
 		.the-content {
 			p, div + p {
 				margin-left: 30%;
 				margin-top: 1em;
+			}
+
+			p.first {
+				margin-left: 30%;
+				margin-top: .5em;
 			}
 
 			.alignleft {

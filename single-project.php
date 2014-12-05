@@ -36,7 +36,7 @@
 										if ($feat == 'option1') {
 											// check for featured image and display
 											if ( '' != get_the_post_thumbnail() ) { ?>
-											<div class="post-thumbnail"><?php the_post_thumbnail( 'large' ); ?></div>
+											<div class="post-thumbnail"><?php the_post_thumbnail( 'large' ); ?><p class="thumbnail-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p></div>
 											<?php } 
 											else {
 												echo '';
