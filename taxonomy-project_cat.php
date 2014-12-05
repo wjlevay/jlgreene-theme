@@ -36,30 +36,24 @@
 										else : echo '<div class="project m-all t-1of2 d-1of2 last-col cf">';
 										endif ; ?>
 
-										<?php // check if it's a new project so we can add the "new-project" class to the thumbnail
-											$new = get_post_meta( $post->ID, '_cmb_new_project', true );
-											if ( !empty( $new ) ) {
-												$new_class = 'new-project';
-												$new_caption= '<div class="new-overlay"></div><p class="h1 new-overlay-text">new</p>';
-											}
-											else {
-												$new_class = '';
-												$new_caption = '';
-											}
-										?>
-
-										<?php // check for featured image and display, and add the "new-project class" if needed
+										<?php // check for featured image and display
 											if ('' != get_the_post_thumbnail() ) { ?>
-											<div class="post-thumbnail <?php echo $new_class; ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); echo $new_caption; ?></a></div>
+											<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a></div>
 											<?php } 
 											else {
 												echo '';
 											} 
 										?>
-										<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-										<p class="project-cat"><?php
-											printf(__('%1$s', 'bonestheme'), get_the_term_list( get_the_ID(), 'project_cat', "", " &middot; ", "" ));
-										?></p>
+
+										<?php // check for short title and display
+											$short_title = get_post_meta( $post->ID, '_cmb2_short_title', true);
+											if ( !empty( $short_title ) ) { ?>
+												<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $short_title; ?></a></h3>
+											<?php } 
+											else { ?>
+												<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+											<?php } 
+										?>
 
 									</div>
 

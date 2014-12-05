@@ -64,13 +64,11 @@ add_action( 'after_setup_theme', 'bones_ahoy' );
 
 /************* OEMBED SIZE OPTIONS *************/
 
-/*
-Disabled this because it was causing large images to be displayed at 640px
 
 if ( ! isset( $content_width ) ) {
-	$content_width = 640;
+	$content_width = 1920;
 }
-*/
+
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
@@ -277,214 +275,161 @@ function first_paragraph($content){
 add_filter('the_content', 'first_paragraph');
 
 
-/************* RELATED PROJECTS *********************/
-
-/*
-Get related "project" custom post types by the custom taxonomy "project_cat"
-via http://wordpress.stackexchange.com/questions/43336/displaying-related-posts-in-a-custom-post-type-by-a-custom-taxonomy
-This is used in the template file single-project.php
-*/
-
-function get_related_projects() {
-
-  // Get array of terms
-  $terms = get_the_terms($post->ID, 'project_cat', 'string');
-  // Pluck out the IDs to get an array of IDs
-  $term_ids = wp_list_pluck($terms, 'term_id');
-  $exclude_post = $post->ID;
-
-    // Set up arguments for the new WP_Query below
-    $args=array(
-      'post_type' => 'project',
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'project_cat',
-          'field' => 'id',
-          'terms' => $term_ids,
-          'operator' => 'IN' // or 'AND' or 'NOT IN'
-        )
-      ),
-      'post__not_in' => array($exclude_post), // Exclude the project being displayed
-      'posts_per_page'=> 2, // Number of related posts that will be shown
-      'orderby' => 'rand'
-    );
-
-  $related = new WP_Query( $args );
-  if ($related->have_posts()) {
-    echo '<h3>related projects:</h3>';
-  }
-  while ($related->have_posts()) : $related->the_post();
-  $postcount++; ?>                
-
-  <?php // If it's the first project, put it in a left column, if it's the second, put it in a right column
-  if ($postcount == 1) : echo '<div class="rel-project m-all t-1of2 d-1of2 cf">'; 
-  else : echo '<div class="rel-project m-all t-1of2 d-1of2 last-col cf">';
-  endif ; ?>
-
-    <?php // check for featured image and display
-      if ( '' != get_the_post_thumbnail() ) { ?>
-      <div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a></div>
-      <?php } 
-      else {
-        echo '';
-      } 
-    ?>
-    <h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-    <p class="project-cat"><?php
-      printf(__('%1$s', 'bonestheme'), get_the_term_list( get_the_ID(), 'project_cat', "", " &middot; ", "" ));
-    ?></p>
-  </div>
-
-  <?php endwhile;
-  wp_reset_query();
-  wp_reset_postdata();
-
-}
-
-
 /************* CUSTOM META BOXES *********************/
 
 /*
 We're using the meta box tool recommended in this version of the Bones framework:
-https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
+https://github.com/WebDevStudios/CMB2
 
-The files are located within the theme folder, in /library/metabox
+The files are located within the theme folder.
 */
 
-function jlg_metaboxes( $meta_boxes ) {
-    $prefix = '_cmb_'; // Prefix for all fields
+/**
+ * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB directory)
+ *
+ * @category JLGreene
+ * @package  Metaboxes
+ * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
+ * @link     https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress
+ */
 
-    $meta_boxes['tagline_metabox'] = array(
-        'id' => 'tagline_metabox',
-        'title' => 'Project Tagline',
-        'pages' => array('project'), // post type
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => false, // Show field names on the left
-        'fields' => array(
-            array(
-                'name' => 'Project Tagline',
-                'desc' => 'Enter a tagline that will display at the top of the Project page',
-                'id' => $prefix . 'tagline',
-                'type' => 'text'
-            ),
-        ),
-    );
-
-    $meta_boxes['about_tagline_metabox'] = array(
-        'id' => 'about_tagline_metabox',
-        'title' => 'About Page Tagline',
-        'pages' => array('page'), // post type
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => false, // Show field names on the left
-        'show_on'    => array( 'key' => 'page-template', 'value' => 'page-about.php' ), // Specific page template to display this metabox
-        'fields' => array(
-            array(
-                'name' => 'About Page Tagline',
-                'desc' => 'Enter a tagline that will display at the top of the About page',
-                'id' => $prefix . 'about_tagline',
-                'type' => 'text'
-            ),
-        ),
-    );
-
-    $meta_boxes['quote_metabox'] = array(
-        'id' => 'quote_metabox',
-        'title' => 'Project Quote',
-        'pages' => array('project'), // post type
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => true, // Show field names on the left
-        'fields' => array(
-            array(
-                'name' => 'Project Quote',
-                'desc' => 'Enter a great quote about this project',
-                'id' => $prefix . 'quote',
-                'type' => 'text'
-            ),
-            array(
-                'name' => 'Who Said It?',
-                'desc' => 'Enter the name.',
-                'id' => $prefix . 'quotee',
-                'type' => 'text_medium'
-            ),
-        ),
-    );
-
-    $meta_boxes['project_viz_metabox'] = array(
-        'id' => 'project_viz_metabox',
-        'title' => 'Project Visibility',
-        'pages' => array('project'), // post type
-        'context' => 'side',
-        'priority' => 'core',
-        'show_names' => true, // Show field names on the left
-        'fields' => array(
-            array(
-                'name' => __( 'Feature this project?', 'cmb' ),
-                'desc' => __( 'Feature this project on the homepage.', 'cmb' ),
-                'id'   => $prefix . 'featured_project',
-                'type' => 'checkbox',
-            ),
-            array(
-                'name' => __( 'Is this project new?', 'cmb' ),
-                'desc' => __( 'Label this project as "new."', 'cmb' ),
-                'id'   => $prefix . 'new_project',
-                'type' => 'checkbox',
-            ),
-        ),
-    );
-
-    $meta_boxes['post_link_metabox'] = array(
-        'id' => 'post_link_metabox',
-        'title' => 'External Link',
-        'pages' => array('post'), // post type
-        'context' => 'normal',
-        'priority' => 'high',
-        'show_names' => true, // Show field names on the left
-        'fields' => array(
-            array(
-                'name' => 'Link Text',
-                'desc' => 'Enter the text that should display for this link.',
-                'id' => $prefix . 'linkText',
-                'type' => 'text_medium'
-            ),
-            array(
-                'name' => __( 'Link URL', 'cmb' ),
-                'desc' => 'Enter the URL for this link.',
-                'id'   => $prefix . 'linkURL',
-                'type' => 'text_url',
-            ),
-        ),
-    );
-
-    $meta_boxes['post_image_size_metabox'] = array(
-        'id' => 'post_image_size_metabox',
-        'title' => 'Featured Image Size',
-        'pages' => array('post'), // post type
-        'context' => 'side',
-        'priority' => 'low',
-        'show_names' => true, // Show field names on the left
-        'fields' => array(
-            array(
-                'name' => __( 'Use full-size image', 'cmb' ),
-                'desc' => __( 'Check this box if you want the featured image for this post to span the full width of the page.', 'cmb' ),
-                'id'   => $prefix . 'large_image',
-                'type' => 'checkbox',
-            ),
-        ),
-    );
-
-    return $meta_boxes;
+/**
+ * Get the bootstrap!
+ */
+if ( file_exists(  __DIR__ . '/library/cmb2/init.php' ) ) {
+  require_once  __DIR__ . '/library/cmb2/init.php';
+} elseif ( file_exists(  __DIR__ . '/library/CMB2/init.php' ) ) {
+  require_once  __DIR__ . '/library/CMB2/init.php';
 }
-add_filter( 'cmb_meta_boxes', 'jlg_metaboxes' );
 
-// Initialize the metabox class
-add_action( 'init', 'initialize_cmb_meta_boxes', 9999 );
-function initialize_cmb_meta_boxes() {
-    if ( !class_exists( 'cmb_Meta_Box' ) ) {
-        require_once( 'library/metabox/init.php' );
-    }
+/**
+ * Conditionally displays a field when used as a callback in the 'show_on_cb' field parameter
+ *
+ * @param  CMB2_Field object $field Field object
+ *
+ * @return bool                     True if metabox should show
+ */
+function cmb2_hide_if_no_cats( $field ) {
+  // Don't show this field if not in the cats category
+  if ( ! has_tag( 'cats', $field->object_id ) ) {
+    return false;
+  }
+  return true;
+}
+
+add_filter( 'cmb2_meta_boxes', 'jlg_metaboxes' );
+/**
+ * Define the metabox and field configurations.
+ *
+ * @param  array $meta_boxes
+ * @return array
+ */
+function jlg_metaboxes( array $meta_boxes ) {
+
+  // Start with an underscore to hide fields from custom fields list
+  $prefix = '_cmb2_';
+
+  // PROJECT SHORT TITLE
+  $meta_boxes['short_title_metabox'] = array(
+      'id'            => 'short_title_metabox',
+      'title'         => __( 'Short Title', 'cmb2' ),
+      'object_types'  => array( 'project' ), // post type
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => false, // Show field names on the left if true
+      'fields'        => array(
+          array(
+              'desc'  => __( 'Enter the short title that will display on the project grid page', 'cmb2' ),
+              'id'    => $prefix . 'short_title',
+              'type'  => 'text'
+          ),
+      ),
+  );
+
+  // PROJECT TAGLINE
+  $meta_boxes['tagline_metabox'] = array(
+      'id'            => 'tagline_metabox',
+      'title'         => __( 'Project Tagline', 'cmb2' ),
+      'object_types'  => array( 'project' ), // post type
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => false, // Show field names on the left if true
+      'fields'        => array(
+          array(
+              'desc'  => __( 'Enter a tagline that will display below the featured content', 'cmb2' ),
+              'id'    => $prefix . 'tagline',
+              'type'  => 'text'
+          ),
+      ),
+  );
+
+  // QUOTE
+  $meta_boxes['quote_metabox'] = array(
+      'id'            => 'quote_metabox',
+      'title'         => __( 'Quote', 'cmb2' ),
+      'object_types'  => array('project', 'page'), // post type
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => true, // Show field names on the left
+      'fields'        => array(
+          array(
+              'desc'  => __( 'Enter the quote with quotation marks', 'cmb2' ),
+              'id'    => $prefix . 'quote',
+              'type'  => 'text'
+          ),
+          array(
+              'name'  => __( 'Who Said It?', 'cmb2' ),
+              'desc'  => __( '<br>Enter their name, title, etc.<br>This will be automatically preceded with an em dash.', 'cmb2' ),
+              'id'    => $prefix . 'quotee',
+              'type'  => 'text_medium'
+          ),
+      ),
+  );
+
+  // PROJECT VIDEO
+  $meta_boxes['video_metabox'] = array(
+      'id'            => 'video_metabox',
+      'title'         => __( 'Project Video', 'cmb2' ),
+      'object_types'  => array('project'), // post type
+      'context'       => 'normal',
+      'priority'      => 'high',
+      'show_names'    => true, // Show field names on the left
+      'fields'        => array(
+          array(
+            'name'    => __( 'Project Video', 'cmb2' ),
+            'desc'    => __( 'Enter the URL of a related video', 'cmb2' ),
+            'id'      => $prefix . 'video',
+            'type'    => 'oembed',
+          ),
+      ),
+  );
+
+  // PROJECT FEATURED CONTENT
+  $meta_boxes['feat_content_metabox'] = array(
+      'id'            => 'feat_content_metabox',
+      'title'         => __( 'Featured Content', 'cmb2' ),
+      'object_types'  => array('project'), // post type
+      'context'       => 'side',
+      'priority'      => 'low',
+      'show_names'    => true, // Show field names on the left
+      'fields'        => array(
+          array(
+            'desc'    => __( 'Choose which type of content should be featured at the top of the project page', 'cmb2' ),
+            'id'      => $prefix . 'feat_content',
+            'type'    => 'radio',
+            'options' => array(
+              'option1' => __( 'Single Featured Image', 'cmb2' ),
+              'option2' => __( 'Image Carousel', 'cmb2' ),
+              'option3' => __( 'Video', 'cmb2' ),
+            ),
+            'default'  => 'option1',
+          ),
+      ),
+  );
+
+  // Add other metaboxes as needed
+
+  return $meta_boxes;
 }
 
 

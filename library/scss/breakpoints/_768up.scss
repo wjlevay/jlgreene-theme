@@ -72,18 +72,20 @@ NAVIGATION STYLES
 		position: relative;
 
 		a {
-			color: $link-color;
+			color: $nav-link-color;
 			border-bottom: 1px solid $plum;
 			padding: 0;
 			margin-right: 0.33em;
-			font-size: 120%;
+			font-size: 110%;
+			line-height: 1;
+			letter-spacing: -.75px;
 
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $white;
+				color: $nav-link-hover;
 			}
 		}
 
@@ -104,7 +106,7 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			padding: 1.5em 1em 0.5em 1em;
+			padding: 1em 1em 0.5em 1em;
 			border-top: 1em solid $plum;
 			background: $warm-gray;
 			position: absolute;
@@ -115,18 +117,21 @@ NAVIGATION STYLES
 
 				background: none;
 				padding-left: 0;
-				margin-bottom: 0.5em;
-				width: 400px;
+				margin-bottom: .5em;
+				width: 300px;
+				line-height: 1;
 
 				a {
 					color: $white;
+					font-size: initial;
 					padding-left: 0;
-					display: inline; /* need this to get the underline to run under text only, not entire element */
-					border: 0;
+					display: inline-block; /* need this to get the underline to run under text only, not entire element */
 					border-bottom: 1px solid $warm-gray;
 
 					&:hover,
-					&:focus {border-bottom: 1px solid $white;}
+					&:focus {
+						border-bottom: 1px solid $white;
+					}
 
 					&:link {}
 				}
@@ -168,9 +173,9 @@ NAVIGATION STYLES
 
 	/* highlight current page */
 	li.current-menu-item,
-	li.current-menu-parent,
-	li.current_page_item,
-	li.current_page_ancestor {
+	/* li.current-menu-parent, */
+	li.current_page_item
+	/* li.current_page_ancestor */ {
 		a {
 			color: $white;
 			border-bottom: 1px solid white;
@@ -191,9 +196,9 @@ NAVIGATION STYLES
 
 		/* highlight current page */
 		li.current-menu-item,
-		li.current-menu-parent,
-		li.current_page_item,
-		li.current_page_ancestor {
+		li.current_page_item
+		/* li.current-menu-parent,
+		li.current_page_ancestor */ {
 			a {
 				color: $white !important;
 				border-bottom: 1px solid white;
@@ -229,42 +234,18 @@ POSTS & CONTENT STYLES
 
 .home {
 	.entry-content {
-		p {
-			width: 66.67%;
-			font-size: 130%;
-		}
-
-		blockquote,
-		.quote {
-			p {
-				width: 100%;
-				font-size: 100%;
-			}
-		}
 	}
 }
 
 .blog {
-	#blank_col {display: block;}
-
-	.hentry {padding-top: 1.5em;}
-
-	.article-header {
-
-		.thumb-medium {
-			margin-top: 0.5em;
-		}
-
-		.thumb-large {
-			margin-top: 0;
-		}
-	}
-
 	.entry-content {
 		padding: 0.5em 0 0 0;
 		margin-top: 0;
 
-		p {margin: 0;}
+		p {
+			margin: 0;
+			width: 70%;
+		}
 	}
 
 	.footer {margin-top: 3em;} /* fixing spacing in case bottom of photo extends close to footer */
@@ -274,15 +255,46 @@ POSTS & CONTENT STYLES
 .page-about, .page-template-page-about-php {
 	
 	.the-content {
+		p {width: 70%;}
+		h2 {
+			@include ibis;
+		}
+	}
+}
 
-		.t-1of2, .d-1of2 {
-			.wp-caption {
-				margin: 0.33em 0 1.5em 0;
+/* project page */
+.project {
+	h1.tagline, h2.tagline {
+		margin-left: 30%;
+		padding-left: 0.375em;
+	}
+}
+
+/* history page */
+.page-history, page-template-page-history-php {
+
+	.article-header {
+		.page-title {
+			margin-left: 30%;
+		}
+	}
+	.entry-content {
+		.the-content {
+			p, div + p {
+				margin-left: 30%;
+				margin-top: 1em;
+			}
+
+			.alignleft {
+				max-width: 30%;
+				padding-right: 1em;
+			}
+
+			p.wp-caption-text {
+				margin-left: 0;
+				margin-top: 0;
 			}
 		}
-
-		.mobile-hide {display: block;} /* for displaying a blank column */
-
 	}
 }
 

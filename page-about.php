@@ -18,18 +18,7 @@
 
 								<header class="article-header">
 
-									<h1 class="page-title h2 hide"><?php the_title(); ?></h1>
-									<?php // display the custom tagline field ?>
-									<h2 class="tagline h1"><?php 
-										$tagline = get_post_meta( $post->ID, '_cmb_about_tagline', true );
-
-										if( !empty( $tagline ) ) {
-        									echo $tagline;
-    									}
-    									else {
-    										echo 'You forgot to add a tagline!';
-    									}
-									?></h2>
+									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
 								</header>
 
@@ -37,8 +26,7 @@
 									<div class="the-content"><?php the_content(); ?></div>
 								</section>
 
-
-								<footer class="article-footer">
+								<footer class="article-footer cf">
 
 								</footer>
 
@@ -65,6 +53,5 @@
 				</div>
 
 			</div>
-
 
 <?php get_footer(); ?>

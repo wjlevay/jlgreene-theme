@@ -458,6 +458,7 @@ DEFAULT BONES COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+/* $light-gray:        #f8f9fa; */
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -739,6 +740,16 @@ them however you see fit.
     padding-right: 0.75em;
     width: 80%; }
 
+  .t-3of10 {
+    float: left;
+    padding-right: 0.75em;
+    width: 30%; }
+
+  .t-7of10 {
+    float: left;
+    padding-right: 0.75em;
+    width: 70%; }
+
   .last-col {
     padding-left: 0.75em; } }
 /* Landscape to small desktop */
@@ -853,6 +864,16 @@ them however you see fit.
     float: left;
     padding-right: 0.75em;
     width: 8.33%; }
+
+  .d-3of10 {
+    float: left;
+    padding-right: 0.75em;
+    width: 30%; }
+
+  .d-7of10 {
+    float: left;
+    padding-right: 0.75em;
+    width: 70%; }
 
   .last-col {
     padding-left: 0.75em; } }
@@ -1260,7 +1281,7 @@ body {
   font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 100%;
+  font-size: 110%;
   line-height: 1.5;
   color: black;
   background-color: white;
@@ -1328,13 +1349,17 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #c0b8b0;
+  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: #9e9da0;
   text-decoration: none;
+  font-size: 1.125em;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #aca196; }
+    color: #970076; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -1372,9 +1397,7 @@ h2, .h2 {
 h1.tagline, h2.tagline {
   font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
   font-style: normal;
-  font-weight: normal;
-  margin-top: 0.375em;
-  margin-bottom: 0; }
+  font-weight: normal; }
 
 h3, .h3 {
   font-size: 1.5em; }
@@ -1413,7 +1436,7 @@ HEADER STYLES
   font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-style: normal;
   font-weight: bold;
-  color: #c0b8b0; }
+  color: #9e9da0; }
 
 #menufication-top,
 #menufication-non-css3-top {
@@ -1484,10 +1507,19 @@ POSTS & CONTENT STYLES
       margin: 0; }
 
 /* end .hentry */
-.single-title,
-.page-title,
-.entry-title {
-  margin: 0; }
+.page-title {
+  font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 900;
+  margin: .25em 0; }
+
+.single-title {
+  font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 900;
+  margin: .5em 0 1em; }
 
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1528,14 +1560,14 @@ POSTS & CONTENT STYLES
   .entry-content tr {
     border-bottom: 1px solid #eaedf2; }
     .entry-content tr:nth-child(even) {
-      background-color: #f8f9fa; }
+      background-color: #c0b8b0; }
   .entry-content td {
     padding: 7px;
     border-right: 1px solid #eaedf2; }
     .entry-content td:last-child {
       border-right: 0; }
   .entry-content th {
-    background-color: #f8f9fa;
+    background-color: #c0b8b0;
     border-bottom: 1px solid #eaedf2;
     border-right: 1px solid #eaedf2; }
     .entry-content th:last-child {
@@ -1544,7 +1576,8 @@ POSTS & CONTENT STYLES
   .entry-content .quote {
     margin: 0;
     padding: 0;
-    color: #970076; }
+    color: #970076;
+    font-size: .9em; }
   .entry-content dd {
     margin-left: 0;
     font-size: 0.9em;
@@ -1563,7 +1596,7 @@ POSTS & CONTENT STYLES
     height: auto; }
   .entry-content pre {
     background: black;
-    color: #f8f9fa;
+    color: #c0b8b0;
     font-size: 0.9em;
     padding: 1.5em;
     margin: 0 0 1.5em;
@@ -1609,10 +1642,6 @@ POSTS & CONTENT STYLES
     margin-bottom: 0;
     width: 100%; }
   .wp-caption p.wp-caption-text {
-    font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    color: black;
     text-align: left; }
 
 /* end .wp-caption */
@@ -1625,14 +1654,24 @@ POSTS & CONTENT STYLES
 /* homepage stuff */
 .home {
   /* latest news */ }
-  .home .latest-news {
-    margin-bottom: 2em; }
-    .home .latest-news .news-title {
-      font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
-      font-style: normal;
-      font-weight: normal;
-      margin: 0.5em 0 0; }
-      .home .latest-news .news-title a {
+  .home .hentry {
+    margin-bottom: 0; }
+  .home .entry-content .tagline {
+    margin-top: 0;
+    margin-bottom: 1em; }
+  .home .latest-news .post-thumbnail {
+    display: table; }
+    .home .latest-news .post-thumbnail .news-title {
+      display: table-caption;
+      caption-side: bottom;
+      margin-top: .5em;
+      line-height: 1.25; }
+      .home .latest-news .post-thumbnail .news-title a {
+        font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 90%;
+        margin: 0.5em 0 0;
         color: black; }
 
 /* end .home */
@@ -1644,18 +1683,22 @@ POSTS & CONTENT STYLES
   font-size: 0.95em; }
 
 .project-title {
-  margin: 0.5em 0 0; }
+  margin: 0.5em 0 0;
+  line-height: 1; }
 
 /* project page stuff */
 .single-project {
   /* related projects */ }
   .single-project .article-header .post-thumbnail {
     margin-top: 1.5em; }
+  .single-project .article-header .tagline {
+    margin-top: 1em;
+    margin-bottom: 0; }
   .single-project .the-content p {
     margin: 0; }
   .single-project .the-content p {
     margin: 1em 0 0 0; }
-  .single-project .the-content p.first, .single-project .the-content h1 + p, .single-project .the-content h2 + p, .single-project .the-content h3 + p, .single-project .the-content div + p, .single-project .the-content p.wp-caption-text {
+  .single-project .the-content p.first, .single-project .the-content p.wp-caption-text {
     margin: 0; }
   .single-project .rel-project {
     margin-bottom: 2em; }
@@ -1664,9 +1707,13 @@ POSTS & CONTENT STYLES
 .tax-project_cat,
 .post-type-archive-project {
   /* a single project */ }
-  .tax-project_cat .archive-title p,
-  .post-type-archive-project .archive-title p {
-    margin: 0; }
+  .tax-project_cat .archive-title,
+  .post-type-archive-project .archive-title {
+    margin-top: .25em;
+    font-weight: 900; }
+    .tax-project_cat .archive-title p,
+    .post-type-archive-project .archive-title p {
+      margin: 0; }
   .tax-project_cat .projects-grid,
   .post-type-archive-project .projects-grid {
     padding-top: 1.5em; }
@@ -1681,22 +1728,19 @@ POSTS & CONTENT STYLES
 .blog #blank_col {
   display: none; }
 .blog .article-header .post-thumbnail {
-  position: relative;
+  display: table;
   margin-top: 1.5em; }
   .blog .article-header .post-thumbnail .thumbnail-caption {
-    position: absolute;
-    left: 0;
-    bottom: -2em;
-    font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 0.9em; }
+    margin-top: .5em;
+    font-size: 0.9em;
+    display: table-caption;
+    caption-side: bottom; }
 .blog .entry-content {
   padding-top: 1.5em;
   margin-top: 1.5em; }
   .blog .entry-content .the-content p {
     margin: 1em 0 0 0; }
-  .blog .entry-content .the-content p.first, .blog .entry-content .the-content h1 + p, .blog .entry-content .the-content h2 + p, .blog .entry-content .the-content h3 + p, .blog .entry-content .the-content div + p, .blog .entry-content .the-content p.wp-caption-text {
+  .blog .entry-content .the-content p.first, .blog .entry-content .the-content p.wp-caption-text {
     margin: 0; }
 .blog .post-meta {
   font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1708,23 +1752,32 @@ POSTS & CONTENT STYLES
     border-bottom-width: 1px;
     padding-bottom: 0; }
 
-/* about page */
-.page-about .the-content, .page-template-page-about-php .the-content {
+/* about page & history page */
+.page-about .the-content, .page-template-page-about-php .the-content,
+.page-history .the-content, .page-template-page-history-php .the-content {
   /* for hiding a blank column */ }
-  .page-about .the-content h3, .page-template-page-about-php .the-content h3 {
+  .page-about .the-content h3, .page-template-page-about-php .the-content h3,
+  .page-history .the-content h3, .page-template-page-history-php .the-content h3 {
     margin-bottom: 0; }
-  .page-about .the-content p, .page-template-page-about-php .the-content p {
+  .page-about .the-content p, .page-template-page-about-php .the-content p,
+  .page-history .the-content p, .page-template-page-history-php .the-content p {
     margin: 0; }
-  .page-about .the-content .wp-caption, .page-template-page-about-php .the-content .wp-caption {
+  .page-about .the-content .wp-caption, .page-template-page-about-php .the-content .wp-caption,
+  .page-history .the-content .wp-caption, .page-template-page-history-php .the-content .wp-caption {
     margin: 1.5em 0; }
-  .page-about .the-content p.wp-caption-text, .page-template-page-about-php .the-content p.wp-caption-text {
+  .page-about .the-content p.wp-caption-text, .page-template-page-about-php .the-content p.wp-caption-text,
+  .page-history .the-content p.wp-caption-text, .page-template-page-history-php .the-content p.wp-caption-text {
     margin: initial;
     font-size: 0.9em; }
-  .page-about .the-content p, .page-template-page-about-php .the-content p {
+  .page-about .the-content p, .page-template-page-about-php .the-content p,
+  .page-history .the-content p, .page-template-page-history-php .the-content p {
     margin: 1em 0 0 0; }
-  .page-about .the-content p.first, .page-about .the-content h1 + p, .page-about .the-content h2 + p, .page-about .the-content h3 + p, .page-about .the-content div + p, .page-about .the-content p.wp-caption-text, .page-template-page-about-php .the-content p.first, .page-template-page-about-php .the-content h1 + p, .page-template-page-about-php .the-content h2 + p, .page-template-page-about-php .the-content h3 + p, .page-template-page-about-php .the-content div + p, .page-template-page-about-php .the-content p.wp-caption-text {
+  .page-about .the-content p.first, .page-about .the-content p.wp-caption-text, .page-template-page-about-php .the-content p.first, .page-template-page-about-php .the-content p.wp-caption-text,
+  .page-history .the-content p.first,
+  .page-history .the-content p.wp-caption-text, .page-template-page-history-php .the-content p.first, .page-template-page-history-php .the-content p.wp-caption-text {
     margin: 0; }
-  .page-about .the-content .mobile-hide, .page-template-page-about-php .the-content .mobile-hide {
+  .page-about .the-content .mobile-hide, .page-template-page-about-php .the-content .mobile-hide,
+  .page-history .the-content .mobile-hide, .page-template-page-history-php .the-content .mobile-hide {
     display: none; }
 
 /******************************************************************
@@ -1786,7 +1839,7 @@ COMMENT STYLES
 #comments-title {
   padding: 0.75em;
   margin: 0;
-  border-top: 1px solid #f8f9fa;
+  border-top: 1px solid #c0b8b0;
   /* number of comments span */ }
 
 .commentlist {
@@ -1798,7 +1851,7 @@ COMMENT STYLES
   clear: both;
   overflow: hidden;
   padding: 1.5em;
-  border-bottom: 1px solid #f8f9fa;
+  border-bottom: 1px solid #c0b8b0;
   /* vcard */
   /* end .commentlist .vcard */
   /* end children */
@@ -1842,7 +1895,7 @@ COMMENT STYLES
   .comment.odd {
     background-color: white; }
   .comment.even {
-    background: #f8f9fa; }
+    background: #c0b8b0; }
 
 /* comment meta */
 /* comment content */
@@ -1870,7 +1923,7 @@ COMMENT FORM STYLES
 ******************************************************************/
 .comment-respond {
   padding: 1.5em;
-  border-top: 1px solid #f8f9fa; }
+  border-top: 1px solid #c0b8b0; }
 
 #reply-title {
   margin: 0; }
@@ -1887,7 +1940,7 @@ COMMENT FORM STYLES
 
 .form-allowed-tags {
   padding: 1.5em;
-  background-color: #f8f9fa;
+  background-color: #c0b8b0;
   font-size: 0.9em; }
 
 /* comment submit button */
@@ -1928,15 +1981,25 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #c0b8b0;
+  background-color: #9e9da0;
   font-size: 0.8em;
-  color: #970076;
-  padding: 1em 0; }
+  color: white;
+  padding: 1em 0;
+  margin-top: 3em; }
   .footer a {
-    color: #970076;
+    color: white;
     text-decoration: none; }
-  .footer .footer-middle {
-    padding-left: 0.75em; }
+  .footer p.address {
+    margin-top: 0;
+    font-weight: bold;
+    word-spacing: -1px; }
+    .footer p.address a {
+      font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+      font-style: normal;
+      font-weight: normal;
+      font-weight: bold; }
+  .footer .logo {
+    margin-bottom: 0; }
 
 /*
 if you checked out the link above:
@@ -1952,7 +2015,7 @@ view.
 FLEXSLIDER STYLES
 *********************/
 /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-.home .flexslider {
+.home .flexslider, .project .flexslider {
   margin: 1.5em 0;
   border: 0;
   position: relative;
@@ -1964,24 +2027,24 @@ FLEXSLIDER STYLES
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -o-box-shadow: none; }
-  .home .flexslider .flex-direction-nav a {
+  .home .flexslider .flex-direction-nav a, .project .flexslider .flex-direction-nav a {
     background-image: url(/wp-content/themes/jlgreene/library/images/bg_direction_nav.png); }
-  .home .flexslider:hover .flex-next {
+  .home .flexslider:hover .flex-next, .project .flexslider:hover .flex-next {
     opacity: 0.8;
     right: 0; }
-  .home .flexslider:hover .flex-prev {
+  .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
     opacity: 0.8;
     left: 0; }
-  .home .flexslider .flex-control-nav {
+  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
     bottom: 5px; }
-  .home .flexslider .flex-control-paging li a {
+  .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px;
     background: none;
     box-shadow: inset 0 0 3px #970076; }
-  .home .flexslider .flex-control-paging li a.flex-active {
+  .home .flexslider .flex-control-paging li a.flex-active, .project .flexslider .flex-control-paging li a.flex-active {
     background: #970076; }
-  .home .flexslider .slides img {
+  .home .flexslider .slides img, .project .flexslider .slides img {
     max-height: none;
     height: auto; }
 
@@ -2158,7 +2221,9 @@ you can add resource intensive styles.
         border-bottom: 1px solid #970076;
         padding: 0;
         margin-right: 0.33em;
-        font-size: 120%;
+        font-size: 110%;
+        line-height: 1;
+        letter-spacing: -.75px;
         /*
         you can use hover styles here even though this size
         has the possibility of being a mobile device.
@@ -2175,9 +2240,9 @@ you can add resource intensive styles.
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
-        padding: 1.5em 1em 0.5em 1em;
+        padding: 1em 1em 0.5em 1em;
         border-top: 1em solid #970076;
-        background: #c0b8b0;
+        background: #9e9da0;
         position: absolute;
         visibility: hidden;
         z-index: 8999;
@@ -2186,8 +2251,9 @@ you can add resource intensive styles.
         .nav li ul.children li {
           background: none;
           padding-left: 0;
-          margin-bottom: 0.5em;
-          width: 400px;
+          margin-bottom: .5em;
+          width: 300px;
+          line-height: 1;
           /*
           if you need to go deeper, go nuts
           just remember deeper menus suck
@@ -2196,11 +2262,11 @@ you can add resource intensive styles.
           .nav li ul.sub-menu li a,
           .nav li ul.children li a {
             color: white;
+            font-size: initial;
             padding-left: 0;
-            display: inline;
+            display: inline-block;
             /* need this to get the underline to run under text only, not entire element */
-            border: 0;
-            border-bottom: 1px solid #c0b8b0; }
+            border-bottom: 1px solid #9e9da0; }
             .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
             .nav li ul.children li a:hover,
             .nav li ul.children li a:focus {
@@ -2213,9 +2279,7 @@ you can add resource intensive styles.
         top: auto;
         visibility: visible; }
     .nav li.current-menu-item a,
-    .nav li.current-menu-parent a,
-    .nav li.current_page_item a,
-    .nav li.current_page_ancestor a {
+    .nav li.current_page_item a {
       color: white;
       border-bottom: 1px solid white; }
 
@@ -2232,9 +2296,7 @@ you can add resource intensive styles.
       /* highlight current page */
       /* end current highlighters */ }
       #thsp-sticky-header #thsp-sticky-header-inner li.current-menu-item a,
-      #thsp-sticky-header #thsp-sticky-header-inner li.current-menu-parent a,
-      #thsp-sticky-header #thsp-sticky-header-inner li.current_page_item a,
-      #thsp-sticky-header #thsp-sticky-header-inner li.current_page_ancestor a {
+      #thsp-sticky-header #thsp-sticky-header-inner li.current_page_item a {
         color: white !important;
         border-bottom: 1px solid white;
         line-height: 20px; }
@@ -2255,39 +2317,42 @@ you can add resource intensive styles.
     text-indent: -0.55em;
     */ }
 
-  .home .entry-content p {
-    width: 66.67%;
-    font-size: 130%; }
-  .home .entry-content blockquote p,
-  .home .entry-content .quote p {
-    width: 100%;
-    font-size: 100%; }
-
   .blog {
     /* fixing spacing in case bottom of photo extends close to footer */ }
-    .blog #blank_col {
-      display: block; }
-    .blog .hentry {
-      padding-top: 1.5em; }
-    .blog .article-header .thumb-medium {
-      margin-top: 0.5em; }
-    .blog .article-header .thumb-large {
-      margin-top: 0; }
     .blog .entry-content {
       padding: 0.5em 0 0 0;
       margin-top: 0; }
       .blog .entry-content p {
-        margin: 0; }
+        margin: 0;
+        width: 70%; }
     .blog .footer {
       margin-top: 3em; }
 
   /* about page */
-  .page-about .the-content, .page-template-page-about-php .the-content {
-    /* for displaying a blank column */ }
-    .page-about .the-content .t-1of2 .wp-caption, .page-about .the-content .d-1of2 .wp-caption, .page-template-page-about-php .the-content .t-1of2 .wp-caption, .page-template-page-about-php .the-content .d-1of2 .wp-caption {
-      margin: 0.33em 0 1.5em 0; }
-    .page-about .the-content .mobile-hide, .page-template-page-about-php .the-content .mobile-hide {
-      display: block; }
+  .page-about .the-content p, .page-template-page-about-php .the-content p {
+    width: 70%; }
+  .page-about .the-content h2, .page-template-page-about-php .the-content h2 {
+    font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+    font-style: normal;
+    font-weight: normal; }
+
+  /* project page */
+  .project h1.tagline, .project h2.tagline {
+    margin-left: 30%;
+    padding-left: 0.375em; }
+
+  /* history page */
+  .page-history .article-header .page-title, page-template-page-history-php .article-header .page-title {
+    margin-left: 30%; }
+  .page-history .entry-content .the-content p, .page-history .entry-content .the-content div + p, page-template-page-history-php .entry-content .the-content p, page-template-page-history-php .entry-content .the-content div + p {
+    margin-left: 30%;
+    margin-top: 1em; }
+  .page-history .entry-content .the-content .alignleft, page-template-page-history-php .entry-content .the-content .alignleft {
+    max-width: 30%;
+    padding-right: 1em; }
+  .page-history .entry-content .the-content p.wp-caption-text, page-template-page-history-php .entry-content .the-content p.wp-caption-text {
+    margin-left: 0;
+    margin-top: 0; }
 
   /*********************
   SIDEBARS & ASIDES
@@ -2380,7 +2445,15 @@ you can add resource intensive styles.
     width: 1030px; }
 
   #thsp-sticky-header #thsp-sticky-header-inner {
-    width: 1030px; } }
+    width: 1030px; }
+
+  .nav li a {
+    font-size: 140%; }
+  .nav li:nth-child(n+2) {
+    background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    padding-left: 0.6em; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.

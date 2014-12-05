@@ -1,76 +1,40 @@
-<?php get_header(); ?>
+<?php // NEWS PAGE
+get_header(); ?>
 
 			<div id="content">
 
 				<div id="inner-content" class="wrap cf">
 
-					<div id="main" class="cf" role="main">
+					<div id="main" class="m-all t-all d-all cf" role="main">
 
 						<?php // display the news page tagline ?>
-						<h2 class="tagline h1">This headline will refer to events and news from the Jerome L. Greene Foundation.</h2>
+						<h1 class="page-title">News</h2>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
 
-							<?php // determine the featured image size and thus the columnar layout
-								$large_image = get_post_meta( $post->ID, '_cmb_large_image', true );
-								if ( !empty( $large_image ) ) {
-									$image_size = 'large';
-									$image_col = 'm-all t-all d-all';
-									$blank_col = '<div id="blank_col" class="m-all t-1of2 d-1of2 cf">&nbsp;</div>';
-								}
-								else {
-									$image_size = 'medium';
-									$image_col = 'm-all t-1of2 d-1of2';
-									$blank_col = '';
-								}
-							?>
+							<header class="article-header">
 
-							<header class="article-header <?php echo $image_col; ?>">
+								<h2 class="h3 entry-title"><?php the_title(); ?></h1>
 
 								<?php // check for featured image and display
 									if ( '' != get_the_post_thumbnail() ) { ?>
-									<div class="post-thumbnail thumb-<?php echo $image_size; ?>"><?php the_post_thumbnail( $image_size ); ?><span class="thumbnail-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></span></div>
+									<div class="post-thumbnail thumb-large"><?php the_post_thumbnail( 'large' ); ?><p class="thumbnail-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p></div>
 									<?php } 
-									else {
+									else { // we can add a default news photo here
 										echo '';
 									} 
 								?>
 
 							</header>
 
-							<?php // if we need a blank column, insert it here 
-								echo $blank_col; 
-							?>
+							<section class="entry-content cf">
+								<div class="the-content"><?php the_content(); ?></div>
+							</section>
 
-							<div id="article-wrap" class="m-all t-1of2 d-1of2 last-col cf"> <!-- begin right column -->
-
-								<section class="entry-content cf">
-									<h1 class="h3 entry-title"><?php the_title(); ?></h1>
-									<div class="the-content"><?php the_content(); ?></div>
-								</section>
-
-								<footer class="article-footer cf">
-									<p class="post-meta">
-										<?php // Uncomment below to display post date
-											  // printf( __( '', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time>', get_the_time('Y-m-j'), get_the_time(get_option('date_format'))); ?>
-									
-									<?php 
-										$linkURL = get_post_meta( $post->ID, '_cmb_linkURL', true );
-										$linkText = get_post_meta( $post->ID, '_cmb_linkText', true );
-
-										if( !empty( $linkURL ) ) {
-	        								echo 'learn more &middot; <a class="external-link" href="' . $linkURL . '" title ="' . $linkText . '">' . $linkText . '</a>';
-	    								}
-	    								else {
-	    									echo '';
-	    								}
-									?>
-									</p>
-								</footer>
-
-							</div> <!-- end right column -->
+							<footer class="article-footer cf">
+							</footer>
 
 						</article>
 

@@ -38,6 +38,7 @@ DEFAULT BONES COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
+/* $light-gray:        #f8f9fa; */
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -265,7 +266,9 @@ NAVIGATION STYLES
       border-bottom: 1px solid #970076;
       padding: 0;
       margin-right: 0.33em;
-      font-size: 120%;
+      font-size: 110%;
+      line-height: 1;
+      letter-spacing: -.75px;
       /*
       you can use hover styles here even though this size
       has the possibility of being a mobile device.
@@ -282,9 +285,9 @@ NAVIGATION STYLES
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
-      padding: 1.5em 1em 0.5em 1em;
+      padding: 1em 1em 0.5em 1em;
       border-top: 1em solid #970076;
-      background: #c0b8b0;
+      background: #9e9da0;
       position: absolute;
       visibility: hidden;
       z-index: 8999;
@@ -293,8 +296,9 @@ NAVIGATION STYLES
       .nav li ul.children li {
         background: none;
         padding-left: 0;
-        margin-bottom: 0.5em;
-        width: 400px;
+        margin-bottom: .5em;
+        width: 300px;
+        line-height: 1;
         /*
         if you need to go deeper, go nuts
         just remember deeper menus suck
@@ -303,11 +307,11 @@ NAVIGATION STYLES
         .nav li ul.sub-menu li a,
         .nav li ul.children li a {
           color: white;
+          font-size: initial;
           padding-left: 0;
-          display: inline;
+          display: inline-block;
           /* need this to get the underline to run under text only, not entire element */
-          border: 0;
-          border-bottom: 1px solid #c0b8b0; }
+          border-bottom: 1px solid #9e9da0; }
           .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
           .nav li ul.children li a:hover,
           .nav li ul.children li a:focus {
@@ -320,9 +324,7 @@ NAVIGATION STYLES
       top: auto;
       visibility: visible; }
   .nav li.current-menu-item a,
-  .nav li.current-menu-parent a,
-  .nav li.current_page_item a,
-  .nav li.current_page_ancestor a {
+  .nav li.current_page_item a {
     color: white;
     border-bottom: 1px solid white; }
 
@@ -339,9 +341,7 @@ NAVIGATION STYLES
     /* highlight current page */
     /* end current highlighters */ }
     #thsp-sticky-header #thsp-sticky-header-inner li.current-menu-item a,
-    #thsp-sticky-header #thsp-sticky-header-inner li.current-menu-parent a,
-    #thsp-sticky-header #thsp-sticky-header-inner li.current_page_item a,
-    #thsp-sticky-header #thsp-sticky-header-inner li.current_page_ancestor a {
+    #thsp-sticky-header #thsp-sticky-header-inner li.current_page_item a {
       color: white !important;
       border-bottom: 1px solid white;
       line-height: 20px; }
@@ -362,39 +362,42 @@ POSTS & CONTENT STYLES
   text-indent: -0.55em;
   */ }
 
-.home .entry-content p {
-  width: 66.67%;
-  font-size: 130%; }
-.home .entry-content blockquote p,
-.home .entry-content .quote p {
-  width: 100%;
-  font-size: 100%; }
-
 .blog {
   /* fixing spacing in case bottom of photo extends close to footer */ }
-  .blog #blank_col {
-    display: block; }
-  .blog .hentry {
-    padding-top: 1.5em; }
-  .blog .article-header .thumb-medium {
-    margin-top: 0.5em; }
-  .blog .article-header .thumb-large {
-    margin-top: 0; }
   .blog .entry-content {
     padding: 0.5em 0 0 0;
     margin-top: 0; }
     .blog .entry-content p {
-      margin: 0; }
+      margin: 0;
+      width: 70%; }
   .blog .footer {
     margin-top: 3em; }
 
 /* about page */
-.page-about .the-content, .page-template-page-about-php .the-content {
-  /* for displaying a blank column */ }
-  .page-about .the-content .t-1of2 .wp-caption, .page-about .the-content .d-1of2 .wp-caption, .page-template-page-about-php .the-content .t-1of2 .wp-caption, .page-template-page-about-php .the-content .d-1of2 .wp-caption {
-    margin: 0.33em 0 1.5em 0; }
-  .page-about .the-content .mobile-hide, .page-template-page-about-php .the-content .mobile-hide {
-    display: block; }
+.page-about .the-content p, .page-template-page-about-php .the-content p {
+  width: 70%; }
+.page-about .the-content h2, .page-template-page-about-php .the-content h2 {
+  font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
+  font-style: normal;
+  font-weight: normal; }
+
+/* project page */
+.project h1.tagline, .project h2.tagline {
+  margin-left: 30%;
+  padding-left: 0.375em; }
+
+/* history page */
+.page-history .article-header .page-title, page-template-page-history-php .article-header .page-title {
+  margin-left: 30%; }
+.page-history .entry-content .the-content p, .page-history .entry-content .the-content div + p, page-template-page-history-php .entry-content .the-content p, page-template-page-history-php .entry-content .the-content div + p {
+  margin-left: 30%;
+  margin-top: 1em; }
+.page-history .entry-content .the-content .alignleft, page-template-page-history-php .entry-content .the-content .alignleft {
+  max-width: 30%;
+  padding-right: 1em; }
+.page-history .entry-content .the-content p.wp-caption-text, page-template-page-history-php .entry-content .the-content p.wp-caption-text {
+  margin-left: 0;
+  margin-top: 0; }
 
 /*********************
 SIDEBARS & ASIDES
@@ -482,6 +485,14 @@ be seen on the Desktop.
 
 #thsp-sticky-header #thsp-sticky-header-inner {
   width: 1030px; }
+
+.nav li a {
+  font-size: 140%; }
+.nav li:nth-child(n+2) {
+  background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  padding-left: 0.6em; }
 
 /*
 you can call the larger styles if you want, but there's really no need

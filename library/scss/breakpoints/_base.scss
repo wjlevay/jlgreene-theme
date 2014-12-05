@@ -17,7 +17,7 @@ GENERAL STYLES
 
 body {
 	@include ibis;
-	font-size: 100%;
+	font-size: 110%;
 	line-height: 1.5;
 	color: $text-color;
 	background-color: $white;
@@ -90,8 +90,10 @@ LINK STYLES
 *********************/
 
 a, a:visited {
+	@include antenna;
 	color: $link-color;
 	text-decoration: none;
+	font-size: 1.125em;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -146,8 +148,6 @@ h2, .h2 {
 
 h1.tagline, h2.tagline {
 	@include ibis;
-	margin-top: 0.375em;
-	margin-bottom: 0;
 }
 
 h3, .h3 {
@@ -317,15 +317,17 @@ POSTS & CONTENT STYLES
 
 		} /* end .hentry */
 
-		.single-title,
-		.page-title,
-		.entry-title {
-			margin: 0;
+		.page-title {
+			@include ibis;
+			font-weight: 900;
+			margin: .25em 0;
 		}
 
-		.single-title {}
-
-		.page-title {}
+		.single-title {
+			@include ibis;
+			font-weight: 900;
+			margin: .5em 0 1em;
+		}
 
 		.entry-title {}
 
@@ -425,6 +427,7 @@ POSTS & CONTENT STYLES
 				margin: 0;
 				padding: 0;
 				color: $plum;
+				font-size: .9em;
 
 				p {}
 
@@ -529,8 +532,6 @@ POSTS & CONTENT STYLES
 			}
 
 			p.wp-caption-text {
-				@include antenna;
-				color: $black;
 				text-align: left;
 			}
 
@@ -568,16 +569,36 @@ POSTS & CONTENT STYLES
 
 	/* homepage stuff */
 	.home {
+		.hentry {
+			margin-bottom: 0;
+		}
+
+		.entry-content {
+			.tagline {
+				margin-top: 0;
+				margin-bottom: 1em;
+			}
+		}
 
 		/* latest news */
 		.latest-news {
-			margin-bottom: 2em;
 
-			.news-title {
-				@include ibis;
-				margin: 0.5em 0 0;
+			.post-thumbnail {
+				display: table;
 
-				a {color: black;}
+				.news-title {
+					display: table-caption;
+					caption-side: bottom;
+					margin-top: .5em;
+					line-height: 1.25;
+
+					a {
+						@include ibis;
+						font-size: 90%;
+						margin: 0.5em 0 0;
+						color: black;
+					}
+				}
 			}
 		}
 
@@ -594,6 +615,7 @@ POSTS & CONTENT STYLES
 
 	.project-title {
 		margin: 0.5em 0 0;
+		line-height: 1;
 	}
 
 	/* project page stuff */
@@ -602,6 +624,11 @@ POSTS & CONTENT STYLES
 		.article-header {
 			.post-thumbnail {
 				margin-top: 1.5em;
+			}
+
+			.tagline {
+				margin-top: 1em;
+				margin-bottom: 0;
 			}
 		}
 
@@ -623,6 +650,8 @@ POSTS & CONTENT STYLES
 	.post-type-archive-project {
 
 		.archive-title {
+			margin-top: .25em;
+			font-weight: 900;
 			p {margin: 0;}
 		}
 
@@ -649,16 +678,14 @@ POSTS & CONTENT STYLES
 		.article-header {
 
 			.post-thumbnail {
-
-				position: relative;
+				display: table;
 				margin-top: 1.5em;
 
 				.thumbnail-caption {
-					position: absolute;
-					left: 0;
-					bottom: -2em;
-					@include antenna;
+					margin-top: .5em;
 					font-size: 0.9em;
+					display: table-caption;
+					caption-side: bottom;
 				}
 			}
 		}
@@ -669,6 +696,7 @@ POSTS & CONTENT STYLES
 
 			.the-content {
 				@include graf-spacing;
+
 			}
 		}
 
@@ -685,8 +713,9 @@ POSTS & CONTENT STYLES
 		}
 	}
 
-	/* about page */
-	.page-about, .page-template-page-about-php {
+	/* about page & history page */
+	.page-about, .page-template-page-about-php,
+	.page-history, .page-template-page-history-php {
 		
 		.the-content {
 
@@ -1082,15 +1111,28 @@ FOOTER STYLES
 	clear: both;
 	background-color: $warm-gray;
 	font-size: 0.8em;
-	color: $plum;
+	color: white;
 	padding: 1em 0;
+	margin-top: 3em;
 
 	a {
-		color: $plum;
+		color: white;
 		text-decoration: none;
 	}
 
-	.footer-middle {padding-left: 0.75em;}
+	p.address {
+		margin-top: 0;
+		font-weight: bold;
+		word-spacing: -1px;
+		a {
+			@include ibis;
+			font-weight: bold;
+		}
+	}
+
+	.logo {
+		margin-bottom: 0;
+	}
 }
 
 	/*
@@ -1121,7 +1163,7 @@ FLEXSLIDER STYLES
 *********************/
 
 /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-.home {
+.home, .project {
 	.flexslider {
 		margin: 1.5em 0;
 		border: 0;

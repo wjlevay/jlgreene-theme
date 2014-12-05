@@ -32,7 +32,7 @@
 										endif ; ?>
 
 										<?php // check if it's a new project so we can add the "new-project" class to the thumbnail
-											$new = get_post_meta( $post->ID, '_cmb_new_project', true );
+											$new = get_post_meta( $post->ID, '_cmb2_new_project', true );
 											if ( !empty( $new ) ) {
 												$new_class = 'new-project';
 												$new_caption= '<div class="new-overlay"></div><p class="h1 new-overlay-text">new</p>';
@@ -51,10 +51,16 @@
 												echo '';
 											} 
 										?>
-										<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-										<p class="project-cat"><?php
-											printf(__('%1$s', 'bonestheme'), get_the_term_list( get_the_ID(), 'project_cat', "", " &middot; ", "" ));
-										?></p>
+
+										<?php // check for short title and display
+											$short_title = get_post_meta( $post_id, '_cmb2_short_title', true);
+											if ( !empty( $short_title ) ) {
+												$title = $short_title;
+											} else {
+												$title = the_title();
+											} ?>
+
+										<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $title; ?></a></h3>
 
 									</div>
 

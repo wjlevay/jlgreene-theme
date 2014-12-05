@@ -134,6 +134,16 @@ them however you see fit.
     width: 80%;
   }
 
+  .t-3of10 {
+    @include grid-col;
+    width: 30%;
+  }
+
+  .t-7of10 {
+    @include grid-col;
+    width: 70%;
+  }
+
   .last-col {
     padding-left: 0.75em;
   }
@@ -252,6 +262,16 @@ them however you see fit.
   .d-1of12 {
     @include grid-col;
     width: 8.33%;
+  }
+
+  .d-3of10 {
+    @include grid-col;
+    width: 30%;
+  }
+
+  .d-7of10 {
+    @include grid-col;
+    width: 70%;
   }
 
   .last-col {

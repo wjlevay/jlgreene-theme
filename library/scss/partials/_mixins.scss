@@ -44,7 +44,7 @@ PARAGRAPH SPACING
 	p {
 		margin: 1em 0 0 0;
 	}
-	p.first, h1 + p, h2 + p, h3 + p, div + p, p.wp-caption-text {
+	p.first, p.wp-caption-text /*h1 + p, h2 + p, h3 + p, div + p, */{
 		margin: 0;
 	}
 

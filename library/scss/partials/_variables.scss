@@ -17,7 +17,8 @@ JLGREENE COLORS
 
 $plum: 				#970076; /*  this was the original value Open gave: #9c1a87. Doesn't seem to match the Pantone color */
 $dark-blue:			#2d4f9e;
-$warm-gray:			#c0b8b0;
+$warm-gray:			#9e9da0;
+$light-gray:		#c0b8b0;
 
 /*********************
 DEFAULT BONES COLORS
@@ -33,7 +34,7 @@ $alert-blue:        #d5edf8;
 $black:             #000;
 $white:             #fff;
 
-$light-gray:        #f8f9fa;
+/* $light-gray:        #f8f9fa; */
 $gray:              #eaedf2;
 $text-color:        $black;
 $meta-gray:         #9fa6b4;
@@ -45,8 +46,10 @@ $green:             #7dd667;
 $bones-pink:        #f01d4f;
 $blue:              #2980b9;
 
+$nav-link-color:	$light-gray;
+$nav-link-hover:	$white;
 $link-color:        $warm-gray;
-$link-hover:        darken($link-color, 9%);
+$link-hover:        $plum;
 
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;

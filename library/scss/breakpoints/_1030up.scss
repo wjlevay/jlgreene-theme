@@ -18,3 +18,18 @@ be seen on the Desktop.
 		width: 1030px;
 	}
 }
+
+.nav {	
+	li {
+		a {
+			font-size: 140%;
+		}
+
+		&:nth-child(n+2) {
+			background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			padding-left: 0.6em;
+		}
+	}
+}

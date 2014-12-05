@@ -12,8 +12,7 @@
 
 								<header class="article-header">
 
-									<?php // display the site description ?>
-									<h2 class="tagline h1"><?php bloginfo('description'); ?></h2>
+									<h1 class="page-title h1"><?php bloginfo('name'); ?></h1>
 
 									<?php // display image slider using Flexslider via WP Better Attachments ?>
 										<?php echo do_shortcode('[wpba-flexslider]'); ?>
@@ -21,15 +20,34 @@
 
 								</header>
 								
-								<?php // here is the content, which includes main paragraph and a quote ?>	
-								<section class="entry-content m-all t-all d-all cf">
+								<?php // here is the content ?>	
+								<section class="entry-content m-all t-7of10 d-7of10 cf">
+
+									<?php // display the site description ?>
+									<h2 class="tagline"><?php bloginfo('description'); ?></h2>
+
 									<?php
-										// the content (pretty self explanatory huh)
+										// the content
 										the_content();
 									?>
 								</section>
 
-								<?php // display two most recent news posts ?>
+								<section class="entry-content m-all t-3of10 d-3of10 cf last-col">
+
+									<?php // display the quote custom fields ?>
+									<div class="quote"><?php
+									    $quote = get_post_meta( $post->ID, '_cmb2_quote', true );
+									    $quotee = get_post_meta( $post->ID, '_cmb2_quotee', true );
+
+									    if( !empty( $quote ) ) {
+											$quote_block = $quote . '<br>&mdash; ' . $quotee;
+											echo apply_filters('the_content', $quote_block);
+										}
+									?></div>
+									
+								</section>
+
+								<?php // display the two most recent news posts ?>
 								<footer class="article-footer m-all t-all d-all cf">
 									<?php // get two news stories
 									$news = new WP_Query(array ('posts_per_page' => 2) );
@@ -46,21 +64,19 @@
 
 										<?php // check for featured image and display
 											if ( '' != get_the_post_thumbnail() ) { ?>
-											<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a></div>
+											<div class="post-thumbnail"><a href="/news/#post-<?php the_ID(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a>
 											<?php } 
-											else {
+											else { // we can add a default photo here if we want
 												echo '';
 											} 
 										?>
-										<h3 class="news-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+											<h3 class="news-title"><a href="/news/#post-<?php the_ID(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3></div>
 									</div>
 
 									<?php endwhile;
 									wp_reset_postdata();
 									?>
 								</footer>
-
-								<?php // comments_template(); ?>
 
 							</article>
 
