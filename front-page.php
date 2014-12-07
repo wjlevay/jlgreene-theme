@@ -61,18 +61,18 @@
 									if ($postcount == 1) : echo '<div class="latest-news m-all t-1of2 d-1of2 cf">'; 
 									else : echo '<div class="latest-news m-all t-1of2 d-1of2 last-col cf">';
 									endif ; ?>
-
+										<div class="news-wrapper">
 										<?php // check for featured image and display
 											if ( '' != get_the_post_thumbnail() ) { ?>
-											<div class="post-thumbnail"><a href="/news/#post-<?php the_ID(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a>
+											<div class="news-thumbnail"><a href="/news/#post-<?php the_ID(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a>
 											<?php } 
 											else { // we can add a default photo here if we want
 												echo '';
 											} 
 										?>
-											<h3 class="news-title"><a href="/news/#post-<?php the_ID(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3></div>
-									</div>
-
+												<h3 class="news-title"><a href="/news/#post-<?php the_ID(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3></div>
+											</div><!--end post-thumbnail-->
+										</div>
 									<?php endwhile;
 									wp_reset_postdata();
 									?>

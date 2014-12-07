@@ -76,7 +76,7 @@ NAVIGATION STYLES
 			border-bottom: 1px solid $plum;
 			padding: 0;
 			margin-right: 0.33em;
-			font-size: 110%;
+			font-size: 1.1em;
 			line-height: 1;
 			letter-spacing: -.75px;
 
@@ -124,7 +124,7 @@ NAVIGATION STYLES
 
 				a {
 					color: $white;
-					font-size: 120%;
+					font-size: 1em;
 					padding-left: 0;
 					display: inline-block; /* need this to get the underline to run under text only, not entire element */
 					border-bottom: 1px solid $warm-gray;
@@ -200,7 +200,8 @@ NAVIGATION STYLES
 
 			li {
 				margin: 0 0 0 0 !important;
-				font-size: .65em;
+
+				a {font-size: 1.2em;}
 
 				&:nth-child(n+2) {
 					background-image: url(/wp-content/themes/jlgreene/library/images/bullet-sm.png);
@@ -254,11 +255,32 @@ POSTS & CONTENT STYLES
 		}
 	}
 
-	/* latest news */
-	.latest-news {
+	.article-footer {
+		margin-bottom: 2em;
 
-		.post-thumbnail {
+		/* latest news */
+		.latest-news {
+			.news-wrapper {
+				/* using method from http://alistapart.com/d/creating-intrinsic-ratios-for-video/example2.html */
+				position: relative;
+				padding-bottom: 56.25%; /* 16:9 aspect ratio */
+				height: 0;
+			
+				.news-thumbnail {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
 
+					img {
+						width: auto;
+						max-width: 100%;
+						height: auto;
+						max-height: 100%;
+					}
+				}
+			}
 		}
 	}
 }
@@ -494,7 +516,7 @@ FLEXSLIDER STYLES
 		}
 
 		.flex-control-nav {
-			bottom: 20px;
+			/* position is set in _481up.scss */
 		}
 
 		.flex-control-paging {

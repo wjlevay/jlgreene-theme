@@ -193,7 +193,7 @@ FLEXSLIDER STYLES
   opacity: 0.8;
   left: 10px; }
 .home .flexslider .flex-control-nav {
-  bottom: 15px; }
+  bottom: 10%; }
 .home .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
@@ -269,7 +269,7 @@ NAVIGATION STYLES
       border-bottom: 1px solid #970076;
       padding: 0;
       margin-right: 0.33em;
-      font-size: 110%;
+      font-size: 1.1em;
       line-height: 1;
       letter-spacing: -.75px;
       /*
@@ -311,7 +311,7 @@ NAVIGATION STYLES
         .nav li ul.sub-menu li a,
         .nav li ul.children li a {
           color: white;
-          font-size: 120%;
+          font-size: 1em;
           padding-left: 0;
           display: inline-block;
           /* need this to get the underline to run under text only, not entire element */
@@ -347,8 +347,9 @@ NAVIGATION STYLES
       /* highlight current page */
       /* end current highlighters */ }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li {
-        margin: 0 0 0 0 !important;
-        font-size: .65em; }
+        margin: 0 0 0 0 !important; }
+        #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li a {
+          font-size: 1.2em; }
         #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
           background-image: url(/wp-content/themes/jlgreene/library/images/bullet-sm.png);
           background-repeat: no-repeat;
@@ -375,10 +376,28 @@ POSTS & CONTENT STYLES
   padding: 1px 0 0 0; }
 
 /* home page */
-.home {
+.home .entry-content .quote {
+  padding: 3px 0 0 0; }
+.home .article-footer {
+  margin-bottom: 2em;
   /* latest news */ }
-  .home .entry-content .quote {
-    padding: 3px 0 0 0; }
+  .home .article-footer .latest-news .news-wrapper {
+    /* using method from http://alistapart.com/d/creating-intrinsic-ratios-for-video/example2.html */
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
+    height: 0; }
+    .home .article-footer .latest-news .news-wrapper .news-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      .home .article-footer .latest-news .news-wrapper .news-thumbnail img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%; }
 
 .blog {
   /* fixing spacing in case bottom of photo extends close to footer */ }
@@ -478,7 +497,7 @@ FLEXSLIDER STYLES
   opacity: 0.8;
   left: 20px; }
 .home .flexslider .flex-control-nav {
-  bottom: 20px; }
+  /* position is set in _481up.scss */ }
 .home .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
@@ -523,6 +542,8 @@ body {
   #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li {
     font-size: .9em;
     margin: 0 0 0 .2em !important; }
+    #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li a {
+      font-size: 1em; }
     #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
       background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
       background-repeat: no-repeat;

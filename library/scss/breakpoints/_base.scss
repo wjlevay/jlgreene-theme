@@ -545,6 +545,8 @@ POSTS & CONTENT STYLES
 		}
 
 		.entry-content {
+			padding-top: 0;
+
 			.tagline {
 				font-size: 1.5em;
 				margin-top: 0;
@@ -555,13 +557,14 @@ POSTS & CONTENT STYLES
 		/* latest news */
 		.latest-news {
 
-			.post-thumbnail {
-				display: table;
+			.news-thumbnail {
+				img {
+					max-width: 100%;
+					height: auto;
+				}
 
 				.news-title {
-					display: table-caption;
-					caption-side: bottom;
-					margin-top: .5em;
+					margin-top: 0;
 					line-height: 1.25;
 
 					a {
@@ -1145,7 +1148,7 @@ FLEXSLIDER STYLES
 /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
 .home, .project {
 	.flexslider {
-		margin: 1.5em 0;
+		margin: 1.5em 0 1em 0;
 		border: 0;
 		position: relative;
 		-webkit-border-radius: 0;
@@ -1169,7 +1172,7 @@ FLEXSLIDER STYLES
 		}
 
 		.flex-control-nav {
-			bottom: 5px;
+			bottom: 15%;
 		}
 
 		.flex-control-paging {
@@ -1185,9 +1188,15 @@ FLEXSLIDER STYLES
 			}
 		}
 
-		.slides img {
-			max-height: none;
-			height: auto;
+		.slides {
+			img {
+				max-height: none;
+				height: auto;
+			}
+			p.caption-text {
+				font-size: .8em;
+				margin-top: .5em;
+			}
 		}
 	}
 }
