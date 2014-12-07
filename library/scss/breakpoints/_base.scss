@@ -580,14 +580,6 @@ POSTS & CONTENT STYLES
 	} /* end .home */
 
 	/* project stuff across all pages */
-	.project-cat {
-
-		a {
-			@include antenna;
-			font-size: 0.95em;
-		}
-	}
-
 	.project-title {
 		margin: 0.5em 0 0;
 		line-height: 1;
@@ -643,9 +635,6 @@ POSTS & CONTENT STYLES
 
 			margin-bottom: 2em;
 
-			.project-cat {
-				margin: 0;
-			}
 		}
 	}
 

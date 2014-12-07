@@ -1654,12 +1654,6 @@ POSTS & CONTENT STYLES
 
 /* end .home */
 /* project stuff across all pages */
-.project-cat a {
-  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 0.95em; }
-
 .project-title {
   margin: 0.5em 0 0;
   line-height: 1; }
@@ -1700,9 +1694,6 @@ POSTS & CONTENT STYLES
   .tax-project_cat .project,
   .post-type-archive-project .project {
     margin-bottom: 2em; }
-    .tax-project_cat .project .project-cat,
-    .post-type-archive-project .project .project-cat {
-      margin: 0; }
 
 /* news page */
 .blog .hentry:before {

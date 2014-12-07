@@ -341,7 +341,7 @@ function jlg_metaboxes( array $meta_boxes ) {
           array(
               'desc'  => __( 'Enter the short title that will display on the project grid page', 'cmb2' ),
               'id'    => $prefix . 'short_title',
-              'type'  => 'text'
+              'type'  => 'text',
           ),
       ),
   );
@@ -358,7 +358,7 @@ function jlg_metaboxes( array $meta_boxes ) {
           array(
               'desc'  => __( 'Enter a tagline that will display below the featured content', 'cmb2' ),
               'id'    => $prefix . 'tagline',
-              'type'  => 'textarea_small'
+              'type'  => 'textarea_small',
           ),
       ),
   );
@@ -376,14 +376,14 @@ function jlg_metaboxes( array $meta_boxes ) {
               'name'  => __( 'The Quote', 'cmb2' ),
               'desc'  => __( 'Enter the quote with quotation marks.<br>Straight quotes will be auto-transformed to curly quotes.', 'cmb2' ),
               'id'    => $prefix . 'quote',
-              'type'  => 'textarea_small'
+              'type'  => 'textarea_small',
           ),
           array(
               'name'  => __( 'Who Said It?', 'cmb2' ),
               'desc'  => __( 'Enter the quotee\'s name, title, etc. This will be automatically preceded with a dash.<br>To italicize the name of a publication, use the &lt;em&gt; tag like this: &lt;em&gt;The New York Times&lt;/em&gt;', 'cmb2' ),
               'id'    => $prefix . 'quotee',
               'type'  => 'text',
-              'sanitization_cb' => false
+              'sanitization_cb' => false,
           ),
       ),
   );

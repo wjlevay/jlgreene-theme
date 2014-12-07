@@ -46,14 +46,14 @@
 										?>
 
 										<?php // check for short title and display
-											$short_title = get_post_meta( $post_id, '_cmb2_short_title', true);
-											if ( !empty( $short_title ) ) {
-												$title = $short_title;
-											} else {
-												$title = the_title();
-											} ?>
-
-										<h3 class="project-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $title; ?></a></h3>
+											$short_title = get_post_meta( $post->ID, '_cmb2_short_title', true);
+											if ( !empty( $short_title ) ) { ?>
+												<h3 class="project-title h4"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php echo $short_title; ?></a></h3>
+											<?php } 
+											else { ?>
+												<h3 class="project-title h4"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+											<?php } 
+										?>
 
 									</div>
 
