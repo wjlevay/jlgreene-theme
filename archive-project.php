@@ -20,7 +20,7 @@
 
 						<div id="main" class="cf" role="main">
 
-							<h1 class="archive-title h1 tagline">JLGreene Projects</h1>
+							<h1 class="archive-title h1 tagline">Projects</h1>
 
 							<div class="projects-grid">
 
@@ -31,21 +31,9 @@
 										else : echo '<div class="project m-all t-1of2 d-1of2 last-col cf">';
 										endif ; ?>
 
-										<?php // check if it's a new project so we can add the "new-project" class to the thumbnail
-											$new = get_post_meta( $post->ID, '_cmb2_new_project', true );
-											if ( !empty( $new ) ) {
-												$new_class = 'new-project';
-												$new_caption= '<div class="new-overlay"></div><p class="h1 new-overlay-text">new</p>';
-											}
-											else {
-												$new_class = '';
-												$new_caption = '';
-											}
-										?>
-
-										<?php // check for featured image and display, and add the "new-project class" if needed
+										<?php // check for featured image and display
 											if ('' != get_the_post_thumbnail() ) { ?>
-											<div class="post-thumbnail <?php echo $new_class; ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); echo $new_caption; ?></a></div>
+											<div class="post-thumbnail"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a></div>
 											<?php } 
 											else {
 												echo '';
