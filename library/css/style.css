@@ -1705,8 +1705,11 @@ POSTS & CONTENT STYLES
       margin: 0; }
 
 /* news page */
-.blog #blank_col {
-  display: none; }
+.blog .hentry:before {
+  content: "";
+  display: block;
+  height: 2em;
+  margin-top: -2em; }
 .blog .article-header .post-thumbnail {
   display: table;
   margin-top: 1em; }
@@ -1721,15 +1724,6 @@ POSTS & CONTENT STYLES
     margin: 1em 0 0 0; }
   .blog .entry-content .the-content p.first, .blog .entry-content .the-content p.wp-caption-text {
     margin: 0; }
-.blog .post-meta {
-  font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  color: #970076; }
-  .blog .post-meta .external-link {
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    padding-bottom: 0; }
 
 /* about page & history page */
 .page-about .entry-content .the-content h3, .page-template-page-about-php .entry-content .the-content h3,
@@ -2253,7 +2247,7 @@ you can add resource intensive styles.
             .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
             .nav li ul.children li a:hover,
             .nav li ul.children li a:focus {
-              border-bottom: 1px solid white; }
+              color: #970076; }
           .nav li ul.sub-menu li ul,
           .nav li ul.children li ul {
             top: 0;

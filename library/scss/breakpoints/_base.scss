@@ -652,7 +652,14 @@ POSTS & CONTENT STYLES
 	/* news page */
 	.blog {
 
-		#blank_col {display: none;}
+		.hentry {
+			&:before {
+				content: "";
+				display: block;
+				height: 2em;
+				margin-top: -2em;
+			}
+		}
 
 		.article-header {
 
@@ -677,18 +684,6 @@ POSTS & CONTENT STYLES
 			.the-content {
 				@include graf-spacing;
 
-			}
-		}
-
-		.post-meta {
-			@include antenna;
-			color: $plum;
-
-			.updated {}
-			.external-link {
-				border-bottom-style: solid;
-				border-bottom-width: 1px;
-				padding-bottom: 0;
 			}
 		}
 	}
