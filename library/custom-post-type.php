@@ -98,26 +98,26 @@ function custom_post_example() {
 	);
 	
 	// now let's add custom tags (these act like categories)
-	register_taxonomy( 'project_tag', 
-		array('project'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
-		array('hierarchical' => false,    /* if this is false, it acts like tags */
-			'labels' => array(
-				'name' => __( 'Project Tags', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Project Tag', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Project Tags', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Project Tags', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Project Tag', 'bonestheme' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Project Tag:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Project Tag', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Project Tag', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Project Tag', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Project Tag Name', 'bonestheme' ) /* name title for taxonomy */
-			),
-			'show_admin_column' => true,
-			'show_ui' => true,
-			'query_var' => true,
-		)
-	);
+	// register_taxonomy( 'project_tag', 
+	// 	array('project'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+	// 	array('hierarchical' => false,    /* if this is false, it acts like tags */
+	// 		'labels' => array(
+	// 			'name' => __( 'Project Tags', 'bonestheme' ), /* name of the custom taxonomy */
+	// 			'singular_name' => __( 'Project Tag', 'bonestheme' ), /* single taxonomy name */
+	// 			'search_items' =>  __( 'Search Project Tags', 'bonestheme' ), /* search title for taxomony */
+	// 			'all_items' => __( 'All Project Tags', 'bonestheme' ), /* all title for taxonomies */
+	// 			'parent_item' => __( 'Parent Project Tag', 'bonestheme' ), /* parent title for taxonomy */
+	// 			'parent_item_colon' => __( 'Parent Project Tag:', 'bonestheme' ), /* parent taxonomy title */
+	// 			'edit_item' => __( 'Edit Project Tag', 'bonestheme' ), /* edit custom taxonomy title */
+	// 			'update_item' => __( 'Update Project Tag', 'bonestheme' ), /* update title for taxonomy */
+	// 			'add_new_item' => __( 'Add New Project Tag', 'bonestheme' ), /* add new title for taxonomy */
+	// 			'new_item_name' => __( 'New Project Tag Name', 'bonestheme' ) /* name title for taxonomy */
+	// 		),
+	// 		'show_admin_column' => true,
+	// 		'show_ui' => true,
+	// 		'query_var' => true,
+	// 	)
+	// );
 	
 	/*
 		looking for custom meta boxes?

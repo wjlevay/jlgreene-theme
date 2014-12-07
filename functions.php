@@ -74,7 +74,7 @@ if ( ! isset( $content_width ) ) {
 
 // Thumbnail sizes
 add_image_size( 'medium-crop', 948, 533, array( 'center', 'top') );
-// add_image_size( 'bones-thumb-300', 300, 100, true );
+// add_image_size( 'news-thumb', 300, 100, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -358,7 +358,7 @@ function jlg_metaboxes( array $meta_boxes ) {
           array(
               'desc'  => __( 'Enter a tagline that will display below the featured content', 'cmb2' ),
               'id'    => $prefix . 'tagline',
-              'type'  => 'text'
+              'type'  => 'textarea_small'
           ),
       ),
   );
@@ -373,15 +373,17 @@ function jlg_metaboxes( array $meta_boxes ) {
       'show_names'    => true, // Show field names on the left
       'fields'        => array(
           array(
-              'desc'  => __( 'Enter the quote with quotation marks', 'cmb2' ),
+              'name'  => __( 'The Quote', 'cmb2' ),
+              'desc'  => __( 'Enter the quote with quotation marks.<br>Straight quotes will be auto-transformed to curly quotes.', 'cmb2' ),
               'id'    => $prefix . 'quote',
-              'type'  => 'text'
+              'type'  => 'textarea_small'
           ),
           array(
               'name'  => __( 'Who Said It?', 'cmb2' ),
-              'desc'  => __( '<br>Enter their name, title, etc.<br>This will be automatically preceded with an em dash.', 'cmb2' ),
+              'desc'  => __( 'Enter the quotee\'s name, title, etc. This will be automatically preceded with a dash.<br>To italicize the name of a publication, use the &lt;em&gt; tag like this: &lt;em&gt;The New York Times&lt;/em&gt;', 'cmb2' ),
               'id'    => $prefix . 'quotee',
-              'type'  => 'text_medium'
+              'type'  => 'text',
+              'sanitization_cb' => false
           ),
       ),
   );
@@ -396,7 +398,6 @@ function jlg_metaboxes( array $meta_boxes ) {
       'show_names'    => true, // Show field names on the left
       'fields'        => array(
           array(
-            'name'    => __( 'Project Video', 'cmb2' ),
             'desc'    => __( 'Enter the URL of a related video', 'cmb2' ),
             'id'      => $prefix . 'video',
             'type'    => 'oembed',

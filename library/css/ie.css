@@ -182,19 +182,19 @@ do they need tweaking?
 FLEXSLIDER STYLES
 *********************/
 /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-.home .flexslider .flex-next {
+.home .flexslider .flex-next, .project .flexslider .flex-next {
   right: 10px; }
-.home .flexslider .flex-prev {
+.home .flexslider .flex-prev, .project .flexslider .flex-prev {
   left: 10px; }
-.home .flexslider:hover .flex-next {
+.home .flexslider:hover .flex-next, .project .flexslider:hover .flex-next {
   opacity: 0.8;
   right: 10px; }
-.home .flexslider:hover .flex-prev {
+.home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
   opacity: 0.8;
   left: 10px; }
-.home .flexslider .flex-control-nav {
+.home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
   bottom: 10%; }
-.home .flexslider .flex-control-paging li a {
+.home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
 
@@ -373,7 +373,7 @@ POSTS & CONTENT STYLES
 /* entry content */
 .entry-content blockquote,
 .entry-content .quote {
-  padding: 1px 0 0 0; }
+  padding: 2px 0 0 0; }
 
 /* home page */
 .home .entry-content .quote {
@@ -490,15 +490,15 @@ mobile. Make sure to double check these!
 FLEXSLIDER STYLES
 *********************/
 /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-.home .flexslider:hover .flex-next {
+.home .flexslider:hover .flex-next, .project .flexslider:hover .flex-next {
   opacity: 0.8;
   right: 20px; }
-.home .flexslider:hover .flex-prev {
+.home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
   opacity: 0.8;
   left: 20px; }
-.home .flexslider .flex-control-nav {
+.home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
   /* position is set in _481up.scss */ }
-.home .flexslider .flex-control-paging li a {
+.home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
 

@@ -243,7 +243,7 @@ POSTS & CONTENT STYLES
 
 	blockquote, 
 	.quote {
-		padding: 1px 0 0 0;
+		padding: 2px 0 0 0;
 	}
 }
 
@@ -508,7 +508,7 @@ FLEXSLIDER STYLES
 *********************/
 
 /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-.home {
+.home, .project {
 	.flexslider {
 
 		&:hover {
