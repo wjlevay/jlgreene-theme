@@ -24,7 +24,17 @@
 								<section class="entry-content m-all t-7of10 d-7of10 cf">
 
 									<?php // display the site description ?>
-									<h2 class="tagline"><?php bloginfo('description'); ?></h2>
+									<h2 class="tagline">
+										<?php // bloginfo('description'); // Originally used site description here, now using tagline
+										$tagline = get_post_meta( $post->ID, '_cmb2_tagline', true );
+
+										if( !empty( $tagline ) ) {
+        									echo $tagline;
+    									}
+    									else {
+    										echo '';
+    									}
+									?></h2>
 
 									<?php
 										// the content

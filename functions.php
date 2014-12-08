@@ -349,8 +349,8 @@ function jlg_metaboxes( array $meta_boxes ) {
   // PROJECT TAGLINE
   $meta_boxes['tagline_metabox'] = array(
       'id'            => 'tagline_metabox',
-      'title'         => __( 'Project Tagline', 'cmb2' ),
-      'object_types'  => array( 'project' ), // post type
+      'title'         => __( 'Tagline', 'cmb2' ),
+      'object_types'  => array( 'project', 'page' ), // post type
       'context'       => 'normal',
       'priority'      => 'high',
       'show_names'    => false, // Show field names on the left if true
