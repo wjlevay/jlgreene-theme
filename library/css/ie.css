@@ -193,7 +193,7 @@ FLEXSLIDER STYLES
   opacity: 0.8;
   left: 10px; }
 .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  bottom: 10%; }
+  top: 80%; }
 .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
@@ -497,7 +497,7 @@ FLEXSLIDER STYLES
   opacity: 0.8;
   left: 20px; }
 .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  /* position is set in _481up.scss */ }
+  top: 82%; }
 .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
@@ -549,6 +549,13 @@ body {
       background-repeat: no-repeat;
       background-position: 0 3px;
       padding-left: .75em; }
+
+/*********************
+FLEXSLIDER STYLES
+*********************/
+/* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+.home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
+  top: 83%; }
 
 /*
 you can call the larger styles if you want, but there's really no need
