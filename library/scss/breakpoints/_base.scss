@@ -24,12 +24,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* This is for the span class in the TinyMCE editor. The WebType fonts are called from the _mixins.scss file */
-.boldsans, .boldsans-lg {
+/* All bold type should be in Antenna. The Boldsans class is a legacy class that can be applied via the Tiny MCE Format selector. The WebType fonts are called from the _mixins.scss file */
+strong, .boldsans-lg {
 	@include antenna;
-}
-
-.boldsans-lg {
 	font-size: 1.125em;
 }
 

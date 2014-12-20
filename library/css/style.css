@@ -458,7 +458,6 @@ DEFAULT BONES COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
-/* $light-gray:        #f8f9fa; */
 /*
 Here's a great tutorial on how to
 use color variables properly:
@@ -516,9 +515,9 @@ p {
   -ms-word-wrap: break-all;
   word-break: break-word;
   word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
@@ -1287,13 +1286,11 @@ body {
   background-color: white;
   -webkit-font-smoothing: antialiased; }
 
-/* This is for the span class in the TinyMCE editor. The WebType fonts are called from the _mixins.scss file */
-.boldsans, .boldsans-lg {
+/* All bold type should be in Antenna. The Boldsans class is a legacy class that can be applied via the Tiny MCE Format selector. The WebType fonts are called from the _mixins.scss file */
+strong, .boldsans-lg {
   font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: bold; }
-
-.boldsans-lg {
+  font-weight: bold;
   font-size: 1.125em; }
 
 .hide {
