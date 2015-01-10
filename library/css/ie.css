@@ -312,9 +312,7 @@ NAVIGATION STYLES
           color: white;
           font-size: 1em;
           padding-left: 0;
-          display: inline-block;
-          /* need this to get the underline to run under text only, not entire element */
-          border-bottom: 1px solid #9e9da0; }
+          border: none; }
           .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
           .nav li ul.children li a:hover,
           .nav li ul.children li a:focus {
@@ -332,8 +330,9 @@ NAVIGATION STYLES
     border-bottom: 1px solid white; }
 
 /* end .nav */
-/* sticky header plugin tweaks */
+/* STICKY HEADER PLUGIN */
 #thsp-sticky-header {
+  padding-bottom: 0;
   -webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
   -moz-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
   box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4); }
@@ -346,6 +345,7 @@ NAVIGATION STYLES
       /* highlight current page */
       /* end current highlighters */ }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li {
+        display: inline-block;
         margin: 0 0 0 0 !important; }
         #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li a {
           font-size: 1.2em; }
@@ -354,6 +354,28 @@ NAVIGATION STYLES
           background-repeat: no-repeat;
           background-position: 0 8px;
           padding-left: .5em; }
+        #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:hover ul.sub-menu, #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:focus ul.sub-menu {
+          display: block; }
+        #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu {
+          margin-top: 0;
+          padding: 1em 1em 0.5em 1em;
+          background: #9e9da0;
+          position: absolute;
+          top: 46px;
+          display: none;
+          width: 300px; }
+          #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li {
+            display: block;
+            background: none;
+            text-align: left;
+            padding-left: 0; }
+            #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a {
+              color: white !important;
+              line-height: 1;
+              margin: 0 0 .5em 0;
+              border: none; }
+              #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a:hover, #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a:focus {
+                color: #970076 !important; }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li.current-menu-item a,
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li.current_page_item a {
         color: white !important;
@@ -363,6 +385,8 @@ NAVIGATION STYLES
     font-family: Antenna, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
     font-weight: bold; }
+    #thsp-sticky-header #thsp-sticky-header-menu > li {
+      padding-bottom: 8px; }
   #thsp-sticky-header a:hover, #thsp-sticky-header a:focus {
     color: white !important; }
 
@@ -438,37 +462,6 @@ POSTS & CONTENT STYLES
     margin-left: 0;
     margin-top: 0; }
 
-/*********************
-SIDEBARS & ASIDES
-*********************/
-.sidebar {
-  margin-top: 2.2em; }
-
-.widgettitle {
-  border-bottom: 2px solid #444;
-  margin-bottom: 0.75em; }
-
-.widget {
-  padding: 0 10px;
-  margin: 2.2em 0; }
-  .widget ul li {
-    margin-bottom: 0.75em;
-    /* deep nesting */ }
-    .widget ul li ul {
-      margin-top: 0.75em;
-      padding-left: 1em; }
-
-/* links widget */
-/* meta widget */
-/* pages widget */
-/* recent-posts widget */
-/* archives widget */
-/* tag-cloud widget */
-/* calendar widget */
-/* category widget */
-/* recent-comments widget */
-/* search widget */
-/* text widget */
 /*********************
 FOOTER STYLES
 *********************/
@@ -548,6 +541,8 @@ body {
       background-repeat: no-repeat;
       background-position: 0 3px;
       padding-left: .75em; }
+    #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu {
+      top: 48px; }
 
 /*********************
 FLEXSLIDER STYLES

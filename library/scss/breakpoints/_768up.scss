@@ -126,8 +126,7 @@ NAVIGATION STYLES
 					color: $white;
 					font-size: 1em;
 					padding-left: 0;
-					display: inline-block; /* need this to get the underline to run under text only, not entire element */
-					border-bottom: 1px solid $warm-gray;
+					border: none;
 
 					&:hover,
 					&:focus {
@@ -185,8 +184,9 @@ NAVIGATION STYLES
 
 } /* end .nav */
 
-/* sticky header plugin tweaks */
-#thsp-sticky-header {	
+/* STICKY HEADER PLUGIN */
+#thsp-sticky-header {
+	padding-bottom: 0;
 	-webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
 	-moz-box-shadow:    0px 9px 10px 0px rgba(50, 50, 50, 0.4);
 	box-shadow:         0px 9px 10px 0px rgba(50, 50, 50, 0.4);
@@ -199,6 +199,7 @@ NAVIGATION STYLES
 		#thsp-sticky-header-menu {
 
 			li {
+				display: inline-block;
 				margin: 0 0 0 0 !important;
 
 				a {font-size: 1.2em;}
@@ -208,6 +209,41 @@ NAVIGATION STYLES
 					background-repeat: no-repeat;
 					background-position: 0 8px;
 					padding-left: .5em;
+				}
+
+				&:hover, &:focus {
+					ul.sub-menu {
+						display: block;
+
+					}
+				}
+
+				ul.sub-menu {
+					margin-top: 0;
+					padding: 1em 1em 0.5em 1em;
+					background: $warm-gray;
+					position: absolute;
+					top: 46px;
+					display: none;
+					width: 300px;
+
+					li {
+						display: block;
+						background: none;
+						text-align: left;
+						padding-left: 0;
+
+						a {
+							color: $white !important;
+							line-height: 1;
+							margin: 0 0 .5em 0;
+							border: none;
+
+							&:hover, &:focus {
+								color: $plum !important;
+							}
+						}
+					}
 				}
 			}
 
@@ -227,12 +263,15 @@ NAVIGATION STYLES
 
 	#thsp-sticky-header-menu {
 		@include antenna;
+
+		>li {padding-bottom: 8px;}
 	}
 
 	a {
 		&:hover, &:focus {color: $white !important;}
 	}
 }
+
 
 /*********************
 POSTS & CONTENT STYLES
@@ -354,128 +393,6 @@ POSTS & CONTENT STYLES
 		}
 	}
 }
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
-
-.sidebar {
-	margin-top: 2.2em;
-}
-
-	.widgettitle {
-		border-bottom: 2px solid #444;
-		margin-bottom: 0.75em;
-	}
-
-	.widget {
-		padding: 0 10px;
-		margin: 2.2em 0;
-
-		ul {
-			li {
-				margin-bottom: 0.75em;
-
-				&:first-child {}
-				&:last-child {}
-				a {}
-				/* deep nesting */
-
-				ul {
-					margin-top: 0.75em;
-					padding-left: 1em;
-				}
-			}
-		}
-	}
-
-
-	/* links widget */
-	.widget_links {}
-	.widget_links ul {}
-	.widget_links ul li {}
-	.widget_links ul li a {}
-
-	/* meta widget */
-	.widget_meta {}
-	.widget_meta ul {}
-	.widget_meta ul li {}
-	.widget_meta ul li a {}
-
-	/* pages widget */
-	.widget_pages {}
-	.widget_pages ul {}
-	.widget_pages ul li {}
-	.widget_pages ul li a {}
-
-	/* recent-posts widget */
-	.widget_recent_entries {}
-	.widget_recent_entries ul {}
-	.widget_recent_entries ul li {}
-	.widget_recent_entries ul li a {}
-
-	/* archives widget */
-	.widget_archive {}
-	.widget_archive ul {}
-	.widget_archive ul li {}
-	.widget_archive ul li a {}
-	.widget_archive select {}
-	.widget_archive option {}
-
-	/* tag-cloud widget */
-	.widget_links {}
-	.widget_links li:after {}
-	.widget_links li:before {}
-	.widget_tag_cloud {}
-	.widget_tag_cloud a {}
-	.widget_tag_cloud a:after {}
-	.widget_tag_cloud a:before {}
-
-	/* calendar widget */
-	.widget_calendar {}
-	#calendar_wrap {}
-	#calendar_wrap th {}
-	#calendar_wrap td {}
-	#wp-calendar tr td {}
-	#wp-calendar caption {}
-	#wp-calendar a {}
-	#wp-calendar #today {}
-	#wp-calendar #prev {}
-	#wp-calendar #next {}
-	#wp-calendar #next a {}
-	#wp-calendar #prev a {}
-
-	/* category widget */
-	.widget_categories {}
-	.widget_categories ul {}
-	.widget_categories ul li {}
-	.widget_categories ul ul.children {}
-	.widget_categories a {}
-	.widget_categories select{}
-	.widget_categories select#cat {}
-	.widget_categories select.postform {}
-	.widget_categories option {}
-	.widget_categories .level-0 {}
-	.widget_categories .level-1 {}
-	.widget_categories .level-2 {}
-	.widget_categories .level-3 {}
-
-	/* recent-comments widget */
-	.recentcomments {}
-	#recentcomments {}
-	#recentcomments li {}
-	#recentcomments li a {}
-	.widget_recent_comments {}
-
-	/* search widget */
-	#searchform {}
-	.widget_search {}
-	.screen-reader-text {}
-
-	/* text widget */
-	.textwidget {}
-	.widget_text {}
-	.textwidget p {}
 
 
 /*********************
