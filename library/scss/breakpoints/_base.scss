@@ -755,6 +755,7 @@ FLEXSLIDER STYLES
 				left: 0;
 				width: 100%;
 				height: 100%;
+				background: $warm-gray;
 
 				img {
 					width: auto;
@@ -783,7 +784,8 @@ FLEXSLIDER STYLES
 		}
 
 		.flex-control-nav {
-			top: 75%;
+			top: 70%;
+			bottom: 0;
 		}
 
 		.flex-control-paging {

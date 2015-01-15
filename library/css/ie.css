@@ -192,7 +192,7 @@ FLEXSLIDER STYLES
   opacity: 0.8;
   left: 10px; }
 .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  top: 80%; }
+  top: 77%; }
 .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
@@ -488,8 +488,6 @@ FLEXSLIDER STYLES
 .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
   opacity: 0.8;
   left: 20px; }
-.home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  top: 82%; }
 .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }

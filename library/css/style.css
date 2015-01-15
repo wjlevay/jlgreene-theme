@@ -1765,7 +1765,8 @@ FLEXSLIDER STYLES
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      background: #9e9da0; }
       .home .flexslider .slide-wrapper .slide-image img, .project .flexslider .slide-wrapper .slide-image img {
         width: auto;
         max-width: 100%;
@@ -1784,7 +1785,8 @@ FLEXSLIDER STYLES
     opacity: 0.8;
     left: 0; }
   .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 75%; }
+    top: 70%;
+    bottom: 0; }
   .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px;
@@ -1887,7 +1889,7 @@ tweeners.
     opacity: 0.8;
     left: 10px; }
   .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 80%; }
+    top: 77%; }
   .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px; } }
@@ -2189,8 +2191,6 @@ you can add resource intensive styles.
   .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
     opacity: 0.8;
     left: 20px; }
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 82%; }
   .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px; } }
@@ -2281,9 +2281,7 @@ This is for the larger monitors and possibly full screen viewers.
   /*********************
   FLEXSLIDER STYLES
   *********************/
-  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 86%; } }
+  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */ }
 /*********************
 EXTRA LARGE VIEWING SIZE
 This is for the largest monitors and possibly full screen viewers.
