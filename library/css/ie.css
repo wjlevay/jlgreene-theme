@@ -192,7 +192,7 @@ FLEXSLIDER STYLES
   opacity: 0.8;
   left: 10px; }
 .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  top: 77%; }
+  top: 241px; }
 .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
@@ -421,6 +421,9 @@ POSTS & CONTENT STYLES
         max-width: 100%;
         height: auto;
         max-height: 100%; }
+      .home .article-footer .latest-news .news-wrapper .news-thumbnail .news-title {
+        height: 2.75em;
+        overflow: auto; }
 
 .blog {
   /* fixing spacing in case bottom of photo extends close to footer */ }
@@ -488,6 +491,8 @@ FLEXSLIDER STYLES
 .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
   opacity: 0.8;
   left: 20px; }
+.home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
+  top: 399px; }
 .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
   width: 13px;
   height: 13px; }
@@ -547,7 +552,7 @@ FLEXSLIDER STYLES
 *********************/
 /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
 .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  top: 83%; }
+  top: 551px; }
 
 /*
 you can call the larger styles if you want, but there's really no need
