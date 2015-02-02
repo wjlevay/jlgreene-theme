@@ -1312,7 +1312,7 @@ a, a:visited {
   font-weight: bold;
   color: #9e9da0;
   text-decoration: none;
-  font-size: 1.125em;
+  font-size: 1em;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
@@ -1377,9 +1377,9 @@ HEADER STYLES
   display: none !important;
   /* need to hide header if we're using the Menufication plugin */
   background-color: #970076;
-  -webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
-  -moz-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
-  box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+  -webkit-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3);
+  -moz-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3);
+  box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3);
   /* hide the menu on mobile devices */ }
   .header .header-right {
     display: none; }
@@ -1398,7 +1398,10 @@ HEADER STYLES
 
 #menufication-top,
 #menufication-non-css3-top {
-  background: #970076 !important; }
+  background: #970076 !important;
+  -webkit-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3) !important;
+  -moz-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3) !important;
+  box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3) !important; }
   #menufication-top #menufication-header-logo,
   #menufication-top #menufication-non-css3-header-logo,
   #menufication-non-css3-top #menufication-header-logo,
@@ -1610,7 +1613,7 @@ POSTS & CONTENT STYLES
       font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
       font-style: normal;
       font-weight: normal;
-      font-size: 90%;
+      font-size: 80%;
       margin: 0.5em 0 0;
       color: black; }
 
@@ -1627,7 +1630,7 @@ POSTS & CONTENT STYLES
     margin-top: 1.5em; }
     .single-project .article-header .post-thumbnail .thumbnail-caption {
       margin-top: .5em;
-      font-size: 0.8em; }
+      font-size: 0.83333em; }
   .single-project .article-header .tagline {
     margin-top: 1em;
     margin-bottom: 0; }
@@ -1668,7 +1671,7 @@ POSTS & CONTENT STYLES
   margin-top: 1em; }
   .blog .article-header .post-thumbnail .thumbnail-caption {
     margin-top: .5em;
-    font-size: 0.8em;
+    font-size: 0.83333em;
     display: table-caption;
     caption-side: bottom; }
 .blog .entry-content {
@@ -1693,7 +1696,7 @@ POSTS & CONTENT STYLES
 .page-about .entry-content .the-content p.wp-caption-text, .page-template-page-about-php .entry-content .the-content p.wp-caption-text,
 .page-history .entry-content .the-content p.wp-caption-text, .page-template-page-history-php .entry-content .the-content p.wp-caption-text {
   margin: initial;
-  font-size: 0.8em; }
+  font-size: 0.833em; }
 .page-about .entry-content .the-content p, .page-template-page-about-php .entry-content .the-content p,
 .page-history .entry-content .the-content p, .page-template-page-history-php .entry-content .the-content p {
   margin: 1em 0 0 0; }
@@ -1707,7 +1710,7 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #9e9da0;
+  background-color: #b6b0ab;
   font-size: 0.8em;
   color: white;
   padding: 1em 0;
@@ -1717,13 +1720,13 @@ FOOTER STYLES
     text-decoration: none; }
   .footer p.address {
     margin-top: 0;
-    font-weight: bold;
+    font-weight: normal;
     word-spacing: -1px; }
     .footer p.address a {
       font-family: "Ibis RE", "Georgia", Cambria, Times New Roman, Times, serif;
       font-style: normal;
       font-weight: normal;
-      font-weight: bold;
+      font-weight: normal;
       font-size: inherit; }
   .footer .logo {
     margin-bottom: 0; }
@@ -1766,7 +1769,7 @@ FLEXSLIDER STYLES
       left: 0;
       width: 100%;
       height: 100%;
-      background: #9e9da0; }
+      background: #efefeb; }
       .home .flexslider .slide-wrapper .slide-image img, .project .flexslider .slide-wrapper .slide-image img {
         width: auto;
         max-width: 100%;
@@ -1774,7 +1777,7 @@ FLEXSLIDER STYLES
         max-height: 100%;
         margin: 0 auto; }
   .home .flexslider p.caption-text, .project .flexslider p.caption-text {
-    font-size: .8em;
+    font-size: 0.83333em;
     margin-top: .5em; }
   .home .flexslider .flex-direction-nav a, .project .flexslider .flex-direction-nav a {
     background-image: url(/wp-content/themes/jlgreene/library/images/bg_direction_nav.png); }
@@ -1962,6 +1965,7 @@ you can add resource intensive styles.
     .nav li {
       float: left;
       position: relative;
+      line-height: 1.875em;
       /*
       plan your menus and drop-downs wisely.
       */
@@ -1971,9 +1975,9 @@ you can add resource intensive styles.
         border-bottom: 1px solid #970076;
         padding: 0;
         margin-right: 0.33em;
-        font-size: 1.1em;
+        font-size: 1em;
         line-height: 1;
-        letter-spacing: -.75px;
+        letter-spacing: .5px;
         /*
         you can use hover styles here even though this size
         has the possibility of being a mobile device.
@@ -2015,7 +2019,9 @@ you can add resource intensive styles.
             color: white;
             font-size: 1em;
             padding-left: 0;
-            border: none; }
+            border: none;
+            line-height: 1.25em;
+            letter-spacing: .4px; }
             .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
             .nav li ul.children li a:hover,
             .nav li ul.children li a:focus {
@@ -2036,9 +2042,9 @@ you can add resource intensive styles.
   /* STICKY HEADER PLUGIN */
   #thsp-sticky-header {
     padding-bottom: 0;
-    -webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
-    -moz-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
-    box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4); }
+    -webkit-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3);
+    -moz-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3);
+    box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3); }
     #thsp-sticky-header #thsp-sticky-header-inner {
       width: 760px;
       /* make this the same as the .wrap width! */
@@ -2049,13 +2055,14 @@ you can add resource intensive styles.
         /* end current highlighters */ }
         #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li {
           display: inline-block;
-          margin: 0 0 0 0 !important; }
+          margin: 0 0 0 0 !important;
+          line-height: 1.875em; }
           #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li a {
             font-size: 1.2em; }
           #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
             background-image: url(/wp-content/themes/jlgreene/library/images/bullet-sm.png);
             background-repeat: no-repeat;
-            background-position: 0 8px;
+            background-position: 0 9px;
             padding-left: .5em; }
           #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:hover ul.sub-menu, #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:focus ul.sub-menu {
             display: block; }
@@ -2074,9 +2081,10 @@ you can add resource intensive styles.
               padding-left: 0; }
               #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a {
                 color: white !important;
-                line-height: 1;
+                line-height: 1.25em;
                 margin: 0 0 .5em 0;
-                border: none; }
+                border: none;
+                letter-spacing: .4px; }
                 #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a:hover, #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a:focus {
                   color: #970076 !important; }
         #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li.current-menu-item a,
@@ -2251,7 +2259,7 @@ you can add resource intensive styles.
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
         background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
         background-repeat: no-repeat;
-        background-position: 0 3px;
+        background-position: 0 6px;
         padding-left: .75em; }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu {
         top: 48px; }

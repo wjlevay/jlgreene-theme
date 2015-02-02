@@ -70,15 +70,16 @@ NAVIGATION STYLES
 	li {
 		float: left;
 		position: relative;
+		line-height: 1.875em;
 
 		a {
 			color: $nav-link-color;
 			border-bottom: 1px solid $plum;
 			padding: 0;
 			margin-right: 0.33em;
-			font-size: 1.1em;
+			font-size: 1em;
 			line-height: 1;
-			letter-spacing: -.75px;
+			letter-spacing: .5px;
 
 			/*
 			you can use hover styles here even though this size
@@ -127,6 +128,8 @@ NAVIGATION STYLES
 					font-size: 1em;
 					padding-left: 0;
 					border: none;
+					line-height: 1.25em;
+					letter-spacing: .4px;
 
 					&:hover,
 					&:focus {
@@ -187,9 +190,9 @@ NAVIGATION STYLES
 /* STICKY HEADER PLUGIN */
 #thsp-sticky-header {
 	padding-bottom: 0;
-	-webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
-	-moz-box-shadow:    0px 9px 10px 0px rgba(50, 50, 50, 0.4);
-	box-shadow:         0px 9px 10px 0px rgba(50, 50, 50, 0.4);
+	-webkit-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3);
+	-moz-box-shadow: 	1px 1px 12px 0px rgba(51, 56, 34, 0.3);
+	box-shadow: 		1px 1px 12px 0px rgba(51, 56, 34, 0.3);
 
 	#thsp-sticky-header-inner {
 		width: 760px; /* make this the same as the .wrap width! */
@@ -201,13 +204,16 @@ NAVIGATION STYLES
 			li {
 				display: inline-block;
 				margin: 0 0 0 0 !important;
+				line-height: 1.875em;
 
-				a {font-size: 1.2em;}
+				a {
+					font-size: 1.2em;
+				}
 
 				&:nth-child(n+2) {
 					background-image: url(/wp-content/themes/jlgreene/library/images/bullet-sm.png);
 					background-repeat: no-repeat;
-					background-position: 0 8px;
+					background-position: 0 9px;
 					padding-left: .5em;
 				}
 
@@ -235,9 +241,10 @@ NAVIGATION STYLES
 
 						a {
 							color: $white !important;
-							line-height: 1;
+							line-height: 1.25em;
 							margin: 0 0 .5em 0;
 							border: none;
+							letter-spacing: .4px;
 
 							&:hover, &:focus {
 								color: $plum !important;
@@ -264,7 +271,9 @@ NAVIGATION STYLES
 	#thsp-sticky-header-menu {
 		@include antenna;
 
-		>li {padding-bottom: 8px;}
+		>li {
+			padding-bottom: 8px;
+		}
 	}
 
 	a {

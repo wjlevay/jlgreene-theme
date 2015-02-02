@@ -73,8 +73,8 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'medium-crop', 948, 533, array( 'center', 'top') );
-// add_image_size( 'news-thumb', 300, 100, true );
+add_image_size( 'thumbnail@1.5x', 600, 600 );
+add_image_size( 'medium@1.5x', 1422, 1422 );
 
 /*
 to add more sizes, simply copy a line from above

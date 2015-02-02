@@ -259,6 +259,7 @@ NAVIGATION STYLES
   .nav li {
     float: left;
     position: relative;
+    line-height: 1.875em;
     /*
     plan your menus and drop-downs wisely.
     */
@@ -268,9 +269,9 @@ NAVIGATION STYLES
       border-bottom: 1px solid #970076;
       padding: 0;
       margin-right: 0.33em;
-      font-size: 1.1em;
+      font-size: 1em;
       line-height: 1;
-      letter-spacing: -.75px;
+      letter-spacing: .5px;
       /*
       you can use hover styles here even though this size
       has the possibility of being a mobile device.
@@ -312,7 +313,9 @@ NAVIGATION STYLES
           color: white;
           font-size: 1em;
           padding-left: 0;
-          border: none; }
+          border: none;
+          line-height: 1.25em;
+          letter-spacing: .4px; }
           .nav li ul.sub-menu li a:hover, .nav li ul.sub-menu li a:focus,
           .nav li ul.children li a:hover,
           .nav li ul.children li a:focus {
@@ -333,9 +336,9 @@ NAVIGATION STYLES
 /* STICKY HEADER PLUGIN */
 #thsp-sticky-header {
   padding-bottom: 0;
-  -webkit-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
-  -moz-box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4);
-  box-shadow: 0px 9px 10px 0px rgba(50, 50, 50, 0.4); }
+  -webkit-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3);
+  -moz-box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3);
+  box-shadow: 1px 1px 12px 0px rgba(51, 56, 34, 0.3); }
   #thsp-sticky-header #thsp-sticky-header-inner {
     width: 760px;
     /* make this the same as the .wrap width! */
@@ -346,13 +349,14 @@ NAVIGATION STYLES
       /* end current highlighters */ }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li {
         display: inline-block;
-        margin: 0 0 0 0 !important; }
+        margin: 0 0 0 0 !important;
+        line-height: 1.875em; }
         #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li a {
           font-size: 1.2em; }
         #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
           background-image: url(/wp-content/themes/jlgreene/library/images/bullet-sm.png);
           background-repeat: no-repeat;
-          background-position: 0 8px;
+          background-position: 0 9px;
           padding-left: .5em; }
         #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:hover ul.sub-menu, #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:focus ul.sub-menu {
           display: block; }
@@ -371,9 +375,10 @@ NAVIGATION STYLES
             padding-left: 0; }
             #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a {
               color: white !important;
-              line-height: 1;
+              line-height: 1.25em;
               margin: 0 0 .5em 0;
-              border: none; }
+              border: none;
+              letter-spacing: .4px; }
               #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a:hover, #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu li a:focus {
                 color: #970076 !important; }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li.current-menu-item a,
@@ -542,7 +547,7 @@ body {
     #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
       background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
       background-repeat: no-repeat;
-      background-position: 0 3px;
+      background-position: 0 6px;
       padding-left: .75em; }
     #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu {
       top: 48px; }

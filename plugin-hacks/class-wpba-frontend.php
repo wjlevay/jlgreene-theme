@@ -180,7 +180,7 @@ class WPBA_Frontend extends WP_Better_Attachments
 		$atts = shortcode_atts( $defaults, $args );
 
 		$atts_to_be_cleaned = array(
-			'post_id'								=> 'int',
+			'post_id'					=> 'int',
 			'show_post_thumbnail'		=> 'boolean'
 		);
 		$atts = $this->clean_shortcode_atts( $atts, $atts_to_be_cleaned );
@@ -224,7 +224,7 @@ class WPBA_Frontend extends WP_Better_Attachments
 		));
 		$slider_properties = json_encode( $slider_properties );
 		$slider = '';
-		$slider .= "<div class='wpba-flexslider flexslider' style='width:{$width};height:{$height};' data-sliderproperties='{$slider_properties}'>";
+		$slider .= "<div class='wpba-flexslider flexslider' data-sliderproperties='{$slider_properties}'>";
 		$slider .= '<ul class="slides">';
 		foreach ( $attachments as $attachment ) {
 			if ( $this->is_image( $attachment->post_mime_type ) ) {
@@ -233,11 +233,20 @@ class WPBA_Frontend extends WP_Better_Attachments
 				$width = $attachment_src[1];
 				$height = $attachment_src[2];
 
-				// HACK! BE SURE TO INCLUDE THIS IN FUTURE UPGRADES!
+				// HACK! BE SURE TO INCLUDE THE FOLLOWING IN FUTURE UPGRADES!
+
 				$caption = $attachment->post_excerpt;
-				// Then add $caption variable to <p> element below
+
+				if ($i > 0) {
+					$lazy = 'lazy';
+				} else {
+					$lazy = '';
+				}
+				$i++;
+
+				// Then add $caption variable to alt attrible and <p> element below
 				
-				$slider .= "<li><div class='slide-wrapper'><div class='slide-image'><img src='{$src}' width='{$width}' height='{$height}'/></div></div><p class='caption-text'>{$caption}</p></li>";
+				$slider .= "<li><div class='slide-wrapper'><div class='slide-image'><img class='{$lazy}' src='{$src}' alt='{$caption}'/></div></div><p class='caption-text'>{$caption}</p></li>";
 			} // if()
 		} // foreach()
 		$slider .= '</ul>';
