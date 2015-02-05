@@ -85,7 +85,10 @@ html {
  * Remove default margin.
  */
 body {
-  margin: 0; }
+  margin: 0;
+  /* fix for Firefox and WebType fonts. See here: https://bugzilla.mozilla.org/show_bug.cgi?id=857142#c83 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 /* ==========================================================================
    Links
@@ -1669,6 +1672,8 @@ POSTS & CONTENT STYLES
 .blog .article-header .post-thumbnail {
   display: table;
   margin-top: 1em; }
+  .blog .article-header .post-thumbnail img {
+    width: 100%; }
   .blog .article-header .post-thumbnail .thumbnail-caption {
     margin-top: .5em;
     font-size: 0.83333em;
@@ -1788,8 +1793,8 @@ FLEXSLIDER STYLES
     opacity: 0.8;
     left: 0; }
   .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 185px;
-    bottom: 0; }
+    top: 0;
+    padding-top: 50%; }
   .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px;
@@ -1891,8 +1896,6 @@ tweeners.
   .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
     opacity: 0.8;
     left: 10px; }
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 241px; }
   .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px; } }
@@ -2202,8 +2205,6 @@ you can add resource intensive styles.
   .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
     opacity: 0.8;
     left: 20px; }
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 399px; }
   .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px; } }
@@ -2267,9 +2268,7 @@ you can add resource intensive styles.
   /*********************
   FLEXSLIDER STYLES
   *********************/
-  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 551px; } }
+  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */ }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2294,9 +2293,7 @@ This is for the larger monitors and possibly full screen viewers.
   /*********************
   FLEXSLIDER STYLES
   *********************/
-  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 669px; } }
+  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */ }
 /*********************
 EXTRA LARGE VIEWING SIZE
 This is for the largest monitors and possibly full screen viewers.
@@ -2321,9 +2318,7 @@ This is for the largest monitors and possibly full screen viewers.
   /*********************
   FLEXSLIDER STYLES
   *********************/
-  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 1036px; } }
+  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */ }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

@@ -626,6 +626,8 @@ POSTS & CONTENT STYLES
 				display: table;
 				margin-top: 1em;
 
+				img {width: 100%;}
+
 				.thumbnail-caption {
 					margin-top: .5em;
 					font-size: $caption-size;
@@ -787,8 +789,8 @@ FLEXSLIDER STYLES
 		}
 
 		.flex-control-nav {
-			top: 185px;
-			bottom: 0;
+			top: 0;
+			padding-top: 50%;
 		}
 
 		.flex-control-paging {

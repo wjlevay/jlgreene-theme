@@ -76,6 +76,10 @@ html {
 
 body {
     margin: 0;
+
+    /* fix for Firefox and WebType fonts. See here: https://bugzilla.mozilla.org/show_bug.cgi?id=857142#c83 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
