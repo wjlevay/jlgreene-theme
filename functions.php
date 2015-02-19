@@ -275,6 +275,24 @@ function first_paragraph($content){
 add_filter('the_content', 'first_paragraph');
 
 
+
+/************* DISPLAY SHORT TITLE IN MENUS *********************/
+
+// via https://wordpress.org/support/topic/replace-page-titles-in-submenu?replies=3#post-6585463
+
+function jcs_short_title($title, $menu_item_id){
+
+  $short_title = get_post_meta($menu_item_id, '_cmb2_short_title', true);
+  if($short_title){
+    $title = $short_title;
+  }
+
+  return $title;
+}
+// uncomment line below to display short title in menu
+//add_filter( 'jcs/item_title', 'jcs_short_title', 10, 2 );
+
+
 /************* CUSTOM META BOXES *********************/
 
 /*
