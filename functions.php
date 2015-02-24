@@ -293,6 +293,18 @@ function jcs_short_title($title, $menu_item_id){
 //add_filter( 'jcs/item_title', 'jcs_short_title', 10, 2 );
 
 
+/************* CUSTOM ORDERBY *********************/
+
+/* This function ignores an initial 'the-' in a post slug for the purposes of alpha sorting */
+
+add_filter('posts_orderby', 'edit_posts_orderby');
+
+function edit_posts_orderby($orderby_statement) {
+  $orderby_statement = "CASE WHEN post_name LIKE 'the-%' THEN substring(post_name, 5, 1000) ELSE post_name END";
+  return $orderby_statement;
+}
+
+
 /************* CUSTOM META BOXES *********************/
 
 /*
