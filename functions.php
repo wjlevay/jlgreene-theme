@@ -280,30 +280,27 @@ add_filter('the_content', 'first_paragraph');
 
 // via https://wordpress.org/support/topic/replace-page-titles-in-submenu?replies=3#post-6585463
 
-function jcs_short_title($title, $menu_item_id){
+// function jcs_short_title($title, $menu_item_id){
 
-  $short_title = get_post_meta($menu_item_id, '_cmb2_short_title', true);
-  if($short_title){
-    $title = $short_title;
-  }
+//   $short_title = get_post_meta($menu_item_id, '_cmb2_short_title', true);
+//   if($short_title){
+//     $title = $short_title;
+//   }
 
-  return $title;
-}
-// uncomment line below to display short title in menu
-//add_filter( 'jcs/item_title', 'jcs_short_title', 10, 2 );
+//   return $title;
+// }
+// add_filter( 'jcs/item_title', 'jcs_short_title', 10, 2 );
 
 
 /************* CUSTOM ORDERBY *********************/
 
 /* This function ignores an initial 'the-' in a post slug for the purposes of alpha sorting */
 
-add_filter('posts_orderby', 'edit_posts_orderby');
-
-function edit_posts_orderby($orderby_statement) {
-  $orderby_statement = "CASE WHEN post_name LIKE 'the-%' THEN substring(post_name, 5, 1000) ELSE post_name END";
-  return $orderby_statement;
-}
-
+// add_filter('posts_orderby', 'edit_posts_orderby');
+// function edit_posts_orderby($orderby_statement) {
+//   $orderby_statement = "CASE WHEN post_name LIKE 'the-%' THEN substring(post_name, 5, 1000) ELSE post_name END";
+//   return $orderby_statement;
+// }
 
 /************* CUSTOM META BOXES *********************/
 
@@ -369,7 +366,7 @@ function jlg_metaboxes( array $meta_boxes ) {
       'show_names'    => false, // Show field names on the left if true
       'fields'        => array(
           array(
-              'desc'  => __( 'Enter the short title that will display on the project grid page', 'cmb2' ),
+              'desc'  => __( 'OPTIONAL: Enter a shorter title that will display on the project grid page', 'cmb2' ),
               'id'    => $prefix . 'short_title',
               'type'  => 'text',
           ),

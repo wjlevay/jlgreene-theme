@@ -510,25 +510,15 @@ https://github.com/devinhunt/typebase.css
 I've edited it a bit, but it's a nice starting point.
 */
 /*
-some nice typographical defaults
-more here: http://www.newnet-soft.com/blog/csstypography
+Making sure words do not break and hyphenation is off.
 */
 p {
-  -ms-word-break: break-all;
-  -ms-word-wrap: break-all;
-  word-break: break-word;
-  word-break: break-word;
+  -ms-word-break: keep-all;
+  -ms-word-wrap: normal;
+  word-break: keep-all;
   -webkit-hyphens: none;
   -moz-hyphens: none;
-  hyphens: none;
-  -webkit-hyphenate-before: 2;
-  -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3;
-  -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig"; }
+  hyphens: none; }
 
 /******************************************************************
 Site Name: JLGreene.org

@@ -53,3 +53,16 @@ I've edited it a bit, but it's a nice starting point.
 // font stacks
 $sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+/*
+Making sure words do not break and hyphenation is off.
+*/
+p {
+  -ms-word-break: keep-all;
+  -ms-word-wrap: normal;
+  word-break: keep-all;
+  // cleaning up the ragged lines and breaks
+  -webkit-hyphens: none;
+     -moz-hyphens: none;
+          hyphens: none;
+}
