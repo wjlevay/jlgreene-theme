@@ -2051,7 +2051,7 @@ you can add resource intensive styles.
           margin: 0 0 0 0 !important;
           line-height: 1.875em; }
           #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li a {
-            font-size: 1.2em; }
+            font-size: 1.1em; }
           #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
             background-image: url(/wp-content/themes/jlgreene/library/images/bullet-sm.png);
             background-repeat: no-repeat;
@@ -2246,12 +2246,12 @@ you can add resource intensive styles.
       font-size: .9em;
       margin: 0 0 0 .2em !important; }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li a {
-        font-size: 1em; }
+        font-size: .9em; }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li:nth-child(n+2) {
         background-image: url(/wp-content/themes/jlgreene/library/images/bullet.png);
         background-repeat: no-repeat;
         background-position: 0 6px;
-        padding-left: .75em; }
+        padding-left: .70em; }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu {
         top: 48px; }
 
