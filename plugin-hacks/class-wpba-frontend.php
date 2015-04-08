@@ -236,6 +236,7 @@ class WPBA_Frontend extends WP_Better_Attachments
 				// HACK! BE SURE TO INCLUDE THE FOLLOWING IN FUTURE UPGRADES!
 
 				$caption = $attachment->post_excerpt;
+				$link = $attachment->post_content;
 
 				if ($i > 0) {
 					$lazy = 'lazy';
@@ -246,7 +247,7 @@ class WPBA_Frontend extends WP_Better_Attachments
 
 				// Then add $caption variable to alt attrible and <p> element below
 				
-				$slider .= "<li><div class='slide-wrapper'><div class='slide-image'><img class='{$lazy}' src='{$src}' alt='{$caption}'/></div></div><p class='caption-text'>{$caption}</p></li>";
+				$slider .= "<li><div class='slide-wrapper'><div class='slide-image'><a href='{$link}'><img class='{$lazy}' src='{$src}' alt='{$caption}'/></a></div></div><p class='caption-text'>{$caption}</p></li>";
 			} // if()
 		} // foreach()
 		$slider .= '</ul>';

@@ -66,15 +66,15 @@ add_action( 'after_setup_theme', 'bones_ahoy' );
 
 
 if ( ! isset( $content_width ) ) {
-	$content_width = 1920;
+	$content_width = 1240;
 }
 
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'thumbnail@1.5x', 600, 600 );
-add_image_size( 'medium@1.5x', 1422, 1422 );
+//add_image_size( 'thumbnail@1.5x', 600, 600 );
+//add_image_size( 'medium@1.5x', 1422, 1422 );
 
 /*
 to add more sizes, simply copy a line from above
@@ -96,14 +96,14 @@ You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
-add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
+// add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
-function bones_custom_image_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'bones-thumb-600' => __('600px by 150px'),
-        'bones-thumb-300' => __('300px by 100px'),
-    ) );
-}
+// function bones_custom_image_sizes( $sizes ) {
+//     return array_merge( $sizes, array(
+//         'bones-thumb-600' => __('600px by 150px'),
+//         'bones-thumb-300' => __('300px by 100px'),
+//     ) );
+// }
 
 /*
 The function above adds the ability to use the dropdown menu to select
