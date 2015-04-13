@@ -165,11 +165,14 @@ class WPBA_Frontend extends WP_Better_Attachments
 	public function setup_build_flexslider( $args = array() )
 	{
 		$defaults = array(
+			// https://github.com/woothemes/FlexSlider/wiki/FlexSlider-Properties
 			'post_id'							=> NULL,
-			'show_post_thumbnail'	=> false,
+			'show_post_thumbnail'				=> false,
 			'width'								=> 'auto',
 			'height'							=> 'auto',
-			'slider_properties'		=> array( 'animation' => 'slide' ) // https://github.com/woothemes/FlexSlider/wiki/FlexSlider-Properties
+			'slider_properties'					=> array( 
+													'animation' => 'slide',
+													)
 		);
 
 		if ( !empty( $args['slider_properties'] ) ) {
@@ -235,8 +238,18 @@ class WPBA_Frontend extends WP_Better_Attachments
 
 				// HACK! BE SURE TO INCLUDE THE FOLLOWING IN FUTURE UPGRADES!
 
+				$alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+				$image_title = $attachment->post_title;
 				$caption = $attachment->post_excerpt;
-				$link = $attachment->post_content;
+				$description = $attachment->post_content;
+
+				if ( is_front_page() ) {
+					$openlink = "<a href='{$description}' title='{$caption}'>";
+					$closelink = "</a>";
+				} else {
+					$openlink = '';
+					$closelink = '';
+				}
 
 				if ($i > 0) {
 					$lazy = 'lazy';
@@ -247,7 +260,7 @@ class WPBA_Frontend extends WP_Better_Attachments
 
 				// Then add $caption variable to alt attrible and <p> element below
 				
-				$slider .= "<li><div class='slide-wrapper'><div class='slide-image'><a href='{$link}'><img class='{$lazy}' src='{$src}' alt='{$caption}'/></a></div></div><p class='caption-text'>{$caption}</p></li>";
+				$slider .= "<li><div class='slide-wrapper'><div class='slide-image'>{$openlink}<img class='{$lazy}' src='{$src}' alt='{$alt}'/>{$closelink}</div></div><p class='caption-text'>{$caption}</p></li>";
 			} // if()
 		} // foreach()
 		$slider .= '</ul>';

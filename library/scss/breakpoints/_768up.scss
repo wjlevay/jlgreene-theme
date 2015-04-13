@@ -446,14 +446,8 @@ FLEXSLIDER STYLES
 			.flex-next {opacity:0.8;right:20px}
 			.flex-prev{opacity:0.8;left:20px}
 		}
-
-		.flex-control-paging {
-			li {
-				a {
-					width: 13px;
-					height: 13px;
-				}
-			}
+		.flex-control-nav {
+			bottom: 20%;
 		}
 	}
 }

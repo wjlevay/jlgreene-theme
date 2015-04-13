@@ -1783,8 +1783,8 @@ FLEXSLIDER STYLES
     opacity: 0.8;
     left: 0; }
   .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    top: 0;
-    padding-top: 50%; }
+    height: 0;
+    bottom: 33%; }
   .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px;
@@ -1876,6 +1876,8 @@ tweeners.
   FLEXSLIDER STYLES
   *********************/
   /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
+    bottom: 22.5%; }
   .home .flexslider .flex-next, .project .flexslider .flex-next {
     right: 10px; }
   .home .flexslider .flex-prev, .project .flexslider .flex-prev {
@@ -1885,10 +1887,7 @@ tweeners.
     right: 10px; }
   .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
     opacity: 0.8;
-    left: 10px; }
-  .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
-    width: 13px;
-    height: 13px; } }
+    left: 10px; } }
 /*********************
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
@@ -2195,9 +2194,8 @@ you can add resource intensive styles.
   .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
     opacity: 0.8;
     left: 20px; }
-  .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
-    width: 13px;
-    height: 13px; } }
+  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
+    bottom: 20%; } }
 @media only screen and (min-width: 768px) and (max-width: 860px) {
   .flex-direction-nav .flex-prev {
     opacity: 0;
@@ -2255,7 +2253,9 @@ you can add resource intensive styles.
   /*********************
   FLEXSLIDER STYLES
   *********************/
-  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */ }
+  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
+    bottom: 17.5%; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2280,7 +2280,9 @@ This is for the larger monitors and possibly full screen viewers.
   /*********************
   FLEXSLIDER STYLES
   *********************/
-  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */ }
+  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
+  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
+    bottom: 15%; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

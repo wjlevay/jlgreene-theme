@@ -125,21 +125,16 @@ FLEXSLIDER STYLES
 .home, .project {
 	.flexslider {
 
+		.flex-control-nav {
+			bottom: 22.5%;
+		}
+
 		.flex-next {right: 10px;}
 		.flex-prev {left: 10px;}
 
 		&:hover {
 			.flex-next {opacity:0.8;right:10px}
 			.flex-prev {opacity:0.8;left:10px}
-		}
-
-		.flex-control-paging {
-			li {
-				a {
-					width: 13px;
-					height: 13px;
-				}
-			}
 		}
 	}
 }
