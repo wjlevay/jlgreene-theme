@@ -1784,7 +1784,7 @@ FLEXSLIDER STYLES
     left: 0; }
   .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
     height: 0;
-    bottom: 33%; }
+    bottom: 0; }
   .home .flexslider .flex-control-paging li a, .project .flexslider .flex-control-paging li a {
     width: 13px;
     height: 13px;
@@ -1876,8 +1876,6 @@ tweeners.
   FLEXSLIDER STYLES
   *********************/
   /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    bottom: 22.5%; }
   .home .flexslider .flex-next, .project .flexslider .flex-next {
     right: 10px; }
   .home .flexslider .flex-prev, .project .flexslider .flex-prev {
@@ -2193,9 +2191,7 @@ you can add resource intensive styles.
     right: 20px; }
   .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
     opacity: 0.8;
-    left: 20px; }
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    bottom: 20%; } }
+    left: 20px; } }
 @media only screen and (min-width: 768px) and (max-width: 860px) {
   .flex-direction-nav .flex-prev {
     opacity: 0;
@@ -2248,14 +2244,7 @@ you can add resource intensive styles.
         background-position: 0 6px;
         padding-left: .70em; }
       #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu {
-        top: 48px; }
-
-  /*********************
-  FLEXSLIDER STYLES
-  *********************/
-  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    bottom: 17.5%; } }
+        top: 48px; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
@@ -2275,14 +2264,7 @@ This is for the larger monitors and possibly full screen viewers.
     width: 1240px; }
 
   #thsp-sticky-header #thsp-sticky-header-inner {
-    width: 1240px; }
-
-  /*********************
-  FLEXSLIDER STYLES
-  *********************/
-  /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-  .home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-    bottom: 15%; } }
+    width: 1240px; } }
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with

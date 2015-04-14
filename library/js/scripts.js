@@ -119,6 +119,9 @@ $('.wpba-flexslider').flexslider({
      var src = $(this).attr("data-src");
         $(this).attr("src", src).removeAttr("data-src").removeClass("lazy");
      });
+
+     // Position Flexslider control nav "dots" relative to image height, not total height of image + caption
+     $('ol.flex-control-nav').css({"top":$('img.sliding-image').height() - 20});
    },
   before: function (slider) {
       // lazy load

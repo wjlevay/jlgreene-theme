@@ -18,16 +18,3 @@ on larger screens.
 		width: 1240px;
 	}
 }
-
-/*********************
-FLEXSLIDER STYLES
-*********************/
-
-/* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-.home, .project {
-	.flexslider {
-		.flex-control-nav {
-			bottom: 15%;
-		}
-	}
-}

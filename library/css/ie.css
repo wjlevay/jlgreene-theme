@@ -181,8 +181,6 @@ do they need tweaking?
 FLEXSLIDER STYLES
 *********************/
 /* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-.home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  bottom: 22.5%; }
 .home .flexslider .flex-next, .project .flexslider .flex-next {
   right: 10px; }
 .home .flexslider .flex-prev, .project .flexslider .flex-prev {
@@ -493,8 +491,6 @@ FLEXSLIDER STYLES
 .home .flexslider:hover .flex-prev, .project .flexslider:hover .flex-prev {
   opacity: 0.8;
   left: 20px; }
-.home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  bottom: 20%; }
 
 @media screen and (max-width: 860px) {
   .flex-direction-nav .flex-prev {
@@ -542,13 +538,6 @@ body {
       padding-left: .70em; }
     #thsp-sticky-header #thsp-sticky-header-inner #thsp-sticky-header-menu li ul.sub-menu {
       top: 48px; }
-
-/*********************
-FLEXSLIDER STYLES
-*********************/
-/* overwriting some styles from /plugins/wp-better-attachments/assets/css/wpba-frontend.css */
-.home .flexslider .flex-control-nav, .project .flexslider .flex-control-nav {
-  bottom: 17.5%; }
 
 /*
 you can call the larger styles if you want, but there's really no need
